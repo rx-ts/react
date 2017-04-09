@@ -10,7 +10,7 @@ PropTypes = 'default' in PropTypes ? PropTypes['default'] : PropTypes;
 QRious = 'default' in QRious ? QRious['default'] : QRious;
 
 var Qrious$1 = (function (superclass) {
-  function Qrious(props) {
+  function anonymous(props) {
     superclass.call(this, props);
     var qr = new QRious(props);
     this.state = {
@@ -19,21 +19,21 @@ var Qrious$1 = (function (superclass) {
     };
   }
 
-  if ( superclass ) Qrious.__proto__ = superclass;
-  Qrious.prototype = Object.create( superclass && superclass.prototype );
-  Qrious.prototype.constructor = Qrious;
+  if ( superclass ) anonymous.__proto__ = superclass;
+  anonymous.prototype = Object.create( superclass && superclass.prototype );
+  anonymous.prototype.constructor = anonymous;
 
-  Qrious.prototype.componentWillReceiveProps = function componentWillReceiveProps (nextProps) {
+  anonymous.prototype.componentWillReceiveProps = function componentWillReceiveProps (nextProps) {
     var qr = this.state.qr;
     Object.assign(qr, nextProps);
     this.state.src = qr.toDataURL(nextProps.mime);
   };
 
-  Qrious.prototype.render = function render () {
+  anonymous.prototype.render = function render () {
     return React.createElement( 'img', { src: this.state.src })
   };
 
-  return Qrious;
+  return anonymous;
 }(React.PureComponent));
 
 var string = PropTypes.string;
@@ -88,7 +88,7 @@ var App = (function (superclass) {
     var ref = this;
     var state = ref.state;
     return React.createElement( 'div', null,
-      React.createElement( 'h1', null, "VueQrious Demo" ),
+      React.createElement( 'h1', null, "ReactQrious Demo" ),
 
       React.createElement( 'ul', { className: "lists" },
         React.createElement( 'li', null,
