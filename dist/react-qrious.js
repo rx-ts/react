@@ -1,6 +1,6 @@
 /*!
  * react-qrious a React component of generating qrcode with `qrious`
- * Version 0.0.1
+ * Version 0.1.0
  * Copyright (C) 2017 JounQin <admin@1stg.me>
  * Released under the MIT license
  *
@@ -16,8 +16,8 @@ React = 'default' in React ? React['default'] : React;
 PropTypes = 'default' in PropTypes ? PropTypes['default'] : PropTypes;
 QRious = 'default' in QRious ? QRious['default'] : QRious;
 
-var Qrious$1 = (function (superclass) {
-  function anonymous(props) {
+var ReactQrious$1 = (function (superclass) {
+  function ReactQrious(props) {
     superclass.call(this, props);
     var qr = new QRious(props);
     this.state = {
@@ -26,21 +26,21 @@ var Qrious$1 = (function (superclass) {
     };
   }
 
-  if ( superclass ) anonymous.__proto__ = superclass;
-  anonymous.prototype = Object.create( superclass && superclass.prototype );
-  anonymous.prototype.constructor = anonymous;
+  if ( superclass ) ReactQrious.__proto__ = superclass;
+  ReactQrious.prototype = Object.create( superclass && superclass.prototype );
+  ReactQrious.prototype.constructor = ReactQrious;
 
-  anonymous.prototype.componentWillReceiveProps = function componentWillReceiveProps (nextProps) {
+  ReactQrious.prototype.componentWillReceiveProps = function componentWillReceiveProps (nextProps) {
     var qr = this.state.qr;
     Object.assign(qr, nextProps);
     this.state.src = qr.toDataURL(nextProps.mime);
   };
 
-  anonymous.prototype.render = function render () {
+  ReactQrious.prototype.render = function render () {
     return React.createElement( 'img', { src: this.state.src })
   };
 
-  return anonymous;
+  return ReactQrious;
 }(React.PureComponent));
 
 var string = PropTypes.string;
@@ -52,7 +52,7 @@ var numberString = function (props, propName, componentName, location, propFullN
   return isNaN(propVal) ? new Error(("Invalid prop `" + propFullName + "` supplied to `" + componentName + "`. Validation failed.")) : null
 };
 
-Qrious$1.propTypes = {
+ReactQrious$1.propTypes = {
   value: string.isRequired,
   background: string,
   backgroundAlpha: numberString,
@@ -64,6 +64,6 @@ Qrious$1.propTypes = {
   size: numberString
 };
 
-return Qrious$1;
+return ReactQrious$1;
 
 })));

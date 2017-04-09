@@ -1,7 +1,5 @@
 # react-qrious
-a React component of generating qrcode with `qrious`
-
-[qrious](https://github.com/neocotic/qrious) is required as **peerDependency** in order to support all versions.
+a [React](https://github.com/facebook/react) component of generating qrcode with [qrious](https://github.com/neocotic/qrious)
 
 ## Demo
 http://react-qrious.1stg.me

@@ -1,8 +1,9 @@
 {
   "name": "react-qrious",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "a React component of generating qrcode with `qrious`",
-  "main": "lib",
+  "main": "dist",
+  "jsnext:main": "lib",
   "browser": "dist/react-qrious.min",
   "unpkg": "dist/react-qrious",
   "repository": "git@github.com:JounQin/react-qrious.git",
@@ -17,9 +18,11 @@
   },
   "peerDependencies": {
     "prop-types": "^15.5.0",
-    "qrious": "^2.0.0",
     "react": "^15.5.0",
     "react-dom": "^15.5.0"
+  },
+  "dependencies": {
+    "qrious": "^2.0.0"
   },
   "devDependencies": {
     "cross-env": "^4.0.0",

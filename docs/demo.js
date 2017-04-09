@@ -9,8 +9,8 @@ ReactDOM = 'default' in ReactDOM ? ReactDOM['default'] : ReactDOM;
 PropTypes = 'default' in PropTypes ? PropTypes['default'] : PropTypes;
 QRious = 'default' in QRious ? QRious['default'] : QRious;
 
-var Qrious$1 = (function (superclass) {
-  function anonymous(props) {
+var ReactQrious = (function (superclass) {
+  function ReactQrious(props) {
     superclass.call(this, props);
     var qr = new QRious(props);
     this.state = {
@@ -19,21 +19,21 @@ var Qrious$1 = (function (superclass) {
     };
   }
 
-  if ( superclass ) anonymous.__proto__ = superclass;
-  anonymous.prototype = Object.create( superclass && superclass.prototype );
-  anonymous.prototype.constructor = anonymous;
+  if ( superclass ) ReactQrious.__proto__ = superclass;
+  ReactQrious.prototype = Object.create( superclass && superclass.prototype );
+  ReactQrious.prototype.constructor = ReactQrious;
 
-  anonymous.prototype.componentWillReceiveProps = function componentWillReceiveProps (nextProps) {
+  ReactQrious.prototype.componentWillReceiveProps = function componentWillReceiveProps (nextProps) {
     var qr = this.state.qr;
     Object.assign(qr, nextProps);
     this.state.src = qr.toDataURL(nextProps.mime);
   };
 
-  anonymous.prototype.render = function render () {
+  ReactQrious.prototype.render = function render () {
     return React.createElement( 'img', { src: this.state.src })
   };
 
-  return anonymous;
+  return ReactQrious;
 }(React.PureComponent));
 
 var string = PropTypes.string;
@@ -45,7 +45,7 @@ var numberString = function (props, propName, componentName, location, propFullN
   return isNaN(propVal) ? new Error(("Invalid prop `" + propFullName + "` supplied to `" + componentName + "`. Validation failed.")) : null
 };
 
-Qrious$1.propTypes = {
+ReactQrious.propTypes = {
   value: string.isRequired,
   background: string,
   backgroundAlpha: numberString,
@@ -136,7 +136,7 @@ var App = (function (superclass) {
           React.createElement( 'textarea', { rows: "6", cols: "80", value: state.value, onChange: this.update('value') })
         )
       ),
-      React.createElement( Qrious$1, this.state)
+      React.createElement( ReactQrious, this.state)
     )
   };
 
