@@ -26,7 +26,7 @@ class App extends React.PureComponent {
   render() {
     const {state} = this
     return <div>
-      <h1>VueQrious Demo</h1>
+      <h1>ReactQrious Demo</h1>
 
       <ul className="lists">
         <li>
