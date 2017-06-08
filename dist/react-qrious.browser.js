@@ -1,6 +1,6 @@
 /*!
  * react-qrious a React component of generating qrcode with `qrious`
- * Version 1.0.0
+ * Version 1.0.1
  * Copyright (C) 2017 JounQin <admin@1stg.me>
  * Released under the MIT license
  *
@@ -32,7 +32,7 @@ var ReactQrious = (function (superclass) {
 
   ReactQrious.prototype.componentWillReceiveProps = function componentWillReceiveProps (nextProps) {
     var qr = this.state.qr;
-    Object.assign(qr, nextProps);
+    qr.set(nextProps);
     this.state.src = qr.toDataURL(nextProps.mime);
   };
 

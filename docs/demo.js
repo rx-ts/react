@@ -25,7 +25,7 @@ var ReactQrious = (function (superclass) {
 
   ReactQrious.prototype.componentWillReceiveProps = function componentWillReceiveProps (nextProps) {
     var qr = this.state.qr;
-    Object.assign(qr, nextProps);
+    qr.set(nextProps);
     this.state.src = qr.toDataURL(nextProps.mime);
   };
 
