@@ -1,13 +1,20 @@
 import buble from 'rollup-plugin-buble'
+import replace from 'rollup-plugin-replace'
 import uglify from 'rollup-plugin-uglify'
 
 const pkg = require('./package.json')
 
+const ENV = process.env.ENV || 'client'
 const NODE_ENV = process.env.NODE_ENV || 'development'
 
+const isServer = ENV === 'server'
 const isProd = NODE_ENV === 'production'
 
 const plugins = [buble()]
+
+isServer && plugins.push(replace({
+  qrious: 'node-qrious'
+}))
 
 isProd && plugins.push(uglify({
   output: {
@@ -24,16 +31,19 @@ export default {
  *
  * Github: https://github.com/JounQin/react-qrious
  */`,
-  entry: `lib/qrious${isProd ? '' : '.dev'}.js`,
-  dest: `dist/react-qrious${isProd ? '.min' : ''}.js`,
+  entry: `lib/index`,
+  dest: `dist/react-qrious${isServer ? '' : '.browser'}${isProd ? '.min' : ''}.js`,
   plugins,
   format: 'umd',
-  external: ['prop-types', 'qrious', 'react'],
+  external: ['node-qrious', 'prop-types', 'qrious', 'react'],
   globals: {
     'prop-types': 'PropTypes',
     qrious: 'QRious',
+    'node-qrious': 'QRious',
     react: 'React'
   },
-  moduleId: 'react-qrious',
+  amd: {
+    id: 'react-qrious'
+  },
   moduleName: 'ReactQrious'
 }

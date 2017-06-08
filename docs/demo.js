@@ -1,13 +1,13 @@
 (function (global, factory) {
-	typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('react'), require('react-dom'), require('prop-types'), require('qrious')) :
-	typeof define === 'function' && define.amd ? define(['react', 'react-dom', 'prop-types', 'qrious'], factory) :
-	(factory(global.React,global.ReactDOM,global.PropTypes,global.QRious));
-}(this, (function (React,ReactDOM,PropTypes,QRious) { 'use strict';
+	typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('react'), require('react-dom'), require('qrious'), require('prop-types')) :
+	typeof define === 'function' && define.amd ? define(['react', 'react-dom', 'qrious', 'prop-types'], factory) :
+	(factory(global.React,global.ReactDOM,global.QRious,global.PropTypes));
+}(this, (function (React,ReactDOM,QRious,PropTypes) { 'use strict';
 
 React = 'default' in React ? React['default'] : React;
 ReactDOM = 'default' in ReactDOM ? ReactDOM['default'] : ReactDOM;
-PropTypes = 'default' in PropTypes ? PropTypes['default'] : PropTypes;
 QRious = 'default' in QRious ? QRious['default'] : QRious;
+PropTypes = 'default' in PropTypes ? PropTypes['default'] : PropTypes;
 
 var ReactQrious = (function (superclass) {
   function ReactQrious(props) {

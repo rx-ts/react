@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import Qrious from './lib/qrious.dev'
+import Qrious from './lib/index'
 
 class App extends React.PureComponent {
   constructor(props) {

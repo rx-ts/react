@@ -1,9 +1,9 @@
 {
   "name": "react-qrious",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "a React component of generating qrcode with `qrious`",
-  "main": "dist",
-  "jsnext:main": "lib",
+  "main": "dist/react-qrious",
+  "module": "lib",
   "browser": "dist/react-qrious.min",
   "unpkg": "dist/react-qrious",
   "repository": "git@github.com:JounQin/react-qrious.git",
@@ -12,7 +12,9 @@
   "scripts": {
     "demo": "rollup -c rollup.demo-config.js",
     "dev": "yarn demo -- --watch",
-    "build": "rollup -c",
+    "client": "rollup -c",
+    "server": "cross-env ENV=server rollup -c",
+    "build": "yarn client && yarn server",
     "build:prod": "cross-env NODE_ENV=production yarn build",
     "dist": "yarn build && yarn build:prod"
   },
@@ -22,13 +24,15 @@
     "react-dom": "^15.5.0"
   },
   "dependencies": {
-    "qrious": "^2.0.0"
+    "node-qrious": "^4.0.0",
+    "qrious": "^4.0.2"
   },
   "devDependencies": {
-    "cross-env": "^4.0.0",
-    "rollup": "^0.41.6",
+    "cross-env": "^5.0.1",
+    "rollup": "^0.42.0",
     "rollup-plugin-buble": "^0.15.0",
-    "rollup-plugin-uglify": "^1.0.2",
-    "rollup-watch": "^3.2.2"
+    "rollup-plugin-replace": "^1.1.1",
+    "rollup-plugin-uglify": "^2.0.1",
+    "rollup-watch": "^4.0.0"
   }
 }

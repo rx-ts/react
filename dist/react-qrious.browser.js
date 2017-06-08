@@ -7,8 +7,8 @@
  * Github: https://github.com/JounQin/react-qrious
  */
 (function (global, factory) {
-	typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('node-qrious'), require('react'), require('prop-types')) :
-	typeof define === 'function' && define.amd ? define('react-qrious', ['node-qrious', 'react', 'prop-types'], factory) :
+	typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('qrious'), require('react'), require('prop-types')) :
+	typeof define === 'function' && define.amd ? define('react-qrious', ['qrious', 'react', 'prop-types'], factory) :
 	(global.ReactQrious = factory(global.QRious,global.React,global.PropTypes));
 }(this, (function (QRious,React,PropTypes) { 'use strict';
 
