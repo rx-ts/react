@@ -1,6 +1,6 @@
 /*!
  * react-qrious a React component of generating qrcode with `qrious`
- * Version 1.0.1
+ * Version 1.0.2
  * Copyright (C) 2017 JounQin <admin@1stg.me>
  * Released under the MIT license
  *
@@ -12,9 +12,9 @@
 	(global.ReactQrious = factory(global.QRious,global.React,global.PropTypes));
 }(this, (function (QRious,React,PropTypes) { 'use strict';
 
-QRious = 'default' in QRious ? QRious['default'] : QRious;
-React = 'default' in React ? React['default'] : React;
-PropTypes = 'default' in PropTypes ? PropTypes['default'] : PropTypes;
+QRious = QRious && 'default' in QRious ? QRious['default'] : QRious;
+React = React && 'default' in React ? React['default'] : React;
+PropTypes = PropTypes && 'default' in PropTypes ? PropTypes['default'] : PropTypes;
 
 var ReactQrious = (function (superclass) {
   function ReactQrious(props) {
