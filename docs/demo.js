@@ -4,10 +4,10 @@
 	(factory(global.React,global.ReactDOM,global.QRious,global.PropTypes));
 }(this, (function (React,ReactDOM,QRious,PropTypes) { 'use strict';
 
-React = 'default' in React ? React['default'] : React;
-ReactDOM = 'default' in ReactDOM ? ReactDOM['default'] : ReactDOM;
-QRious = 'default' in QRious ? QRious['default'] : QRious;
-PropTypes = 'default' in PropTypes ? PropTypes['default'] : PropTypes;
+React = React && 'default' in React ? React['default'] : React;
+ReactDOM = ReactDOM && 'default' in ReactDOM ? ReactDOM['default'] : ReactDOM;
+QRious = QRious && 'default' in QRious ? QRious['default'] : QRious;
+PropTypes = PropTypes && 'default' in PropTypes ? PropTypes['default'] : PropTypes;
 
 var ReactQrious = (function (superclass) {
   function ReactQrious(props) {
@@ -24,9 +24,10 @@ var ReactQrious = (function (superclass) {
   ReactQrious.prototype.constructor = ReactQrious;
 
   ReactQrious.prototype.componentWillReceiveProps = function componentWillReceiveProps (nextProps) {
-    var qr = this.state.qr;
+    var ref = this.state;
+    var qr = ref.qr;
     qr.set(nextProps);
-    this.state.src = qr.toDataURL(nextProps.mime);
+    this.setState({src: qr.toDataURL(nextProps.mime)});
   };
 
   ReactQrious.prototype.render = function render () {

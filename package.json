@@ -1,6 +1,6 @@
 {
   "name": "react-qrious",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "a React component of generating qrcode with `qrious`",
   "main": "dist/react-qrious",
   "module": "lib",
