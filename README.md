@@ -19,7 +19,7 @@ Or you can manually choosing files in `react-qrious/dist` folder as following.
 
 ## Demo
 
-http://react-qrious.1stg.me
+https://JounQin.github.io/react-qrious/
 
 ## Usage
 
