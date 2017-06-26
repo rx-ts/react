@@ -1,62 +1,12 @@
 (function (global, factory) {
-	typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('react'), require('react-dom'), require('qrious'), require('prop-types')) :
-	typeof define === 'function' && define.amd ? define(['react', 'react-dom', 'qrious', 'prop-types'], factory) :
-	(factory(global.React,global.ReactDOM,global.QRious,global.PropTypes));
-}(this, (function (React,ReactDOM,QRious,PropTypes) { 'use strict';
+	typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('react'), require('react-dom'), require('react-qrious')) :
+	typeof define === 'function' && define.amd ? define(['react', 'react-dom', 'react-qrious'], factory) :
+	(factory(global.React,global.ReactDOM,global.ReactQrious));
+}(this, (function (React,ReactDOM,Qrious) { 'use strict';
 
 React = React && 'default' in React ? React['default'] : React;
 ReactDOM = ReactDOM && 'default' in ReactDOM ? ReactDOM['default'] : ReactDOM;
-QRious = QRious && 'default' in QRious ? QRious['default'] : QRious;
-PropTypes = PropTypes && 'default' in PropTypes ? PropTypes['default'] : PropTypes;
-
-var ReactQrious = (function (superclass) {
-  function ReactQrious(props) {
-    superclass.call(this, props);
-    var qr = new QRious(props);
-    this.state = {
-      qr: qr,
-      src: qr.toDataURL(this.props.mime)
-    };
-  }
-
-  if ( superclass ) ReactQrious.__proto__ = superclass;
-  ReactQrious.prototype = Object.create( superclass && superclass.prototype );
-  ReactQrious.prototype.constructor = ReactQrious;
-
-  ReactQrious.prototype.componentWillReceiveProps = function componentWillReceiveProps (nextProps) {
-    var ref = this.state;
-    var qr = ref.qr;
-    qr.set(nextProps);
-    this.setState({src: qr.toDataURL(nextProps.mime)});
-  };
-
-  ReactQrious.prototype.render = function render () {
-    return React.createElement( 'img', { src: this.state.src })
-  };
-
-  return ReactQrious;
-}(React.PureComponent));
-
-var string = PropTypes.string;
-
-var LEVELS = ['L', 'M', 'Q', 'H'];
-
-var numberString = function (props, propName, componentName, location, propFullName) {
-  var propVal = +props[propName];
-  return isNaN(propVal) ? new Error(("Invalid prop `" + propFullName + "` supplied to `" + componentName + "`. Validation failed.")) : null
-};
-
-ReactQrious.propTypes = {
-  value: string.isRequired,
-  background: string,
-  backgroundAlpha: numberString,
-  foreground: string,
-  foregroundAlpha: numberString,
-  level: PropTypes.oneOf(LEVELS),
-  mime: string,
-  padding: numberString,
-  size: numberString
-};
+Qrious = Qrious && 'default' in Qrious ? Qrious['default'] : Qrious;
 
 var App = (function (superclass) {
   function App(props) {
@@ -137,7 +87,7 @@ var App = (function (superclass) {
           React.createElement( 'textarea', { rows: "6", cols: "80", value: state.value, onChange: this.update('value') })
         )
       ),
-      React.createElement( ReactQrious, this.state)
+      React.createElement( Qrious, this.state)
     )
   };
 
