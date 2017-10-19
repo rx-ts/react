@@ -1,10 +1,12 @@
 import bubble from 'rollup-plugin-buble'
 
 export default {
-  entry: 'demo.js',
-  dest: 'docs/demo.js',
+  input: 'demo.js',
+  output: {
+    file: 'docs/demo.js',
+    format: 'umd'
+  },
   plugins: [bubble()],
-  format: 'umd',
   external: ['prop-types', 'qrious', 'react', 'react-dom', 'react-qrious'],
   globals: {
     'prop-types': 'PropTypes',

@@ -18,10 +18,12 @@ const config = {
  *
  * Github: https://github.com/JounQin/react-qrious
  */`,
-  entry: `lib/index`,
-  dest: `dist/react-qrious${isServer ? '' : '.browser'}${isProd ? '.min' : ''}.js`,
+  input: `lib/react-qrious`,
+  output: {
+    file: `dist/react-qrious${isServer ? '' : '.browser'}${isProd ? '.min' : ''}.js`,
+    format: 'umd'
+  },
   plugins: [buble()],
-  format: 'umd',
   external: ['node-qrious', 'prop-types', 'qrious', 'react'],
   globals: {
     'prop-types': 'PropTypes',
@@ -32,17 +34,21 @@ const config = {
   amd: {
     id: 'react-qrious'
   },
-  moduleName: 'ReactQrious'
+  name: 'ReactQrious'
 }
 
-isServer && (config.paths = {
-  qrious: 'node-qrious'
-})
+isServer &&
+  (config.paths = {
+    qrious: 'node-qrious'
+  })
 
-isProd && config.plugins.push(uglify({
-  output: {
-    comments: true
-  }
-}))
+isProd &&
+  config.plugins.push(
+    uglify({
+      output: {
+        comments: true
+      }
+    })
+  )
 
 export default config

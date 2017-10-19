@@ -4,9 +4,9 @@
 	(factory(global.React,global.ReactDOM,global.ReactQrious));
 }(this, (function (React,ReactDOM,Qrious) { 'use strict';
 
-React = React && 'default' in React ? React['default'] : React;
-ReactDOM = ReactDOM && 'default' in ReactDOM ? ReactDOM['default'] : ReactDOM;
-Qrious = Qrious && 'default' in Qrious ? Qrious['default'] : Qrious;
+React = React && React.hasOwnProperty('default') ? React['default'] : React;
+ReactDOM = ReactDOM && ReactDOM.hasOwnProperty('default') ? ReactDOM['default'] : ReactDOM;
+Qrious = Qrious && Qrious.hasOwnProperty('default') ? Qrious['default'] : Qrious;
 
 var App = (function (superclass) {
   function App(props) {
