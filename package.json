@@ -1,6 +1,6 @@
 {
   "name": "react-qrious",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "a React component of generating qrcode with `qrious`",
   "module": "lib/react-qrious",
   "main": "dist/react-qrious",
@@ -19,28 +19,33 @@
     "dist": "yarn build && yarn build:prod",
     "lint": "eslint . --max-warnings=10",
     "lint:fix": "yarn lint --fix",
-    "prepublishOnly": "yarn dist"
+    "prepublishOnly": "yarn dist",
+    "postinstall": "node ./check.js"
   },
-  "files": [
-    "dist/*.js",
-    "lib/*.js"
-  ],
+  "files": ["check.js", "dist/*.js", "lib/*.js"],
+  "eslintConfig": {
+    "extends": "1stg/react"
+  },
+  "eslintIgnore": ["dist", "docs"],
+  "prettier": {
+    "semi": false,
+    "singleQuote": true,
+    "trailingComma": "all"
+  },
   "peerDependencies": {
     "prop-types": "^15.6.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0"
   },
-  "dependencies": {
-    "node-qrious": "^4.0.0",
-    "qrious": "^4.0.2"
-  },
   "devDependencies": {
-    "cross-env": "^5.1.0",
-    "eslint": "^4.9.0",
-    "eslint-config-1stg": "^0.0.5",
-    "rollup": "^0.50.0",
-    "rollup-plugin-buble": "^0.16.0",
-    "rollup-plugin-uglify": "^2.0.1",
+    "cross-env": "^5.1.5",
+    "eslint": "^4.19.1",
+    "eslint-config-1stg": "^2.1.0",
+    "prettier": "^1.12.1",
+    "qrious": "^4.0.2",
+    "rollup": "^0.58.2",
+    "rollup-plugin-buble": "^0.19.2",
+    "rollup-plugin-uglify": "^3.0.0",
     "rollup-watch": "^4.3.1"
   }
 }

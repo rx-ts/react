@@ -15,16 +15,16 @@ class App extends React.PureComponent {
       mime: 'image/png',
       padding: 0,
       size: 100,
-      value: 'http://1stg.me'
+      value: 'http://1stg.me',
     }
   }
 
   update(propName) {
-    return e => this.setState({[propName]: e.target.value})
+    return e => this.setState({ [propName]: e.target.value })
   }
 
   render() {
-    const {state} = this
+    const { state } = this
     return (
       <div>
         <h1>ReactQrious Demo</h1>
@@ -32,19 +32,35 @@ class App extends React.PureComponent {
         <ul className="lists">
           <li>
             <label>background(color)</label>
-            <input type="color" value={state.background} onChange={this.update('background')} />
+            <input
+              type="color"
+              value={state.background}
+              onChange={this.update('background')}
+            />
           </li>
           <li>
             <label>backgroundAlpha(0.1-1.0)</label>
-            <input type="number" value={state.backgroundAlpha} onChange={this.update('backgroundAlpha')} />
+            <input
+              type="number"
+              value={state.backgroundAlpha}
+              onChange={this.update('backgroundAlpha')}
+            />
           </li>
           <li>
             <label>foreground(color)</label>
-            <input type="color" value={state.foreground} onChange={this.update('foreground')} />
+            <input
+              type="color"
+              value={state.foreground}
+              onChange={this.update('foreground')}
+            />
           </li>
           <li>
             <label>foregroundAlpha(0.1-1.0)</label>
-            <input type="number" value={state.foregroundAlpha} onChange={this.update('foregroundAlpha')} />
+            <input
+              type="number"
+              value={state.foregroundAlpha}
+              onChange={this.update('foregroundAlpha')}
+            />
           </li>
           <li>
             <label>level</label>
@@ -64,15 +80,28 @@ class App extends React.PureComponent {
           </li>
           <li>
             <label>padding(px)</label>
-            <input type="number" value={state.padding} onChange={this.update('padding')} />
+            <input
+              type="number"
+              value={state.padding}
+              onChange={this.update('padding')}
+            />
           </li>
           <li>
             <label>size(px)</label>
-            <input type="number" value={state.size} onChange={this.update('size')} />
+            <input
+              type="number"
+              value={state.size}
+              onChange={this.update('size')}
+            />
           </li>
           <li>
             <label>value</label>
-            <textarea rows="6" cols="80" value={state.value} onChange={this.update('value')} />
+            <textarea
+              rows="6"
+              cols="80"
+              value={state.value}
+              onChange={this.update('value')}
+            />
           </li>
         </ul>
         <Qrious {...this.state} />

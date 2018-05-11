@@ -10,45 +10,47 @@ const isServer = ENV === 'server'
 const isProd = NODE_ENV === 'production'
 
 const config = {
-  banner: `/*!
+  input: `lib/react-qrious`,
+  output: {
+    amd: {
+      id: 'react-qrious',
+    },
+    banner: `/*!
  * ${pkg.name} ${pkg.description}
  * Version ${pkg.version}
- * Copyright (C) 2017 JounQin <admin@1stg.me>
+ * Copyright (C) 2017-present JounQin <admin@1stg.me>
  * Released under the MIT license
  *
  * Github: https://github.com/JounQin/react-qrious
  */`,
-  input: `lib/react-qrious`,
-  output: {
-    file: `dist/react-qrious${isServer ? '' : '.browser'}${isProd ? '.min' : ''}.js`,
-    format: 'umd'
+    file: `dist/react-qrious${isServer ? '' : '.browser'}${
+      isProd ? '.min' : ''
+    }.js`,
+    format: 'umd',
+    name: 'ReactQrious',
+    globals: {
+      'prop-types': 'PropTypes',
+      qrious: 'QRious',
+      'node-qrious': 'QRious',
+      react: 'React',
+    },
   },
   plugins: [buble()],
   external: ['node-qrious', 'prop-types', 'qrious', 'react'],
-  globals: {
-    'prop-types': 'PropTypes',
-    qrious: 'QRious',
-    'node-qrious': 'QRious',
-    react: 'React'
-  },
-  amd: {
-    id: 'react-qrious'
-  },
-  name: 'ReactQrious'
 }
 
 isServer &&
-  (config.paths = {
-    qrious: 'node-qrious'
+  (config.output.paths = {
+    qrious: 'node-qrious',
   })
 
 isProd &&
   config.plugins.push(
     uglify({
       output: {
-        comments: true
-      }
-    })
+        comments: true,
+      },
+    }),
   )
 
 export default config
