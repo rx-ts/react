@@ -1,16 +1,26 @@
-import { debounce } from 'lodash'
 import React from 'react'
 import { hot } from 'react-hot-loader/root'
 import { Subscribe } from 'react-rx'
-import { combineLatest, Subject } from 'rxjs'
-import { map, tap, timestamp, withLatestFrom } from 'rxjs/operators'
+import { EMPTY, merge, Subject } from 'rxjs'
+import {
+  debounceTime,
+  switchMapTo,
+  tap,
+  timestamp,
+  withLatestFrom,
+} from 'rxjs/operators'
+
+const getTextWithScore = (score: number, rank?: number) =>
+  `You get score ${score}ms${
+    rank ? `, and have beaten ${rank}% of people` : ''
+  }!`
 
 class App extends React.PureComponent {
   mouseDown$ = new Subject()
 
   mouseUp$ = new Subject()
 
-  rank$ = new Subject<number | null>()
+  text$ = new Subject<string | null>()
 
   score$ = this.mouseUp$.pipe(
     timestamp(),
@@ -18,26 +28,17 @@ class App extends React.PureComponent {
       this.mouseDown$.pipe(timestamp()),
       (end, start) => end.timestamp - start.timestamp,
     ),
-    tap(() => this.rank$.next(null)),
-    tap(
-      debounce(
-        score =>
-          fetch('https://timing-sense-score-board.herokuapp.com/score/' + score)
-            .then(response => response.json())
-            .then(({ rank }) => this.rank$.next(rank)),
-        500,
-      ),
+    tap(score => this.text$.next(getTextWithScore(score))),
+    debounceTime(500),
+    tap(score =>
+      fetch('https://timing-sense-score-board.herokuapp.com/score/' + score)
+        .then(response => response.json())
+        .then(({ rank }) => this.text$.next(getTextWithScore(score, rank))),
     ),
+    switchMapTo(EMPTY),
   )
 
-  text$ = combineLatest(this.score$, this.rank$).pipe(
-    map(
-      ([score, rank]) =>
-        `You get score ${score}ms${
-          rank ? `, and have beaten ${rank}% of people` : ''
-        }!`,
-    ),
-  )
+  textWithScore$ = merge(this.text$, this.score$)
 
   onMouseDown = () => this.mouseDown$.next()
 
@@ -50,7 +51,7 @@ class App extends React.PureComponent {
           Action
         </button>
         <p>
-          <Subscribe>{this.text$}</Subscribe>
+          <Subscribe>{this.textWithScore$}</Subscribe>
         </p>
       </>
     )

@@ -8,6 +8,7 @@
   ],
   "rules": {
     "member-access": [true, "no-public"],
+    "no-floating-promises": false,
     "object-literal-sort-keys": false,
     "prettier": true
   }
