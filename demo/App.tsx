@@ -1,58 +1,197 @@
+import cn from 'classnames'
 import React from 'react'
 import { hot } from 'react-hot-loader/root'
 import { Subscribe } from 'react-rx'
-import { EMPTY, merge, Subject } from 'rxjs'
+import { BehaviorSubject, combineLatest } from 'rxjs'
+import { map } from 'rxjs/operators'
+
+import './App.less'
+
 import {
-  debounceTime,
-  switchMapTo,
-  tap,
-  timestamp,
-  withLatestFrom,
-} from 'rxjs/operators'
+  addTodo,
+  changeTodoFilter,
+  changeTodoTitle,
+  clearComputedTodos,
+  deleteTodo,
+  setAllTodosStatus,
+  TODO_FILTERS,
+  TodoFilter,
+  todoFilter$,
+  todos$,
+  toggleTodoStatus,
+} from './store'
 
-const getTextWithScore = (score: number, rank?: number) =>
-  `You get score ${score}ms${
-    rank ? `, and have beaten ${rank}% of people` : ''
-  }!`
+export interface IAppState {
+  newTodoValue: string
+}
 
-class App extends React.PureComponent {
-  mouseDown$ = new Subject()
+class App extends React.PureComponent<{}, IAppState> {
+  state: IAppState = {
+    newTodoValue: '',
+  }
 
-  mouseUp$ = new Subject()
+  editingTodo$ = new BehaviorSubject<{
+    id?: number
+    value?: string
+  }>({})
 
-  text$ = new Subject<string | null>()
-
-  score$ = this.mouseUp$.pipe(
-    timestamp(),
-    withLatestFrom(
-      this.mouseDown$.pipe(timestamp()),
-      (end, start) => end.timestamp - start.timestamp,
-    ),
-    tap(score => this.text$.next(getTextWithScore(score))),
-    debounceTime(500),
-    tap(score =>
-      fetch('https://timing-sense-score-board.herokuapp.com/score/' + score)
-        .then(response => response.json())
-        .then(({ rank }) => this.text$.next(getTextWithScore(score, rank))),
-    ),
-    switchMapTo(EMPTY),
+  todos$ = combineLatest(todos$, todoFilter$, this.editingTodo$).pipe(
+    map(([todos, todoFilter, editingTodo]) => {
+      switch (todoFilter) {
+        case TodoFilter.ACTIVE:
+          todos = todos.filter(({ completed }) => !completed)
+          break
+        case TodoFilter.COMPLETED:
+          todos = todos.filter(({ completed }) => completed)
+          break
+      }
+      // tslint:disable jsx-no-lambda
+      return (
+        <>
+          <section className="main">
+            <input
+              id="toggle-all"
+              className="toggle-all"
+              type="checkbox"
+              onChange={e => setAllTodosStatus(e.target.checked)}
+            />
+            <label htmlFor="toggle-all">Mark all as complete</label>
+            <ul className="todo-list">
+              {todos.map(({ id, completed, title }) => (
+                <li
+                  key={id}
+                  className={cn({ completed, editing: editingTodo.id === id })}
+                  onDoubleClick={() =>
+                    this.editingTodo$.next({ id, value: title })
+                  }
+                >
+                  <div className="view">
+                    <input
+                      data-id={id}
+                      className="toggle"
+                      type="checkbox"
+                      checked={completed}
+                      onChange={this.toggleTodoStatus}
+                    />
+                    <label>{title}</label>
+                    <button
+                      className="destroy"
+                      data-id={id}
+                      onClick={this.onDeleteTodo}
+                    />
+                  </div>
+                  {editingTodo.id === id && (
+                    <input
+                      className="edit"
+                      value={editingTodo.value}
+                      autoFocus={true}
+                      onChange={e =>
+                        this.editingTodo$.next({
+                          id,
+                          value: e.currentTarget.value,
+                        })
+                      }
+                      onKeyUp={e => {
+                        if (e.key !== 'Escape') {
+                          return
+                        }
+                        this.editingTodo$.next({})
+                      }}
+                      onKeyPress={e => {
+                        if (e.key !== 'Enter') {
+                          return
+                        }
+                        e.currentTarget.blur()
+                      }}
+                      onBlur={() => {
+                        changeTodoTitle(id, editingTodo.value!)
+                        this.editingTodo$.next({})
+                      }}
+                    />
+                  )}
+                </li>
+              ))}
+            </ul>
+          </section>
+          <footer className="footer">
+            <span className="todo-count">
+              <strong>{todos.length}</strong> item left
+            </span>
+            <ul className="filters">
+              {TODO_FILTERS.map(([key, value]) => (
+                <li key={key}>
+                  <a
+                    className={todoFilter === value ? 'selected' : undefined}
+                    onClick={() => changeTodoFilter(value)}
+                  >
+                    {value}
+                  </a>
+                </li>
+              ))}
+            </ul>
+            <button className="clear-completed" onClick={clearComputedTodos}>
+              Clear completed
+            </button>
+          </footer>
+        </>
+      )
+    }),
   )
 
-  textWithScore$ = merge(this.text$, this.score$)
+  toggleTodoStatus: React.ChangeEventHandler<HTMLInputElement> = e =>
+    toggleTodoStatus(+e.currentTarget.dataset.id!)
 
-  onMouseDown = () => this.mouseDown$.next()
+  onDeleteTodo: React.MouseEventHandler<HTMLButtonElement> = e =>
+    deleteTodo(+e.currentTarget.dataset.id!)
 
-  onMouseUp = () => this.mouseUp$.next()
+  onAddTodo: React.KeyboardEventHandler<HTMLInputElement> = e => {
+    if (e.key !== 'Enter') {
+      return
+    }
+    const newTodoValue = e.currentTarget.value.trim()
+    if (!newTodoValue) {
+      return
+    }
+    addTodo(newTodoValue)
+    this.setState({ newTodoValue: '' })
+  }
+
+  onNewTodoChange: React.ChangeEventHandler<HTMLInputElement> = e => {
+    this.setState({
+      newTodoValue: e.currentTarget.value,
+    })
+  }
 
   render() {
+    const { newTodoValue } = this.state
     return (
       <>
-        <button onMouseDown={this.onMouseDown} onMouseUp={this.onMouseUp}>
-          Action
-        </button>
-        <p>
-          <Subscribe>{this.textWithScore$}</Subscribe>
-        </p>
+        <section className="todoapp">
+          <header className="header">
+            <h1>todos</h1>
+            <input
+              className="new-todo"
+              placeholder="What needs to be done?"
+              autoFocus={true}
+              value={newTodoValue}
+              onChange={this.onNewTodoChange}
+              onKeyPress={this.onAddTodo}
+            />
+          </header>
+          <Subscribe>{this.todos$}</Subscribe>
+        </section>
+        <footer className="info">
+          <p>Double-click to edit a todo</p>
+          <p>
+            Template by <a href="http://sindresorhus.com">Sindre Sorhus</a>
+          </p>
+          <p>
+            Created by <a href="http://todomvc.com">you</a>
+          </p>
+          <p>
+            Part of <a href="http://todomvc.com">TodoMVC</a>
+          </p>
+        </footer>
       </>
     )
   }

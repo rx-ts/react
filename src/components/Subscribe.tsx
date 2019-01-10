@@ -23,9 +23,9 @@ export class Subscribe extends React.PureComponent<
     if (this.subscription) {
       this.unsubscribe()
     }
-    this.subscription = this.props.children.subscribe(value =>
-      this.setState({ value }),
-    )
+    this.subscription = this.props.children.subscribe(value => {
+      this.setState({ value })
+    })
   }
 
   unsubscribe() {

@@ -10,6 +10,8 @@ const NODE_ENV = (process.env.NODE_ENV as Configuration['mode']) || DEV
 
 const isDev = NODE_ENV === DEV
 
+const sourceMap = isDev
+
 const config: Configuration = {
   mode: NODE_ENV,
   entry: {
@@ -31,6 +33,35 @@ const config: Configuration = {
         options: {
           cacheDirectory: true,
         },
+      },
+      {
+        test: /\.less$/,
+        use: [
+          {
+            loader: 'style-loader',
+            options: {
+              sourceMap,
+            },
+          },
+          {
+            loader: 'css-loader',
+            options: {
+              sourceMap,
+            },
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              sourceMap,
+            },
+          },
+          {
+            loader: 'less-loader',
+            options: {
+              sourceMap,
+            },
+          },
+        ],
       },
     ],
   },
