@@ -1,0 +1,14 @@
+{
+  "extends": [
+    "tslint:recommended",
+    "tslint-react",
+    "tslint-config-standard",
+    "tslint-config-prettier",
+    "tslint-plugin-prettier"
+  ],
+  "rules": {
+    "member-access": [true, "no-public"],
+    "object-literal-sort-keys": false,
+    "prettier": true
+  }
+}

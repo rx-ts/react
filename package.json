@@ -1,0 +1,87 @@
+{
+  "name": "react-rx",
+  "version": "0.0.1",
+  "description": "👁️ RxJS integration for React.",
+  "repository": "git@github.com:JounQin/react-rx.git",
+  "author": "JounQin <admin@1stg.me>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon"
+  },
+  "peerDependencies": {
+    "react": "^16.7.0",
+    "rxjs": "^6.3.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/plugin-proposal-class-properties": "^7.2.3",
+    "@babel/plugin-transform-runtime": "^7.2.0",
+    "@babel/preset-env": "^7.2.3",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/preset-typescript": "^7.1.0",
+    "@babel/runtime-corejs2": "^7.2.0",
+    "@types/html-webpack-plugin": "^3.2.0",
+    "@types/lodash": "^4.14.119",
+    "@types/node": "^10.12.18",
+    "@types/react": "^16.7.18",
+    "@types/react-dom": "^16.0.11",
+    "@types/webpack": "^4.4.22",
+    "@types/webpack-dev-server": "^3.1.1",
+    "@types/webpack-env": "^1.13.6",
+    "babel-loader": "^8.0.5",
+    "html-webpack-plugin": "^3.2.0",
+    "nodemon": "^1.18.9",
+    "prettier": "^1.15.3",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "react-hot-loader": "^4.6.3",
+    "rxjs": "^6.3.3",
+    "ts-node": "^7.0.1",
+    "tsconfig-paths-webpack-plugin": "^3.2.0",
+    "tslint": "^5.12.0",
+    "tslint-config-prettier": "^1.17.0",
+    "tslint-config-standard": "^8.0.1",
+    "tslint-plugin-prettier": "^2.0.1",
+    "tslint-react": "^3.6.0",
+    "typescript": "^3.2.2",
+    "webpack": "^4.28.1",
+    "webpack-cli": "^3.2.1",
+    "webpack-dev-server": "^3.1.14"
+  },
+  "babel": {
+    "presets": [
+      [
+        "@babel/env",
+        {
+          "modules": false,
+          "useBuiltIns": "usage"
+        }
+      ],
+      "@babel/react",
+      "@babel/typescript"
+    ],
+    "plugins": [
+      "@babel/proposal-class-properties",
+      [
+        "@babel/transform-runtime",
+        {
+          "corejs": 2
+        }
+      ],
+      "react-hot-loader/babel"
+    ]
+  },
+  "nodemonConfig": {
+    "ext": "ts",
+    "exec": "webpack-dev-server --hot",
+    "watch": "webpack.config.ts"
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true,
+    "trailingComma": "all"
+  },
+  "dependencies": {
+    "lodash": "^4.17.11"
+  }
+}
