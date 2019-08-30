@@ -1,6 +1,6 @@
 import { BehaviorSubject } from 'rxjs'
 
-export interface ITodo {
+export interface Todo {
   id: number
   title: string
   completed: boolean
@@ -18,11 +18,11 @@ const LOCAL_STORAGE_KEY = 'REACT_RX_TODO_LIST'
 
 const storage = localStorage.getItem(LOCAL_STORAGE_KEY)
 
-let todos: ITodo[] = (storage && JSON.parse(storage)) || []
+let todos: Todo[] = (storage && JSON.parse(storage)) || []
 
 let uid = todos.length
 
-export const todos$ = new BehaviorSubject<ITodo[]>(todos)
+export const todos$ = new BehaviorSubject<Todo[]>(todos)
 
 todos$.subscribe(newTodos => {
   todos = newTodos

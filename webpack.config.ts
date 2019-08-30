@@ -1,6 +1,5 @@
-import { resolve } from 'path'
-
 import HtmlWebpackPlugin from 'html-webpack-plugin'
+import { resolve } from 'path'
 import TsconfigPathsWebpackPlugin from 'tsconfig-paths-webpack-plugin'
 import { Configuration } from 'webpack'
 
@@ -37,12 +36,7 @@ const config: Configuration = {
       {
         test: /\.less$/,
         use: [
-          {
-            loader: 'style-loader',
-            options: {
-              sourceMap,
-            },
-          },
+          'style-loader',
           {
             loader: 'css-loader',
             options: {

@@ -5,28 +5,27 @@ import { Subscribe } from 'react-rx'
 import { BehaviorSubject, combineLatest } from 'rxjs'
 import { map } from 'rxjs/operators'
 
-import './App.less'
-
 import {
+  TODO_FILTERS,
+  TodoFilter,
   addTodo,
   changeTodoFilter,
   changeTodoTitle,
   clearComputedTodos,
   deleteTodo,
   setAllTodosStatus,
-  TODO_FILTERS,
-  TodoFilter,
   todoFilter$,
   todos$,
   toggleTodoStatus,
 } from './store'
+import './App.less'
 
-export interface IAppState {
+export interface AppState {
   newTodoValue: string
 }
 
-class App extends React.PureComponent<{}, IAppState> {
-  state: IAppState = {
+class App extends React.PureComponent<{}, AppState> {
+  state: AppState = {
     newTodoValue: '',
   }
 
@@ -71,20 +70,20 @@ class App extends React.PureComponent<{}, IAppState> {
                       className="toggle"
                       type="checkbox"
                       checked={completed}
-                      onChange={this.toggleTodoStatus}
+                      onChange={this.handleTodoStatus}
                     />
                     <label>{title}</label>
                     <button
                       className="destroy"
                       data-id={id}
-                      onClick={this.onDeleteTodo}
+                      onClick={this.handleDeleteTodo}
                     />
                   </div>
                   {editingTodo.id === id && (
                     <input
                       className="edit"
                       value={editingTodo.value}
-                      autoFocus={true}
+                      autoFocus
                       onChange={e =>
                         this.editingTodo$.next({
                           id,
@@ -138,13 +137,13 @@ class App extends React.PureComponent<{}, IAppState> {
     }),
   )
 
-  toggleTodoStatus: React.ChangeEventHandler<HTMLInputElement> = e =>
+  handleTodoStatus: React.ChangeEventHandler<HTMLInputElement> = e =>
     toggleTodoStatus(+e.currentTarget.dataset.id!)
 
-  onDeleteTodo: React.MouseEventHandler<HTMLButtonElement> = e =>
+  handleDeleteTodo: React.MouseEventHandler<HTMLButtonElement> = e =>
     deleteTodo(+e.currentTarget.dataset.id!)
 
-  onAddTodo: React.KeyboardEventHandler<HTMLInputElement> = e => {
+  handleAddTodo: React.KeyboardEventHandler<HTMLInputElement> = e => {
     if (e.key !== 'Enter') {
       return
     }
@@ -156,7 +155,7 @@ class App extends React.PureComponent<{}, IAppState> {
     this.setState({ newTodoValue: '' })
   }
 
-  onNewTodoChange: React.ChangeEventHandler<HTMLInputElement> = e => {
+  handleNewTodoChange: React.ChangeEventHandler<HTMLInputElement> = e => {
     this.setState({
       newTodoValue: e.currentTarget.value,
     })
@@ -172,10 +171,10 @@ class App extends React.PureComponent<{}, IAppState> {
             <input
               className="new-todo"
               placeholder="What needs to be done?"
-              autoFocus={true}
+              autoFocus
               value={newTodoValue}
-              onChange={this.onNewTodoChange}
-              onKeyPress={this.onAddTodo}
+              onChange={this.handleNewTodoChange}
+              onKeyPress={this.handleAddTodo}
             />
           </header>
           <Subscribe>{this.todos$}</Subscribe>

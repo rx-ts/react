@@ -1,17 +1,17 @@
 import React, { ReactNode } from 'react'
 import { Observable, Subscription } from 'rxjs'
 
-export interface ISubscribeProps {
+export interface SubscribeProps {
   children: Observable<ReactNode>
 }
 
-export interface ISubscribeState {
+export interface SubscribeState {
   value: React.ReactNode
 }
 
 export class Subscribe extends React.PureComponent<
-  ISubscribeProps,
-  ISubscribeState
+  SubscribeProps,
+  SubscribeState
 > {
   state = {
     value: null,
@@ -38,7 +38,7 @@ export class Subscribe extends React.PureComponent<
     this.subscribe()
   }
 
-  componentDidUpdate(prevProps: ISubscribeProps) {
+  componentDidUpdate(prevProps: SubscribeProps) {
     if (prevProps.children !== this.props.children) {
       this.subscribe()
     }
