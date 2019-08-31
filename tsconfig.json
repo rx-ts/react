@@ -1,12 +1,7 @@
 {
-  "extends": "@1stg/tsconfig",
+  "extends": "@1stg/tsconfig/tsconfig.app.json",
   "compilerOptions": {
     "baseUrl": ".",
-    "incremental": false,
-    "lib": ["dom", "esnext"],
-    "jsx": "react",
-    "module": "commonjs",
-    "noEmit": true,
     "paths": {
       "react-rx": ["src"]
     }
