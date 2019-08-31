@@ -7,9 +7,13 @@ export type ObservableSource<T> =
   | null
   | undefined
 
+export const isBehaviorSubject = <T>(
+  observable?: ObservableSource<T>,
+): observable is BehaviorSubject<T> => observable instanceof BehaviorSubject
+
 export const useObservable = <T>(observable?: ObservableSource<T>) => {
   const [value, setValue] = useState<T | null>(
-    observable instanceof BehaviorSubject ? observable.getValue() : null,
+    isBehaviorSubject(observable) ? observable.getValue() : null,
   )
   const observableRef = useRef(observable)
   useEffect(() => {

@@ -1,0 +1,24 @@
+{
+  "name": "@rxts/react-rx",
+  "version": "0.1.0",
+  "description": "👁️ RxJS integration for React.",
+  "repository": "git@github.com:rx-ts/react.git",
+  "author": "JounQin <admin@1stg.me>",
+  "license": "MIT",
+  "main": "lib/cjs.js",
+  "module": "lib/index.js",
+  "browser": "lib/umd.js",
+  "unpkg": "lib/umd.min.js",
+  "esm5": "lib/index.js",
+  "fesm5": "lib/esm.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib",
+    "src"
+  ],
+  "peerDependencies": {
+    "react": "^16.9.0",
+    "rxjs": "^6.5.2"
+  },
+  "sideEffects": false
+}

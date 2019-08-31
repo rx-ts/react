@@ -15,3 +15,26 @@ install: yarn --frozen-lockfile
 script:
   - yarn lint
   - yarn build
+
+before_deploy:
+  - npm set //registry.npmjs.org/:_authToken $NPM_TOKEN
+  - git remote set-url origin https://user:$GH_TOKEN@github.com/$TRAVIS_REPO_SLUG.git
+  - git fetch origin $TRAVIS_BRANCH:$TRAVIS_BRANCH
+  - git checkout $TRAVIS_BRANCH
+  - yarn run lerna-changelog
+
+deploy:
+  - provider: script
+    skip_cleanup: true
+    script: yarn run lerna publish --create-release github --yes
+    on:
+      branch: master
+  - provider: script
+    skip_cleanup: true
+    script: yarn run lerna publish --canary --conventional-prerelease --force-publish --preid beta --pre-dist-tag beta --yes
+    on:
+      branch: develop
+
+after_script:
+  - yarn add -D @codechecks/client @codechecks/build-size-watcher @codechecks/type-coverage-watcher -W
+  - yarn codechecks
