@@ -17,7 +17,7 @@ export class Subscribe extends React.PureComponent<
     value: null,
   }
 
-  subscription: Subscription
+  subscription?: Subscription
 
   subscribe() {
     if (this.subscription) {

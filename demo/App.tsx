@@ -1,6 +1,5 @@
 import cn from 'classnames'
 import React from 'react'
-import { hot } from 'react-hot-loader/root'
 import { Subscribe } from 'react-rx'
 import { BehaviorSubject, combineLatest } from 'rxjs'
 import { map } from 'rxjs/operators'
@@ -18,13 +17,12 @@ import {
   todos$,
   toggleTodoStatus,
 } from './store'
-import './App.less'
 
 export interface AppState {
   newTodoValue: string
 }
 
-class App extends React.PureComponent<{}, AppState> {
+export class App extends React.PureComponent<{}, AppState> {
   state: AppState = {
     newTodoValue: '',
   }
@@ -195,7 +193,3 @@ class App extends React.PureComponent<{}, AppState> {
     )
   }
 }
-
-const AppContainer = module.hot ? hot(App) : App
-
-export { AppContainer as App }

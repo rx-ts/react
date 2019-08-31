@@ -6,12 +6,11 @@
   "author": "JounQin <admin@1stg.me>",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon",
-    "lint:style": "stylelint demo/**/*.less",
+    "dev": "parcel demo/index.html",
     "lint:es": "EFF_NO_LINK_RULES=true eslint . --ext js,mdx,ts,tsx -f friendly",
     "lint:ts": "tslint -p . -t stylish",
     "lint": "run-p lint:*",
-    "demo": "rimraf dist && cross-env NODE_ENV=production webpack -p --bail"
+    "demo": "parcel build demo/index.html"
   },
   "peerDependencies": {
     "react": "^16.7.0",
@@ -27,83 +26,46 @@
     "@1stg/tsconfig": "^0.1.1",
     "@1stg/tslint-config": "^0.1.2",
     "@babel/core": "^7.5.5",
-    "@babel/plugin-proposal-class-properties": "^7.5.5",
     "@commitlint/config-conventional": "^8.1.0",
     "@types/classnames": "^2.2.9",
-    "@types/html-webpack-plugin": "^3.2.1",
     "@types/lodash": "^4.14.138",
     "@types/node": "^12.7.3",
     "@types/react": "^16.9.2",
     "@types/react-dom": "^16.9.0",
-    "@types/webpack": "^4.39.1",
-    "@types/webpack-dev-server": "^3.1.7",
-    "@types/webpack-env": "^1.14.0",
     "autoprefixer": "^9.6.1",
-    "babel-loader": "^8.0.6",
     "classnames": "^2.2.6",
     "commitlint": "^8.1.0",
-    "cross-env": "^5.2.0",
-    "css-loader": "^3.2.0",
+    "core-js": "^3.2.1",
     "cssnano": "^4.1.10",
-    "eslint": "^6.2.2",
+    "eslint": "^6.3.0",
     "eslint-formatter-friendly": "^7.0.0",
-    "html-webpack-plugin": "^3.2.0",
     "husky": "^3.0.4",
-    "less": "^3.10.3",
-    "less-loader": "^5.0.0",
     "lint-staged": "^9.2.5",
     "lodash": "^4.17.15",
-    "nodemon": "^1.19.1",
     "npm-run-all": "^4.1.5",
+    "parcel": "^1.12.3",
     "postcss": "^7.0.17",
-    "postcss-loader": "^3.0.0",
     "prettier": "^1.18.2",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
-    "react-hot-loader": "^4.12.12",
-    "rimraf": "^3.0.0",
     "rxjs": "^6.5.2",
-    "sass": "^1.22.10",
-    "style-loader": "^1.0.0",
-    "stylelint": "^10.1.0",
     "todomvc-app-css": "^2.2.0",
-    "ts-loader": "^6.0.4",
     "ts-node": "^8.3.0",
-    "tsconfig-paths-webpack-plugin": "^3.2.0",
     "tslint": "^5.19.0",
-    "tslint-config-prettier": "^1.18.0",
-    "tslint-config-standard": "^8.0.1",
-    "tslint-plugin-prettier": "^2.0.1",
-    "tslint-react": "^4.0.0",
-    "typescript": "^3.6.2",
-    "webpack": "^4.39.3",
-    "webpack-cli": "^3.3.7",
-    "webpack-dev-server": "^3.8.0"
+    "typescript": "^3.6.2"
+  },
+  "alias": {
+    "react-rx": "./src"
   },
   "babel": {
     "presets": [
-      [
-        "@1stg",
-        {
-          "react": true,
-          "typescript": true
-        }
-      ]
-    ],
-    "plugins": [
-      "@babel/proposal-class-properties",
-      "react-hot-loader/babel"
+      "@1stg"
     ]
   },
   "commitlint": {
     "extends": [
       "@commitlint/config-conventional"
     ]
-  },
-  "nodemonConfig": {
-    "ext": "ts",
-    "exec": "webpack-dev-server --hot",
-    "watch": "webpack.config.ts"
   },
   "prettier": "@1stg/prettier-config",
   "renovate": {
