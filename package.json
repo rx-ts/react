@@ -1,16 +1,30 @@
 {
-  "name": "react-rx",
-  "version": "0.0.1",
+  "name": "@rxts/react-rx",
+  "version": "0.1.0",
   "description": "👁️ RxJS integration for React.",
   "repository": "git@github.com:rx-ts/react-rx.git",
   "author": "JounQin <admin@1stg.me>",
   "license": "MIT",
+  "main": "lib/cjs",
+  "module": "lib/es",
+  "unpkg": "lib/umd/index.min.js",
+  "types": "lib/types",
+  "files": [
+    "lib",
+    "src"
+  ],
   "scripts": {
     "dev": "parcel demo/index.html",
     "lint:es": "EFF_NO_LINK_RULES=true eslint . --ext js,mdx,ts,tsx -f friendly",
     "lint:ts": "tslint -p . -t stylish",
     "lint": "run-p lint:*",
-    "build": "rimraf dist && parcel build demo/index.html",
+    "build:es": "tsc -P src --outDir lib/es",
+    "build:cjs": "tsc -P src --module commonjs --outDir lib/cjs",
+    "build:umd": "rollup -c",
+    "build:umd:min": "cross-env NODE_ENV=production rollup -c",
+    "build:types": "tsc -P src --declaration --declarationMap --emitDeclarationOnly --outDir lib/types",
+    "build:demo": "parcel build demo/index.html --out-dir dist",
+    "build": "rimraf dist lib && run-p build:**",
     "serve": "serve dist"
   },
   "peerDependencies": {
@@ -36,6 +50,7 @@
     "autoprefixer": "^9.6.1",
     "classnames": "^2.2.6",
     "core-js": "^3.2.1",
+    "cross-env": "^5.2.0",
     "cssnano": "^4.1.10",
     "eslint": "^6.3.0",
     "eslint-formatter-friendly": "^7.0.0",
@@ -49,6 +64,9 @@
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "rimraf": "^3.0.0",
+    "rollup": "^1.20.3",
+    "rollup-plugin-terser": "^5.1.1",
+    "rollup-plugin-typescript": "^1.0.1",
     "rxjs": "^6.5.2",
     "serve": "^11.1.0",
     "todomvc-app-css": "^2.2.0",
@@ -57,6 +75,6 @@
     "typescript": "^3.6.2"
   },
   "alias": {
-    "react-rx": "./src"
+    "@rxts/react-rx": "./src"
   }
 }

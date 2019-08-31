@@ -4,7 +4,7 @@
     "baseUrl": ".",
     "jsx": "react",
     "paths": {
-      "react-rx": ["src"]
+      "@rxts/react-rx": ["src"]
     }
   }
 }

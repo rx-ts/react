@@ -1,6 +1,6 @@
+import { Subscribe } from '@rxts/react-rx'
 import cn from 'classnames'
 import React from 'react'
-import { Subscribe } from 'react-rx'
 import { BehaviorSubject, combineLatest } from 'rxjs'
 import { map } from 'rxjs/operators'
 
