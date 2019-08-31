@@ -6,13 +6,13 @@
     <img src="https://rx-ts.github.io/assets/heart.svg" height="50">
   </a>
   <a href="https://reactjs.org">
-    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0xMS41IC0xMC4yMzE3NCAyMyAyMC40NjM0OCI+CiAgPHRpdGxlPlJlYWN0IExvZ288L3RpdGxlPgogIDxjaXJjbGUgY3g9IjAiIGN5PSIwIiByPSIyLjA1IiBmaWxsPSIjNjFkYWZiIi8+CiAgPGcgc3Ryb2tlPSIjNjFkYWZiIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIi8+CiAgICA8ZWxsaXBzZSByeD0iMTEiIHJ5PSI0LjIiIHRyYW5zZm9ybT0icm90YXRlKDYwKSIvPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIiB0cmFuc2Zvcm09InJvdGF0ZSgxMjApIi8+CiAgPC9nPgo8L3N2Zz4K"  height="50">
+    <img src="https://rx-ts.github.io/assets/react.svg"  height="50">
   </a>
 </p>
 
 [![Travis](https://img.shields.io/travis/com/rx-ts/react.svg)](https://travis-ci.com/rx-ts/react)
 [![Codacy Grade](https://img.shields.io/codacy/grade/7c86462361344d6f8b6566b1dd5fa2ea)](https://www.codacy.com/app/JounQin/react)
-[![type-coverage](https://img.shields.io/badge/dynamic/json.svg?label=type-coverage&prefix=%E2%89%A5&suffix=%&query=$.typeCoverage.atLeast&uri=https%3A%2F%2Fraw.githubusercontent.com%2Frx-ts%2Feslint-mdx%2Fmaster%2Fpackage.json)](https://github.com/plantain-00/type-coverage)
+[![type-coverage](https://img.shields.io/badge/dynamic/json.svg?label=type-coverage&prefix=%E2%89%A5&suffix=%&query=$.typeCoverage.atLeast&uri=https%3A%2F%2Fraw.githubusercontent.com%2Frx-ts%2Freact%2Fmaster%2Fpackage.json)](https://github.com/plantain-00/type-coverage)
 [![GitHub release](https://img.shields.io/github/release/rx-ts/react)](https://github.com/rx-ts/react/releases)
 [![David Dev](https://img.shields.io/david/dev/rx-ts/react.svg)](https://david-dm.org/rx-ts/react?type=dev)
 
@@ -49,10 +49,10 @@ This repository is a monorepo managed by [Lerna][] what means we actually publis
 
 ```sh
 # yarn
-yarn add @rxts/react-rx @rxts/react-storage
+yarn add @rxts/react-{rx,storage}
 
 # npm
-npm i @rxts/react-rx @rxts/react-storage
+npm i @rxts/react-{rx,storage}
 ```
 
 ## Changelog
