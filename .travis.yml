@@ -14,5 +14,5 @@ install: yarn --frozen-lockfile
 
 script:
   - yarn lint
-  - yarn demo
+  - yarn build
   - 'if [[ $TRAVIS_BRANCH = "master" && "$TRAVIS_PULL_REQUEST" = "false" ]]; then bash sync.sh; fi'
