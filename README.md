@@ -22,7 +22,7 @@
 [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org)
 [![codechecks.io](https://raw.githubusercontent.com/codechecks/docs/master/images/badges/badge-default.svg?sanitize=true)](https://codechecks.io)
 
-> Make React great again with RxTS.
+> Make [React][] great again with [RxTS][].
 
 ## TOC <!-- omit in toc -->
 
@@ -34,7 +34,7 @@
 
 ## Homepage
 
-[rx-react]()
+[rx-react][]
 
 ## Packages
 
@@ -65,7 +65,7 @@ Detailed changes for each release are documented in [CHANGELOG.md](./CHANGELOG.m
 
 [1stg.me]: https://www.1stg.me
 [rx-react]: https://rx-react.now.sh
-[rxjs]: https://rxjs.dev
+[rxts]: https://rxjs.dev
 [react]: https://reactjs.org
 [jounqin]: https://GitHub.com/JounQin
 [lerna]: https://github.com/lerna/lerna
