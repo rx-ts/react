@@ -1,7 +1,8 @@
 {
   "version": 2,
-  "name": "rx-react",
+  "name": "@rxts/react",
   "alias": [
+    "react-rx.now.sh",
     "rx-react.now.sh"
   ],
   "public": true,
