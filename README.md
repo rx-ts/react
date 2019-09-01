@@ -34,7 +34,7 @@
 
 ## Homepage
 
-[rx-react][]
+<a href="https://rx-react.now.sh" target="_blank">rx-react</a>
 
 ## Packages
 
@@ -64,7 +64,6 @@ Detailed changes for each release are documented in [CHANGELOG.md](./CHANGELOG.m
 [MIT][] © [JounQin][]@[1stG.me][]
 
 [1stg.me]: https://www.1stg.me
-[rx-react]: https://rx-react.now.sh?target=_blank
 [rxts]: https://rxjs.dev
 [react]: https://reactjs.org
 [jounqin]: https://GitHub.com/JounQin
