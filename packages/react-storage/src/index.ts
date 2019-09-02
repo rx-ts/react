@@ -9,7 +9,7 @@ export const useStorageFactory = (storage: Storage) => <T>(
     const value = storage.getItem(key)
     return value === null ? initValue : JSON.parse(value)
   })
-  useEffect(() => storage.setItem(key, JSON.stringify(state[0])))
+  useEffect(() => storage.setItem(key, JSON.stringify(state[0])), [key, state])
   return state
 }
 

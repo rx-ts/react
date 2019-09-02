@@ -1,7 +1,7 @@
 {
-  "name": "@rxts/react-storage",
-  "version": "0.2.0",
-  "description": "🔥 React hooks for using localStorage/sessionStorage",
+  "name": "react-qrious",
+  "version": "2.0.0",
+  "description": "🤳 A React component for QR code generation with qrious",
   "repository": "git@github.com:rx-ts/react.git",
   "author": "JounQin <admin@1stg.me>",
   "license": "MIT",
@@ -15,10 +15,12 @@
   "types": "lib/index.d.ts",
   "files": [
     "lib",
-    "src"
+    "src",
+    "qrious.d.ts"
   ],
   "peerDependencies": {
-    "react": "^16.8.0"
+    "qrious": "^4.0.0",
+    "react": ">=16.8.0"
   },
   "sideEffects": false
 }
