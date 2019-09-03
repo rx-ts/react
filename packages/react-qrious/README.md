@@ -1,3 +1,7 @@
+# ReactQrious
+
+🤳 A React component for QR code generation with qrious
+
 ## Usage
 
 ```jsx
@@ -6,7 +10,7 @@ import ReactDOM from 'react-dom'
 import { QRious } from 'react-qrious'
 
 ReactDOM.render(
-  <QRious value="https://blog.1stg.me" />,
+  <QRious value="https://www.1stg.me" />,
   document.getElementById('qrious'),
 )
 
@@ -14,14 +18,14 @@ ReactDOM.render(
 import { useQrious } from 'react-qrious'
 
 export const App = () => {
-  const [value, setValue] = useState('https://blog.1stg.me')
+  const [value, setValue] = useState('https://www.1stg.me')
   const [dataUrl, _qrious] = useQrious({ value })
   return (
-    <div>
-      dataUrl: {dataUrl}
+    <>
+      <div>dataUrl: {dataUrl}</div>
       <img src={dataUrl} />
       <input onChange={e => setValue(e.currentTarget.value)} />
-    </div>
+    </>
   )
 }
 ```
@@ -32,7 +36,7 @@ export const App = () => {
 | ----------------- | ------------------------------------ | ------------- |
 | `background`      | `string` (CSS color)                 | `"#ffffff"`   |
 | `backgroundAlpha` | `number` (0.1-1.0)                   | `1.0`         |
-| `foreground`      | `string` (CSS color)                 | `"#000"`      |
+| `foreground`      | `string` (CSS color)                 | `"#000000"`   |
 | `foregroundAlpha` | `number` (0.1-1.0)                   | `1.0`         |
 | `level`           | `string` ("L", "M", "Q", "H")        | `"L"`         |
 | `mime`            | `string` ("image/png", "image/jpeg") | `"image/png"` |

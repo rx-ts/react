@@ -1,6 +1,0 @@
-{
-  "extends": ["@1stg/tslint-config"],
-  "linterOptions": {
-    "exclude": ["lib", "node_modules"]
-  }
-}
