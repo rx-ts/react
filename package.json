@@ -89,9 +89,9 @@
   "eslintIgnore": [
     ".cache",
     ".parcel-cache",
-    "CHANGELOG.md",
     "dist",
-    "lib"
+    "lib",
+    "packages/*/CHANGELOG.md"
   ],
   "prettier": "@1stg/prettier-config",
   "renovate": {
