@@ -22,7 +22,7 @@
 [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org)
 [![codechecks.io](https://raw.githubusercontent.com/codechecks/docs/master/images/badges/badge-default.svg?sanitize=true)](https://codechecks.io)
 
-> Make [React][] great again with [RxTS][].
+> Make [React][] greater with [RxTS][].
 
 ## TOC <!-- omit in toc -->
 
