@@ -1,6 +1,6 @@
 {
   "name": "react-qrious",
-  "version": "2.3.0",
+  "version": "2.3.1",
   "description": "🤳 A React component for QR code generation with qrious",
   "repository": "git@github.com:rx-ts/react.git",
   "author": "JounQin <admin@1stg.me>",
