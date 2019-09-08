@@ -19,10 +19,10 @@ export const QRCode: React.FC<QRCodeProps> = ({
   version,
   width,
   ...props
-}) => (
-  <img
-    {...props}
-    src={useQRCode({
+}) =>
+  React.createElement('img', {
+    ...props,
+    src: useQRCode({
       color,
       errorCorrectionLevel,
       margin,
@@ -34,6 +34,5 @@ export const QRCode: React.FC<QRCodeProps> = ({
       value,
       version,
       width,
-    })}
-  />
-)
+    }),
+  })

@@ -1,3 +1,6 @@
 {
-  "extends": "./node_modules/@1stg/tsconfig/tsconfig.json"
+  "extends": "./node_modules/@1stg/tsconfig/tsconfig.json",
+  "compilerOptions": {
+    "jsx": "react"
+  }
 }

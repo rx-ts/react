@@ -1,6 +1,6 @@
 {
-  "name": "@1stg/react-qrcode",
-  "version": "0.1.0",
+  "name": "@rxts/react-qrcode",
+  "version": "0.0.0",
   "description": "🤳 A React component for QR code generation with `qrcode`",
   "repository": "git@github.com:rx-ts/react.git",
   "author": "JounQin <admin@1stg.me>",
@@ -17,12 +17,17 @@
     "lib",
     "src"
   ],
+  "keywords": [
+    "react-qrcode",
+    "qrcode",
+    "react"
+  ],
   "peerDependencies": {
     "qrcode": ">=1.0.0",
     "react": ">=16.8.0"
   },
-  "sideEffects": false,
-  "devDependencies": {
-    "@babel/core": "^7.6.0"
-  }
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": false
 }

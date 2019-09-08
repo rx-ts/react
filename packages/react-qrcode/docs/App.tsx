@@ -7,7 +7,7 @@ import {
   QRCodeProps,
   QRCodeSegment,
   TYPES,
-} from '@1stg/react-qrcode'
+} from '@rxts/react-qrcode'
 import { get, merge, set } from 'lodash-es'
 import React, { useState } from 'react'
 
