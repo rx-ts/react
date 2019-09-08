@@ -7,10 +7,13 @@
   },
   "references": [
     {
-      "path": "packages/react-rx"
+      "path": "packages/react-qrcode"
     },
     {
       "path": "packages/react-qrious"
+    },
+    {
+      "path": "packages/react-rx"
     },
     {
       "path": "packages/react-storage"

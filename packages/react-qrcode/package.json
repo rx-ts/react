@@ -1,7 +1,7 @@
 {
-  "name": "@rxts/react-rx",
-  "version": "0.4.0",
-  "description": "👁️ RxJS integration for React.",
+  "name": "@1stg/react-qrcode",
+  "version": "0.0.0",
+  "description": "🤳 A React component for QR code generation with `qrcode`",
   "repository": "git@github.com:rx-ts/react.git",
   "author": "JounQin <admin@1stg.me>",
   "license": "MIT",
@@ -18,8 +18,8 @@
     "src"
   ],
   "peerDependencies": {
-    "react": ">=16.8.0",
-    "rxjs": "^6.0.0"
+    "qrcode": ">=1.0.0",
+    "react": ">=16.8.0"
   },
   "sideEffects": false,
   "devDependencies": {

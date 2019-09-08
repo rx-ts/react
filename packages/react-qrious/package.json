@@ -23,5 +23,11 @@
     "qrious": "^4.0.0",
     "react": ">=16.8.0"
   },
-  "sideEffects": false
+  "sideEffects": false,
+  "devDependencies": {
+    "@babel/core": "^7.6.0"
+  },
+  "dependencies": {
+    "packages": "^0.0.8"
+  }
 }

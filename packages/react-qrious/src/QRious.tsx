@@ -6,7 +6,31 @@ import { useQrious } from './use-qrious'
 export type QriousProps = QRiousOptions &
   Omit<HTMLAttributes<HTMLImageElement>, 'src'>
 
-export const QRious: React.FC<QriousProps> = props => {
-  const [dataUrl] = useQrious(props)
-  return <img {...props} src={dataUrl} />
+export const QRious: React.FC<QriousProps> = ({
+  background,
+  backgroundAlpha,
+  foreground,
+  foregroundAlpha,
+  level,
+  mime,
+  padding,
+  value,
+  size,
+  ...props
+}) => {
+  const [dataUrl] = useQrious({
+    background,
+    backgroundAlpha,
+    foreground,
+    foregroundAlpha,
+    level,
+    mime,
+    padding,
+    size,
+    value,
+  })
+  return React.createElement('img', {
+    ...props,
+    src: dataUrl,
+  })
 }

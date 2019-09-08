@@ -22,6 +22,7 @@
     },
     "publish": {
       "ignoreChanges": [
+        "docs",
         "test",
         "*.md"
       ]

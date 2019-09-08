@@ -4,7 +4,7 @@
 
 ## Usage
 
-```jsx
+```tsx
 // Component
 import ReactDOM from 'react-dom'
 import { QRious } from 'react-qrious'
