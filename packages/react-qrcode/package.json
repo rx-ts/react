@@ -1,6 +1,6 @@
 {
   "name": "@1stg/react-qrcode",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "🤳 A React component for QR code generation with `qrcode`",
   "repository": "git@github.com:rx-ts/react.git",
   "author": "JounQin <admin@1stg.me>",

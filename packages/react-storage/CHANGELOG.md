@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0](https://github.com/rx-ts/react/compare/@rxts/react-storage@0.4.0...@rxts/react-storage@0.5.0) (2019-09-08)
+
+
+### Features
+
+* add @rxts/react-qrcode package ([74431bc](https://github.com/rx-ts/react/commit/74431bc))
+
+
+
+
+
 # 0.4.0 (2019-09-02)
 
 ### Features
