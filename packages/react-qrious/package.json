@@ -28,7 +28,7 @@
   ],
   "peerDependencies": {
     "qrious": ">=4.0.0",
-    "react": ">=16.8.0"
+    "react": ">=16.9.0"
   },
   "sideEffects": false
 }
