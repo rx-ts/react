@@ -21,9 +21,6 @@ module.exports = {
       },
     },
   ],
-  rules: {
-    'promise/catch-or-return': 0,
-  },
   settings: {
     polyfills: ['Array.from', 'Object.assign', 'Object.entries'],
   },

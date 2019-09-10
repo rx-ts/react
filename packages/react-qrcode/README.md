@@ -1,4 +1,4 @@
-# VueQRCode
+# ReactQRCode
 
 > 🤳 A React component for QR code generation with [qrcode](https://github.com/soldair/node-qrcode)
 
