@@ -1,11 +1,13 @@
 {
-  "version": 2,
   "name": "@rxts/react",
+  "version": 2,
   "alias": [
     "react-rx.now.sh",
     "rx-react.now.sh"
   ],
-  "public": true,
+  "github": {
+    "silent": true
+  },
   "builds": [
     {
       "src": "package.json",
