@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.6.0](https://github.com/rx-ts/react/compare/@rxts/react-rx@0.5.3...@rxts/react-rx@0.6.0) (2019-09-23)
+
+
+### Features
+
+* rename @rxts/react-qrcode to react-qrcode, correct package homepages ([473e56f](https://github.com/rx-ts/react/commit/473e56f))
+
+
+
+
+
 ## [0.5.3](https://github.com/rx-ts/react/compare/@rxts/react-rx@0.5.2...@rxts/react-rx@0.5.3) (2019-09-09)
 
 **Note:** Version bump only for package @rxts/react-rx

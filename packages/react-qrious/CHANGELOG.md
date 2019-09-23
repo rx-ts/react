@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.4.0](https://github.com/rx-ts/react/compare/react-qrious@2.3.2...react-qrious@2.4.0) (2019-09-23)
+
+
+### Features
+
+* rename @rxts/react-qrcode to react-qrcode, correct package homepages ([473e56f](https://github.com/rx-ts/react/commit/473e56f))
+
+
+
+
+
 ## [2.3.2](https://github.com/rx-ts/react/compare/react-qrious@2.3.1...react-qrious@2.3.2) (2019-09-09)
 
 **Note:** Version bump only for package react-qrious
