@@ -1,27 +1,22 @@
-const fs = require('fs')
-const path = require('path')
-const { overrides } = require('@1stg/eslint-config/overrides')
+const { allowModules } = require('@1stg/eslint-config/_util')
 
 module.exports = {
-  extends: '@1stg',
+  extends: '@1stg/eslint-config/recommended',
+  settings: {
+    polyfills: ['Array.from', 'Object.assign', 'Object.entries'],
+  },
   overrides: [
-    ...overrides,
     {
       files: '**/docs/*.tsx',
       settings: {
         node: {
-          allowModules: fs
-            .readdirSync('packages')
-            .map(
-              pkg =>
-                require(path.resolve('packages', pkg, 'package.json')).name,
-            )
-            .concat(['classnames', 'lodash-es', 'react-dom']),
+          allowModules: allowModules.concat(
+            'classnames',
+            'lodash-es',
+            'react-dom',
+          ),
         },
       },
     },
   ],
-  settings: {
-    polyfills: ['Array.from', 'Object.assign', 'Object.entries'],
-  },
 }

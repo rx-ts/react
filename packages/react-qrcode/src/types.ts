@@ -1,6 +1,6 @@
 import { QRCodeSegment as _QRCodeSegment, QRCodeToDataURLOptions } from 'qrcode'
 
-export const LEVELS = Object.freeze([
+export const LEVELS = [
   'low',
   'medium',
   'quartile',
@@ -9,26 +9,23 @@ export const LEVELS = Object.freeze([
   'M',
   'Q',
   'H',
-] as const)
+] as const
 
-export const MASK_PATTERNS = Object.freeze([0, 1, 2, 3, 4, 5, 6, 7] as const)
+// eslint-disable-next-line @typescript-eslint/no-magic-numbers
+export const MASK_PATTERNS = [0, 1, 2, 3, 4, 5, 6, 7] as const
 
 // eslint-disable-next-line @typescript-eslint/no-type-alias
 export type MaskPattern = (typeof MASK_PATTERNS)[number]
 
-export const MODES = Object.freeze([
+export const MODES = [
   'auto',
   'alphanumeric',
   'numeric',
   'kanji',
   'byte',
-] as const)
+] as const
 
-export const TYPES = Object.freeze([
-  'image/png',
-  'image/jpeg',
-  'image/webp',
-] as const)
+export const TYPES = ['image/png', 'image/jpeg', 'image/webp'] as const
 
 // eslint-disable-next-line @typescript-eslint/no-type-alias
 export type QRCodeMode = (typeof MODES)[number]

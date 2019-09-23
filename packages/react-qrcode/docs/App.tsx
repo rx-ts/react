@@ -1,3 +1,5 @@
+import { get, merge, set } from 'lodash-es'
+import React, { useState } from 'react'
 import {
   LEVELS,
   MASK_PATTERNS,
@@ -7,9 +9,7 @@ import {
   QRCodeProps,
   QRCodeSegment,
   TYPES,
-} from '@rxts/react-qrcode'
-import { get, merge, set } from 'lodash-es'
-import React, { useState } from 'react'
+} from 'react-qrcode'
 
 const DEFAULT_TEXT = 'https://www.1stg.me'
 

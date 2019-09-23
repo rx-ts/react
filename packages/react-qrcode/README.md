@@ -7,12 +7,12 @@
 ```tsx
 // Component
 import ReactDOM from 'react-dom'
-import { QRCode } from '@rxts/react-qrcode'
+import { QRCode } from 'react-qrcode'
 
 ReactDOM.render(<QRCode value="https://www.1stg.me" />)
 
 // hooks
-import { useQRCode } from '@rxts/react'
+import { useQRCode } from 'react-qrcode'
 
 export const App = () => {
   const [value, setValue] = useState('https://www.1stg.me')
