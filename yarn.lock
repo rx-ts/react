@@ -118,17 +118,17 @@
     rollup-plugin-typescript "^1.0.1"
     umd-globals "^0.3.0"
 
-"@1stg/stylelint-config@^0.6.3":
-  version "0.6.3"
-  resolved "https://registry.yarnpkg.com/@1stg/stylelint-config/-/stylelint-config-0.6.3.tgz#be83ee63fc79c61632874ee23159eee2baf002d4"
-  integrity sha512-FVMFC2zVXVhtdPp+wbtX9myQrJYc8ZIa4QGP2etCvw1ff98cwP6o97WBO6pImleHa4OHCfdY+TIFpA8e/9mr6Q==
+"@1stg/stylelint-config@^0.7.2":
+  version "0.7.2"
+  resolved "https://registry.yarnpkg.com/@1stg/stylelint-config/-/stylelint-config-0.7.2.tgz#c74c703dda3f7b06beaf76bae9e098c5693e15dd"
+  integrity sha512-inHh7epongBFQmpKGcvEXOeFvkrYpgQcfz/OZWAMZmEpFOM5PADWqXk6tT9LvaB/+gDhN4rrnWmsopI8M6H7Kg==
   dependencies:
-    stylelint-config-prettier "^5.2.0"
+    stylelint-config-prettier "^6.0.0"
     stylelint-config-standard "^19.0.0"
     stylelint-high-performance-animation "^1.2.1"
     stylelint-no-unsupported-browser-features "^3.0.2"
     stylelint-prettier "^1.1.1"
-    stylelint-scss "^3.11.0"
+    stylelint-scss "^3.11.1"
 
 "@1stg/tsconfig@^0.5.1":
   version "0.5.1"
@@ -2338,11 +2338,9 @@
 
 "@rxts/react-rx@link:packages/react-rx/src":
   version "0.0.0"
-  uid ""
 
 "@rxts/react-storage@link:packages/react-storage/src":
   version "0.0.0"
-  uid ""
 
 "@samverschueren/stream-to-observable@^0.3.0":
   version "0.3.0"
@@ -10298,11 +10296,9 @@ react-is@^16.8.1:
 
 "react-qrcode@link:packages/react-qrcode/src":
   version "0.0.0"
-  uid ""
 
 "react-qrious@link:packages/react-qrious/src":
   version "0.0.0"
-  uid ""
 
 react@^16.9.0:
   version "16.9.0"
@@ -12468,10 +12464,10 @@ stylehacks@^4.0.0:
     postcss "^7.0.0"
     postcss-selector-parser "^3.0.0"
 
-stylelint-config-prettier@^5.2.0:
-  version "5.2.0"
-  resolved "https://registry.yarnpkg.com/stylelint-config-prettier/-/stylelint-config-prettier-5.2.0.tgz#b73d56a380662abd434ed745ca84db15e1a5aac6"
-  integrity sha512-ehrG/mBi9CTKkOBi0wlStX58+g9eGJhJW/jFEcCm/dUVHg9I2+T90k4tlyratvhlz876dyrTlor7gvDEaohVnA==
+stylelint-config-prettier@^6.0.0:
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/stylelint-config-prettier/-/stylelint-config-prettier-6.0.0.tgz#600aa218d8e34cf44a025903b0f60c079fd83366"
+  integrity sha512-f/BKiUAczB4KODC1w5eY6LoNgfq6QzdSnSc4ccAATKo1IfYCuG3IZwaxj/5AAxl1kyaW7kPLBOXG66O4gSIKTQ==
 
 stylelint-config-recommended@^3.0.0:
   version "3.0.0"
@@ -12506,7 +12502,7 @@ stylelint-prettier@^1.1.1:
   dependencies:
     prettier-linter-helpers "^1.0.0"
 
-stylelint-scss@^3.11.0:
+stylelint-scss@^3.11.1:
   version "3.11.1"
   resolved "https://registry.yarnpkg.com/stylelint-scss/-/stylelint-scss-3.11.1.tgz#016a6c1a6e051faed0a186b3698fcf24b0e90b0d"
   integrity sha512-0FZNSfy5X2Or4VRA3Abwfrw1NHrI6jHT8ji9xSwP8Re2Kno0i90qbHwm8ohPO0kRB1RP9x1vCYBh4Tij+SZjIg==
