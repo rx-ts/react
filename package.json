@@ -35,7 +35,7 @@
     "@1stg/rollup-config": "^0.9.5",
     "@1stg/stylelint-config": "^0.6.3",
     "@1stg/tsconfig": "^0.5.1",
-    "@1stg/tslint-config": "^0.3.3",
+    "@1stg/tslint-config": "^0.3.4",
     "@babel/core": "^7.6.0",
     "@commitlint/cli": "^8.2.0",
     "@rxts/react-rx": "link:packages/react-rx/src",
