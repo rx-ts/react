@@ -41,7 +41,7 @@
     "@rxts/react-rx": "link:packages/react-rx/src",
     "@rxts/react-storage": "link:packages/react-storage/src",
     "@types/classnames": "^2.2.9",
-    "@types/lodash": "^4.14.138",
+    "@types/lodash": "^4.14.149",
     "@types/lodash-es": "^4.17.3",
     "@types/node": "^12.7.5",
     "@types/qrcode": "^1.3.4",
