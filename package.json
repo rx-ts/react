@@ -33,7 +33,7 @@
     "@1stg/prettier-config": "^0.2.0",
     "@1stg/remark-config": "^0.2.1",
     "@1stg/rollup-config": "^0.9.5",
-    "@1stg/stylelint-config": "^0.6.3",
+    "@1stg/stylelint-config": "^0.8.9",
     "@1stg/tsconfig": "^0.5.1",
     "@1stg/tslint-config": "^0.3.3",
     "@babel/core": "^7.6.0",
