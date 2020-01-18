@@ -36,7 +36,7 @@
     "@1stg/stylelint-config": "^0.6.3",
     "@1stg/tsconfig": "^0.5.1",
     "@1stg/tslint-config": "^0.3.3",
-    "@babel/core": "^7.6.0",
+    "@babel/core": "^7.8.3",
     "@commitlint/cli": "^8.2.0",
     "@rxts/react-rx": "link:packages/react-rx/src",
     "@rxts/react-storage": "link:packages/react-storage/src",
@@ -102,7 +102,7 @@
     "extends": "@1stg"
   },
   "resolutions": {
-    "@babel/core": "^7.6.0"
+    "@babel/core": "^7.8.3"
   },
   "stylelint": {
     "extends": "@1stg/stylelint-config/scss"
