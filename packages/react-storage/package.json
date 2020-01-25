@@ -19,7 +19,7 @@
     "src"
   ],
   "peerDependencies": {
-    "react": ">=16.9.0"
+    "react": ">=16.8.0"
   },
   "publishConfig": {
     "access": "public"

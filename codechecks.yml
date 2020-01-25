@@ -8,5 +8,5 @@ checks:
       atLeast: 100
       ignoreCatch: true
       ignoreFiles:
-        - '*.d.ts'
+        - '**/*.d.ts'
       strict: true
