@@ -1,6 +1,6 @@
 {
   "name": "@rxts/react-storage",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "description": "🔥 React hooks for using localStorage/sessionStorage",
   "repository": "git@github.com:rx-ts/react.git",
   "homepage": "https://github.com/rx-ts/react/blob/master/packages/react-storage",
