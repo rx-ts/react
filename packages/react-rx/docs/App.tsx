@@ -81,7 +81,7 @@ export class App extends React.PureComponent<{}, AppState> {
                     <input
                       className="edit"
                       value={editingTodo.value}
-                      autoFocus
+                      autoFocus={true}
                       onChange={e =>
                         this.editingTodo$.next({
                           id,
@@ -169,7 +169,7 @@ export class App extends React.PureComponent<{}, AppState> {
             <input
               className="new-todo"
               placeholder="What needs to be done?"
-              autoFocus
+              autoFocus={true}
               value={newTodoValue}
               onChange={this.handleNewTodoChange}
               onKeyPress={this.handleAddTodo}

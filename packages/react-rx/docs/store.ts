@@ -43,7 +43,7 @@ export const changeTodoTitle = (id: number, title: string) => {
   todos$.next([...todos])
 }
 
-export const toggleTodoStatus = (id: number, completed?: boolean) => {
+export const toggleTodoStatus = (id: number, completed = false) => {
   const todo = todos.find(({ id: _id }) => _id === id)
   if (!todo) {
     return

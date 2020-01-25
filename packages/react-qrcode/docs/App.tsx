@@ -25,6 +25,7 @@ type ChangeEvent = React.ChangeEvent<
   HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
 >
 
+// eslint-disable-next-line sonarjs/cognitive-complexity
 export const App = () => {
   const [{ manualMode, ...options }, setState] = useState<FormModel>({
     version: '',

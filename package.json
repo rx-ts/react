@@ -10,15 +10,16 @@
     "packages/*"
   ],
   "scripts": {
-    "dev": "parcel packages/*/docs/index.html",
-    "lint:style": "stylelint **/*.scss",
-    "lint:es": "eslint . --ext js,md,mdx,ts,tsx -f friendly",
-    "lint:ts": "tslint -p . -t stylish",
-    "lint": "run-p lint:*",
-    "build:ts": "tsc -b",
-    "build:bundle": "r --prod",
-    "build:docs": "parcel build packages/*/docs/index.html --out-dir dist",
     "build": "rimraf dist && run-p build:**",
+    "build:docs": "parcel build packages/*/docs/index.html --out-dir dist",
+    "build:r": "r -p",
+    "build:ts": "tsc -b",
+    "dev": "parcel packages/*/docs/index.html",
+    "lint": "run-p lint:*",
+    "lint:es": "eslint . --ext js,md,mdx,ts,tsx -f friendly",
+    "lint:style": "stylelint **/*.scss",
+    "lint:ts": "tslint -p . -t stylish",
+    "lint:tsc": "tsc",
     "start": "serve dist",
     "type-coverage": "type-coverage --cache --ignore-catch --detail --ignore-files '**/*.d.ts' --strict"
   },
@@ -61,31 +62,9 @@
     "type-coverage": "^2.4.0",
     "typescript": "^3.7.5"
   },
-  "browserslist": [
-    "extends @1stg/browserslist-config"
-  ],
-  "commitlint": {
-    "extends": [
-      "@1stg"
-    ]
-  },
-  "eslintIgnore": [
-    ".cache",
-    ".parcel-cache",
-    "dist",
-    "lib",
-    "packages/*/CHANGELOG.md",
-    "!.*.js"
-  ],
-  "prettier": "@1stg/prettier-config",
-  "renovate": {
-    "extends": "@1stg"
-  },
   "resolutions": {
-    "@babel/core": "^7.6.0"
-  },
-  "stylelint": {
-    "extends": "@1stg/stylelint-config/scss"
+    "@babel/core": "^7.8.3",
+    "eslint-plugin-prettier": "^3.1.2"
   },
   "typeCoverage": {
     "atLeast": 100
