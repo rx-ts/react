@@ -10,10 +10,11 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "rimraf dist && run-p build:**",
+    "build": "yarn clean && run-p build:**",
     "build:docs": "parcel build packages/*/docs/index.html --out-dir dist",
     "build:r": "r -p",
     "build:ts": "tsc -b",
+    "clean": "rimraf dist packages/*/lib packages/*/*.tsbuildinfo",
     "dev": "parcel packages/*/docs/index.html",
     "lint": "run-p lint:*",
     "lint:es": "eslint . --ext js,md,mdx,ts,tsx -f friendly",

@@ -34,7 +34,7 @@
 
 ## Homepage
 
-<a href="https://rx-react.now.sh" target="_blank">rx-react</a>
+<a href="https://react-rx.now.sh" target="_blank">react-rx</a>
 
 ## Packages
 
