@@ -1,4 +1,4 @@
-import { get, merge, set } from 'lodash-es'
+import { get, merge, set } from 'lodash'
 import React, { useState } from 'react'
 import { QRious, QriousProps } from 'react-qrious'
 
@@ -48,6 +48,7 @@ export const App = () => {
           defaultOnChange(e)
         }
       },
+      // type-coverage:ignore-next-line
       value: get(props, name),
     }
   }

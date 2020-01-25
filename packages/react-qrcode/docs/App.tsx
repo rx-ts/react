@@ -1,4 +1,4 @@
-import { get, merge, set } from 'lodash-es'
+import { get, merge, set } from 'lodash'
 import React, { useState } from 'react'
 import {
   LEVELS,
@@ -69,6 +69,7 @@ export const App = () => {
           defaultOnChange(e)
         }
       },
+      // type-coverage:ignore-next-line
       value: get(options, name),
     }
   }

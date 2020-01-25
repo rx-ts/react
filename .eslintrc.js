@@ -9,7 +9,7 @@ module.exports = {
         node: {
           allowModules: allowModules.concat(
             'classnames',
-            'lodash-es',
+            'lodash',
             'react-dom',
           ),
         },
