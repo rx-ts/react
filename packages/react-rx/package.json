@@ -19,7 +19,7 @@
     "src"
   ],
   "peerDependencies": {
-    "react": ">=16.8.0",
+    "react": ">=16.12.0",
     "rxjs": ">=6.0.0"
   },
   "publishConfig": {

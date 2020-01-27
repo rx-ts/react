@@ -25,7 +25,7 @@
   ],
   "peerDependencies": {
     "qrcode": ">=1.0.0",
-    "react": ">=16.8.0"
+    "react": ">=16.12.0"
   },
   "publishConfig": {
     "access": "public"
