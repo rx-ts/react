@@ -198,10 +198,10 @@
   dependencies:
     tslib "^1.10.0"
 
-"@1stg/tslint-config@^0.5.8":
-  version "0.5.8"
-  resolved "https://registry.yarnpkg.com/@1stg/tslint-config/-/tslint-config-0.5.8.tgz#61f0e0809f80e8c880df4ba6e1708ccfd2560322"
-  integrity sha512-W9a+Gu6ctXK6uAGZbNGzU0nGWAKOb/FocOQOGhaCOi7w4Sm012pLpvjKl3Udv6R9B4ZgGked3XvlFvhdkELd5w==
+"@1stg/tslint-config@^0.5.10":
+  version "0.5.10"
+  resolved "https://registry.yarnpkg.com/@1stg/tslint-config/-/tslint-config-0.5.10.tgz#a8884411b6c56e1ea7b5c989630e2f17dc679ee0"
+  integrity sha512-V/0rCjzr39imXORkOCxSWS5AzKxZQbOGllX7x8BILUiLvuaeDo8mRMSo27A61FwJlw56rviO/NVO1KI/LqkFOQ==
   dependencies:
     codelyzer "^5.2.1"
     rxjs-tslint "^0.1.7"
@@ -209,7 +209,7 @@
     tslint-config-eslint "^0.2.1"
     tslint-config-prettier "^1.18.0"
     tslint-plugin-prettier "^2.1.0"
-    tslint-react "^4.1.0"
+    tslint-react "^4.2.0"
     tslint-sonarts "^1.9.0"
 
 "@babel/code-frame@7.0.0":
@@ -2674,11 +2674,9 @@
 
 "@rxts/react-rx@link:packages/react-rx/src":
   version "0.0.0"
-  uid ""
 
 "@rxts/react-storage@link:packages/react-storage/src":
   version "0.0.0"
-  uid ""
 
 "@rxts/rollup-plugin-alias@^0.1.1":
   version "0.1.1"
@@ -12582,11 +12580,9 @@ react-is@^16.8.1, react-is@^16.8.4:
 
 "react-qrcode@link:packages/react-qrcode/src":
   version "0.0.0"
-  uid ""
 
 "react-qrious@link:packages/react-qrious/src":
   version "0.0.0"
-  uid ""
 
 react@^16.12.0:
   version "16.12.0"
@@ -15488,7 +15484,7 @@ tslint-plugin-prettier@^2.1.0:
     lines-and-columns "^1.1.6"
     tslib "^1.7.1"
 
-tslint-react@^4.1.0:
+tslint-react@^4.2.0:
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/tslint-react/-/tslint-react-4.2.0.tgz#41b16e0438365f8d3ed4120501f02cabff9fd1e4"
   integrity sha512-lO22+FKr9ZZGueGiuALzvZE/8ANoDoCHGCknX1Ge3ALrfcLQHQ1VGdyb1scZXQFdEQEfwBTIU40r5BUlJpn0JA==

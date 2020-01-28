@@ -27,7 +27,7 @@
   "devDependencies": {
     "@1stg/app-config": "^0.1.21",
     "@1stg/lib-config": "^0.1.19",
-    "@1stg/tslint-config": "^0.5.8",
+    "@1stg/tslint-config": "^0.5.10",
     "@rxts/react-rx": "link:packages/react-rx/src",
     "@rxts/react-storage": "link:packages/react-storage/src",
     "@types/classnames": "^2.2.9",
