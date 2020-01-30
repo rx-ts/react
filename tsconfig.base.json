@@ -1,6 +1,12 @@
 {
-  "extends": "@1stg/tsconfig/tsconfig",
+  "extends": "@1stg/tsconfig/lib",
   "compilerOptions": {
-    "jsx": "react"
+    "baseUrl": ".",
+    "paths": {
+      "react-qrcode": ["packages/react-qrcode/src"],
+      "react-qrious": ["packages/react-qrious/src"],
+      "@rxts/react-rx": ["packages/react-rx/src"],
+      "@rxts/react-storage": ["packages/react-storage/src"]
+    }
   }
 }

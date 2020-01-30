@@ -14,18 +14,10 @@
       "use": "@now/static-build"
     }
   ],
-  "routes": [
+  "rewrites": [
     {
-      "src": "/react-qrcode/*",
-      "dest": "react-qrcode/docs/index.html"
-    },
-    {
-      "src": "/react-qrious/*",
-      "dest": "react-qrious/docs/index.html"
-    },
-    {
-      "src": "/*",
-      "dest": "react-rx/docs/index.html"
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ]
 }

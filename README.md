@@ -1,17 +1,17 @@
 <p align="center">
   <a href="https://rxjs.dev">
-    <img src="https://rxjs.dev/assets/images/logos/Rx_Logo_S.png" height="50">
+    <img src="https://rxjs.dev/assets/images/logos/Rx_Logo_S.png" height="50" />
   </a>
   <a href="#readme">
-    <img src="https://rx-ts.github.io/assets/heart.svg" height="50">
+    <img src="https://rx-ts.github.io/assets/heart.svg" height="50" />
   </a>
   <a href="https://reactjs.org">
-    <img src="https://rx-ts.github.io/assets/react.svg"  height="50">
+    <img src="https://rx-ts.github.io/assets/react.svg"  height="50" />
   </a>
 </p>
 
 [![GitHub Actions](https://github.com/rx-ts/react/workflows/Node%20CI/badge.svg)](https://github.com/rx-ts/react/actions?query=workflow%3A%22Node+CI%22)
-[![Codacy Grade](https://img.shields.io/codacy/grade/ab069c2d26684633b3baeee88844254b)](https://www.codacy.com/app/JounQin/react)
+[![Codacy Grade](https://img.shields.io/codacy/grade/789ccd82b1464108b8ec254b852e0f2b)](https://www.codacy.com/gh/rx-ts/react)
 [![type-coverage](https://img.shields.io/badge/dynamic/json.svg?label=type-coverage&prefix=%E2%89%A5&suffix=%&query=$.typeCoverage.atLeast&uri=https%3A%2F%2Fraw.githubusercontent.com%2Frx-ts%2Freact%2Fmaster%2Fpackage.json)](https://github.com/plantain-00/type-coverage)
 [![GitHub release](https://img.shields.io/github/release/rx-ts/react)](https://github.com/rx-ts/react/releases)
 [![David Dev](https://img.shields.io/david/dev/rx-ts/react.svg)](https://david-dm.org/rx-ts/react?type=dev)
