@@ -1,8 +1,14 @@
-@import 'sanitize.css';
-@import 'sanitize.css/forms.css';
+@import '~todomvc-app-css';
 
 #app {
   margin: 0 auto;
+}
+
+body {
+  max-width: 1024px;
+}
+
+.container {
   text-align: center;
 }
 

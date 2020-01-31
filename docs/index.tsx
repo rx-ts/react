@@ -1,6 +1,14 @@
+import { MDXProvider } from '@mdx-js/react'
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import ReadMe from '../README.md'
+import * as components from './components'
+import { App } from './App'
 
-ReactDOM.render(<ReadMe />, document.querySelector('#app'))
+ReactDOM.render(
+  // @ts-ignore
+  <MDXProvider components={components}>
+    <App />
+  </MDXProvider>,
+  document.querySelector('#app'),
+)

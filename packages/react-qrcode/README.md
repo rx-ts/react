@@ -2,6 +2,10 @@
 
 > 🤳 A React component for QR code generation with [qrcode](https://github.com/soldair/node-qrcode)
 
+## Demo
+
+<ReactQrcodeDemo />
+
 ## Usage
 
 ```tsx
@@ -42,3 +46,15 @@ export const App = () => {
 | `type`                 | `string` ('image/png', 'image/jpeg', 'image/webp')                 | `'image/png'`                               |
 | `quality`              | `number`(0-1)                                                      | `0.92`                                      |
 | `value`                | `string | Array<{ data: string; mode?: string }>`                  | N/A                                         |
+
+## Changelog
+
+Detailed changes for each release are documented in [CHANGELOG.md](./CHANGELOG.md).
+
+## License
+
+[MIT][] © [JounQin][]@[1stG.me][]
+
+[1stg.me]: https://www.1stg.me
+[jounqin]: https://GitHub.com/JounQin
+[mit]: http://opensource.org/licenses/MIT

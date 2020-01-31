@@ -9,7 +9,7 @@ type ChangeEvent = React.ChangeEvent<
   HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
 >
 
-export const App = () => {
+export const ReactQriousDemo = () => {
   const [props, setState] = useState<QriousProps>({
     background: '#ffffff',
     backgroundAlpha: 1,
@@ -53,8 +53,7 @@ export const App = () => {
     }
   }
   return (
-    <>
-      <h1>ReactQRious</h1>
+    <div className="container">
       <ul className="lists">
         <li>
           <label>background(color)</label>
@@ -101,6 +100,6 @@ export const App = () => {
         </li>
       </ul>
       <QRious {...props} />
-    </>
+    </div>
   )
 }

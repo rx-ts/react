@@ -26,7 +26,7 @@ type ChangeEvent = React.ChangeEvent<
 >
 
 // eslint-disable-next-line sonarjs/cognitive-complexity
-export const App = () => {
+export const ReactQrcodeDemo = () => {
   const [{ manualMode, ...options }, setState] = useState<FormModel>({
     version: '',
     errorCorrectionLevel: 'M',
@@ -75,8 +75,7 @@ export const App = () => {
   }
 
   return (
-    <>
-      <h1>ReactQRcode</h1>
+    <div className="container">
       <ul className="lists">
         <li>
           <label>version</label>
@@ -216,6 +215,6 @@ export const App = () => {
         </li>
       </ul>
       <QRCode {...(options as QRCodeProps)} />
-    </>
+    </div>
   )
 }

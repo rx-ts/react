@@ -22,7 +22,7 @@ export interface AppState {
   newTodoValue: string
 }
 
-export class App extends React.PureComponent<{}, AppState> {
+export class ReactRxDemo extends React.PureComponent<{}, AppState> {
   state: AppState = {
     newTodoValue: '',
   }
