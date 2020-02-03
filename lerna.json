@@ -22,9 +22,12 @@
     },
     "publish": {
       "ignoreChanges": [
-        "docs",
-        "test",
-        "*.md"
+        "**/docs/**",
+        "**/test/**",
+        "**/*.md",
+        "**/.*",
+        "**/.*.*",
+        "package.json"
       ]
     }
   }
