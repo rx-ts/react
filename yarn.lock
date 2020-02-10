@@ -53,29 +53,6 @@
     core-js "^3.6.4"
     fast-async "^7.0.6"
 
-"@1stg/babel-preset@^0.9.8":
-  version "0.9.8"
-  resolved "https://registry.yarnpkg.com/@1stg/babel-preset/-/babel-preset-0.9.8.tgz#00d084548b54a7e555eb52add122493196d25a63"
-  integrity sha512-I1n2tRm17i/KB8lzseRWcy2sB/nkjg3EBJv+rbahvjO4Od46KLE9G6jXEX3N1o8CuYJ/5CBL6dF1ushAe+oEjA==
-  dependencies:
-    "@babel/helper-plugin-utils" "^7.8.3"
-    "@babel/plugin-proposal-class-properties" "^7.8.3"
-    "@babel/plugin-proposal-decorators" "^7.8.3"
-    "@babel/preset-env" "^7.8.3"
-    "@babel/preset-react" "^7.8.3"
-    "@babel/preset-typescript" "^7.8.3"
-    "@pkgr/utils" "^0.3.5"
-    "@vue/babel-helper-vue-jsx-merge-props" "^1.0.0"
-    "@vue/babel-preset-jsx" "^1.1.2"
-    babel-plugin-import "^1.13.0"
-    babel-plugin-transform-async-to-promises "^0.8.15"
-    babel-plugin-transform-react-remove-prop-types "^0.4.24"
-    babel-plugin-transform-remove-console "^6.9.4"
-    babel-plugin-transform-typescript-metadata "^0.2.2"
-    babel-preset-proposal-typescript "^1.5.0"
-    core-js "^3.6.4"
-    fast-async "^7.0.6"
-
 "@1stg/browserslist-config@^0.5.0":
   version "0.5.0"
   resolved "https://registry.yarnpkg.com/@1stg/browserslist-config/-/browserslist-config-0.5.0.tgz#1d25fb02bf03240aebd6ffdc74b964ded8d36f75"
@@ -163,20 +140,6 @@
     prettier "^1.19.1"
     prettier-plugin-sh "^0.2.8"
     prettier-plugin-toml "^0.3.1"
-
-"@1stg/postcss-config@^0.5.2":
-  version "0.5.2"
-  resolved "https://registry.yarnpkg.com/@1stg/postcss-config/-/postcss-config-0.5.2.tgz#464a6815c14aeede9da9f90252b1cabc4136aaa7"
-  integrity sha512-iIDojPTXMM++or4xDG6KDD0HH+QLWHCUyYJvF3hQ29tj8qMsEu6ulAmChbYAt7D+tXieNwaAl0HsJLzVtiQFqw==
-  dependencies:
-    autoprefixer "^9.7.4"
-    cssnano "^4.1.10"
-    cssnano-preset-advanced "^4.0.7"
-    postcss-import "^12.0.1"
-    postcss-modules "^1.5.0"
-    postcss-normalize "^8.0.1"
-    postcss-preset-env "^6.7.0"
-    postcss-url "^8.0.0"
 
 "@1stg/postcss-config@^0.7.0":
   version "0.7.0"
@@ -1120,7 +1083,7 @@
     "@babel/helper-create-regexp-features-plugin" "^7.8.3"
     "@babel/helper-plugin-utils" "^7.8.3"
 
-"@babel/preset-env@^7.4.5", "@babel/preset-env@^7.5.5", "@babel/preset-env@^7.8.3", "@babel/preset-env@^7.8.4":
+"@babel/preset-env@^7.4.5", "@babel/preset-env@^7.5.5", "@babel/preset-env@^7.8.4":
   version "7.8.4"
   resolved "https://registry.yarnpkg.com/@babel/preset-env/-/preset-env-7.8.4.tgz#9dac6df5f423015d3d49b6e9e5fa3413e4a72c4e"
   integrity sha512-HihCgpr45AnSOHRbS5cWNTINs0TwaR8BS8xIIH+QwiW8cKL0llV91njQMpeMReEPVs+1Ao0x3RLEBLtt1hOq4w==
@@ -2642,6 +2605,11 @@
   resolved "https://registry.yarnpkg.com/@pkgr/es-modules/-/es-modules-0.2.3.tgz#13b9cbe24af889fc0b32daa3c693d3dd5efe6f47"
   integrity sha512-ZbHc3EzJanAxjeRDWk/6p7pgyxfOP7CfCu+5P17HKlDX+OF4ExIGjp0/g2wlmKgDqNfwYUFq2LxasjTqPbqs3A==
 
+"@pkgr/es-modules@^0.2.4":
+  version "0.2.4"
+  resolved "https://registry.yarnpkg.com/@pkgr/es-modules/-/es-modules-0.2.4.tgz#8972bb41c93bad4a5ca6b9126f3b9ffbcb14c742"
+  integrity sha512-lxq2VPLe5xDwyFqcF2QiUF1IOpKRgp7GwiXwqdxYCjwSy0CnEmcrrHDedvgKxyNLy72MtYen2TZI36NxIO1T9w==
+
 "@pkgr/imagemin@^0.3.7":
   version "0.3.7"
   resolved "https://registry.yarnpkg.com/@pkgr/imagemin/-/imagemin-0.3.7.tgz#0d4c790ec3e988c2168acf95a225a68194959f72"
@@ -2701,7 +2669,12 @@
   resolved "https://registry.yarnpkg.com/@pkgr/umd-globals/-/umd-globals-0.3.2.tgz#0bdae5e0025b70871ef204b280f0326fe9aa4609"
   integrity sha512-z3ro2HketpS/betBs4skLM38CfQW+TndEMTDf4INVCTeZysLbEQd5CqmLO6uR+ihue7ihilnqrSDBNonbtR4wA==
 
-"@pkgr/utils@^0.3.5", "@pkgr/utils@^0.3.8":
+"@pkgr/umd-globals@^0.3.3":
+  version "0.3.3"
+  resolved "https://registry.yarnpkg.com/@pkgr/umd-globals/-/umd-globals-0.3.3.tgz#0561a28324fb7134bf2720a2f53bb14c324d5e91"
+  integrity sha512-VSTUWdDci3J03aw3Q7D2CqNRBhh1fFWk4Lsz1u3DnDkFXs06NPHIPRe2zIYqMrwqx+vfmVPg+Q5QjYeX2tLZzA==
+
+"@pkgr/utils@^0.3.8":
   version "0.3.8"
   resolved "https://registry.yarnpkg.com/@pkgr/utils/-/utils-0.3.8.tgz#96406d17ff30317928efaedaa66fb7b02ac40918"
   integrity sha512-IY9nkZAUpPxYmCHf6uJy95erZ7dy/dwRaOxqWYgG0fe5ID/SMcQD4t22KXOxE4QBSbVTLrKYvW/WrsZxWIDQTA==
@@ -2710,6 +2683,18 @@
     cross-spawn "^7.0.1"
     is-glob "^4.0.1"
     open "^7.0.1"
+    tiny-glob "^0.2.6"
+    tslib "^1.10.0"
+
+"@pkgr/utils@^0.3.9":
+  version "0.3.9"
+  resolved "https://registry.yarnpkg.com/@pkgr/utils/-/utils-0.3.9.tgz#9d420a1f78646f4e66c06ea51287edbf40d22231"
+  integrity sha512-h1i46p/XRHtfnApca4S7AvxyL785EqgHgnHvM6uWe/2dIbM/PhgvTiujYDwxvTdqOQ9mj3/yIM2x41/+WRhBfw==
+  dependencies:
+    chalk "^3.0.0"
+    cross-spawn "^7.0.1"
+    is-glob "^4.0.1"
+    open "^7.0.2"
     tiny-glob "^0.2.6"
     tslib "^1.10.0"
 
@@ -2730,21 +2715,21 @@
     "@svgr/webpack" "^5.1.0"
     react-hot-loader "^4.12.19"
 
-"@pkgr/webpack@^0.5.5":
-  version "0.5.5"
-  resolved "https://registry.yarnpkg.com/@pkgr/webpack/-/webpack-0.5.5.tgz#7a61ba7774e3724ee1237e3f5d6427289b545716"
-  integrity sha512-OS8RuMDJ4gr1ZAOA3HlMliuMezYJuvDNUnwU3lreDo8pEKoifT4IJslCjEqCAsn0k95zAAXEkk88zTzJni9wWw==
+"@pkgr/webpack@^0.5.6":
+  version "0.5.6"
+  resolved "https://registry.yarnpkg.com/@pkgr/webpack/-/webpack-0.5.6.tgz#ba95952aaa993b7f1e6b0b9d623b6f290e5bd905"
+  integrity sha512-gzmA/Gk87oQrhqG3eIpR020jJ1Rb41NyBJdIeqnOwNQFI1b+OiZjckvzSr66I3MXhLfzsYzVI/o83V24DyhD1Q==
   dependencies:
-    "@1stg/babel-preset" "^0.9.8"
-    "@1stg/postcss-config" "^0.5.2"
+    "@1stg/babel-preset" "^0.11.0"
+    "@1stg/postcss-config" "^0.7.0"
     "@babel/core" "^7.8.4"
-    "@pkgr/es-modules" "^0.2.3"
-    "@pkgr/umd-globals" "^0.3.2"
-    "@pkgr/utils" "^0.3.8"
+    "@pkgr/es-modules" "^0.2.4"
+    "@pkgr/umd-globals" "^0.3.3"
+    "@pkgr/utils" "^0.3.9"
     babel-loader "^8.0.6"
     cache-loader "^4.1.0"
     case-sensitive-paths-webpack-plugin "^2.3.0"
-    commander "^4.1.0"
+    commander "^4.1.1"
     copy-webpack-plugin "^5.1.1"
     core-js "^3.6.4"
     css-loader "^3.4.2"
@@ -2779,7 +2764,7 @@
     tslib "^1.10.0"
     url-loader "^3.0.0"
     webpack "^4.41.5"
-    webpack-dev-server "^3.10.1"
+    webpack-dev-server "^3.10.2"
     workbox-webpack-plugin "^5.0.0"
 
 "@prettier/plugin-pug@^1.1.5":
@@ -5431,6 +5416,11 @@ commander@^4.0.1, commander@^4.1.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/commander/-/commander-4.1.0.tgz#545983a0603fe425bc672d66c9e3c89c42121a83"
   integrity sha512-NIQrwvv9V39FHgGFm36+U9SMQzbiHvU79k+iADraJTpmrFFfx7Ds0IvDoAdZsDrknlkRk14OYoWXb57uTh7/sw==
+
+commander@^4.1.1:
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/commander/-/commander-4.1.1.tgz#9fd602bd936294e9e9ef46a3f4d6964044b18068"
+  integrity sha512-NOKm8xhkzAjzFx8B2v5OAHT+u5pRQc2UCa2Vq9jYL/31o2wi9mxBA7LIFs3sV5VSC49z6pEhfbMULvShKj26WA==
 
 commander@~2.19.0:
   version "2.19.0"
@@ -12116,6 +12106,14 @@ open@^7.0.1:
     is-docker "^2.0.0"
     is-wsl "^2.1.1"
 
+open@^7.0.2:
+  version "7.0.2"
+  resolved "https://registry.yarnpkg.com/open/-/open-7.0.2.tgz#fb3681f11f157f2361d2392307548ca1792960e8"
+  integrity sha512-70E/pFTPr7nZ9nLDPNTcj3IVqnNvKuP4VsBmoKV9YGTnChe0mlS3C4qM7qKarhZ8rGaHKLfo+vBTHXDp6ZSyLQ==
+  dependencies:
+    is-docker "^2.0.0"
+    is-wsl "^2.1.1"
+
 opencollective-postinstall@^2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/opencollective-postinstall/-/opencollective-postinstall-2.0.2.tgz#5657f1bede69b6e33a45939b061eb53d3c6c3a89"
@@ -18084,10 +18082,10 @@ webpack-dev-middleware@^3.7.2:
     range-parser "^1.2.1"
     webpack-log "^2.0.0"
 
-webpack-dev-server@^3.10.1:
-  version "3.10.1"
-  resolved "https://registry.yarnpkg.com/webpack-dev-server/-/webpack-dev-server-3.10.1.tgz#1ff3e5cccf8e0897aa3f5909c654e623f69b1c0e"
-  integrity sha512-AGG4+XrrXn4rbZUueyNrQgO4KGnol+0wm3MPdqGLmmA+NofZl3blZQKxZ9BND6RDNuvAK9OMYClhjOSnxpWRoA==
+webpack-dev-server@^3.10.2:
+  version "3.10.3"
+  resolved "https://registry.yarnpkg.com/webpack-dev-server/-/webpack-dev-server-3.10.3.tgz#f35945036813e57ef582c2420ef7b470e14d3af0"
+  integrity sha512-e4nWev8YzEVNdOMcNzNeCN947sWJNd43E5XvsJzbAL08kGc2frm1tQ32hTJslRS+H65LCb/AaUCYU7fjHCpDeQ==
   dependencies:
     ansi-html "0.0.7"
     bonjour "^3.5.0"
