@@ -2713,18 +2713,27 @@
     tiny-glob "^0.2.6"
     tslib "^1.10.0"
 
-"@pkgr/webpack-mdx@^0.2.4":
-  version "0.2.4"
-  resolved "https://registry.yarnpkg.com/@pkgr/webpack-mdx/-/webpack-mdx-0.2.4.tgz#e992265a2dd84a59cc5e6af9a6e162459f404a05"
-  integrity sha512-IoEyo1G8GLSVFbq6p3CYSxvSGhcucrMA3gzEp873q+/oK8DwmR84GwS+OIMHvmhZwg/2xk72loeu5x2O1TECQQ==
+"@pkgr/webpack-mdx@^0.2.5":
+  version "0.2.5"
+  resolved "https://registry.yarnpkg.com/@pkgr/webpack-mdx/-/webpack-mdx-0.2.5.tgz#7d3eba1109c9312ba1efbec4ceb56b2a119909dc"
+  integrity sha512-/vZQAmr5pr7YiiL7lYSTOREfo3KdE5OW4BsDcXTQ6x5E00jgnk9e8BB7LQW+mlSbRVwuev8D9dhYkkg3WNH0VQ==
   dependencies:
     "@mdx-js/loader" "^1.5.5"
-    "@pkgr/webpack-react" "^0.2.11"
+    "@pkgr/webpack-react" "^0.2.12"
 
 "@pkgr/webpack-react@^0.2.11":
   version "0.2.11"
   resolved "https://registry.yarnpkg.com/@pkgr/webpack-react/-/webpack-react-0.2.11.tgz#dac66eec37ef51d7544cdcb3c510ebf200016955"
   integrity sha512-OYRx/xzjeKWVuJxZMMqQaH4oIMES1PKo679tCqjbDM7JM9TOX+tONYr5M3VjlR2YhwRTQxAHUIrYfXRownvMuw==
+  dependencies:
+    "@hot-loader/react-dom" "^16.11.0"
+    "@svgr/webpack" "^5.1.0"
+    react-hot-loader "^4.12.19"
+
+"@pkgr/webpack-react@^0.2.12":
+  version "0.2.12"
+  resolved "https://registry.yarnpkg.com/@pkgr/webpack-react/-/webpack-react-0.2.12.tgz#2fa32f417c59c8dff27438b937bc7f14087cf431"
+  integrity sha512-YabprXqYU4nJzNEk5zGBDQZuqiWvtQGmtcfCTjTLNdrniuHWOIUIPdYcv671XIRVemmju7G7MND88K9FohEeCw==
   dependencies:
     "@hot-loader/react-dom" "^16.11.0"
     "@svgr/webpack" "^5.1.0"
