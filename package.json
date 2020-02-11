@@ -27,7 +27,7 @@
   },
   "devDependencies": {
     "@1stg/app-config": "^0.3.0",
-    "@1stg/lib-config": "^0.3.0",
+    "@1stg/lib-config": "^0.3.2",
     "@1stg/tslint-config": "^0.7.0",
     "@mdx-js/react": "^1.5.5",
     "@pkgr/webpack": "^0.5.5",
