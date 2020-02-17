@@ -55,7 +55,7 @@
     "react-hot-loader": "^4.12.19",
     "react-router": "^5.1.2",
     "react-router-dom": "^5.1.2",
-    "rimraf": "^3.0.1",
+    "rimraf": "^3.0.2",
     "rxjs": "^6.5.4",
     "sanitize.css": "^11.0.0",
     "sass": "^1.25.0",
