@@ -71,7 +71,7 @@
   "resolutions": {
     "@babel/core": "^7.8.4",
     "eslint-plugin-prettier": "^3.1.2",
-    "imagemin-gifsicle": "^6.0.1"
+    "imagemin-gifsicle": "^7.0.0"
   },
   "typeCoverage": {
     "atLeast": 100
