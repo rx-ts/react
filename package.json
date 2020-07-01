@@ -32,7 +32,7 @@
     "@mdx-js/react": "^1.5.5",
     "@pkgr/webpack": "^0.5.5",
     "@pkgr/webpack-mdx": "^0.2.4",
-    "@pkgr/webpack-react": "^0.2.11",
+    "@pkgr/webpack-react": "^0.2.12",
     "@types/classnames": "^2.2.9",
     "@types/lodash": "^4.14.149",
     "@types/node": "^13.7.0",
