@@ -29,5 +29,8 @@
     "qrious": ">=4.0.0",
     "react": ">=16.8.0"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "sideEffects": false
 }
