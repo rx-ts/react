@@ -37,7 +37,7 @@
 
 ## Packages
 
-This repository is a monorepo managed by [Lerna][] what means we actually publish several packages to npm from same codebase, including:
+This repository is a monorepo managed by [changesets][] what means we actually publish several packages to npm from same codebase, including:
 
 | Package                                    | Description                                                 | Version                                                                                                           | Peer Dependencies                                                                                                                                                      | Dependencies                                                                                                                                       |
 | ------------------------------------------ | ----------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -65,10 +65,10 @@ Detailed changes for each release are documented in [CHANGELOG.md](./CHANGELOG.m
 [MIT][] © [JounQin][]@[1stG.me][]
 
 [1stg.me]: https://www.1stg.me
+[changesets]: https://github.com/atlassian/changesets
+[jounqin]: https://GitHub.com/JounQin
+[mit]: http://opensource.org/licenses/MIT
 [qrcode]: https://github.com/soldair/node-qrcode
 [qrious]: https://github.com/neocotic/qrious
 [react]: https://reactjs.org
 [rxts]: https://rxjs.dev
-[jounqin]: https://GitHub.com/JounQin
-[lerna]: https://github.com/lerna/lerna
-[mit]: http://opensource.org/licenses/MIT
