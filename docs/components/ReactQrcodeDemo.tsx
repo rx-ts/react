@@ -1,5 +1,6 @@
 import { get, merge, set } from 'lodash'
 import React, { useState } from 'react'
+
 import {
   LEVELS,
   MASK_PATTERNS,
@@ -13,19 +14,17 @@ import {
 
 const DEFAULT_TEXT = 'https://www.1stg.me'
 
-type FormModel = Omit<QRCodeProps, 'maskPattern' | 'width' | 'version'> & {
+type FormModel = Omit<QRCodeProps, 'maskPattern' | 'version' | 'width'> & {
   manualMode?: boolean
   maskPattern?: MaskPattern | ''
   width?: number | ''
   version?: number | ''
 }
 
-// eslint-disable-next-line @typescript-eslint/no-type-alias
 type ChangeEvent = React.ChangeEvent<
   HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
 >
 
-// eslint-disable-next-line sonarjs/cognitive-complexity
 export const ReactQrcodeDemo = () => {
   const [{ manualMode, ...options }, setState] = useState<FormModel>({
     version: '',
@@ -56,7 +55,7 @@ export const ReactQrcodeDemo = () => {
           type === 'number'
             ? value.trim() === ''
               ? ''
-              : parseFloat(value)
+              : Number.parseFloat(value)
             : value,
         ),
       )
@@ -69,8 +68,7 @@ export const ReactQrcodeDemo = () => {
           defaultOnChange(e)
         }
       },
-      // type-coverage:ignore-next-line
-      value: get(options, name),
+      value: get(options, name) as number | string,
     }
   }
 
@@ -164,10 +162,13 @@ export const ReactQrcodeDemo = () => {
               <button
                 onClick={() =>
                   setOptions({
-                    value: (options.value as QRCodeSegment[]).concat({
-                      data: DEFAULT_TEXT,
-                      mode: 'auto',
-                    }),
+                    value: [
+                      ...(options.value as QRCodeSegment[]),
+                      {
+                        data: DEFAULT_TEXT,
+                        mode: 'auto',
+                      },
+                    ],
                   })
                 }
               >

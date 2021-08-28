@@ -18,7 +18,7 @@ const LOCAL_STORAGE_KEY = 'REACT_RX_TODO_LIST'
 
 const storage = localStorage.getItem(LOCAL_STORAGE_KEY)
 
-let todos: Todo[] = (storage && JSON.parse(storage)) || []
+let todos = (storage && (JSON.parse(storage) as Todo[] | undefined)) || []
 
 let uid = todos.length
 
@@ -43,7 +43,7 @@ export const changeTodoTitle = (id: number, title: string) => {
   todos$.next([...todos])
 }
 
-export const toggleTodoStatus = (id: number, completed = false) => {
+export const toggleTodoStatus = (id: number, completed?: boolean) => {
   const todo = todos.find(({ id: _id }) => _id === id)
   if (!todo) {
     return
@@ -53,7 +53,7 @@ export const toggleTodoStatus = (id: number, completed = false) => {
 }
 
 export const setAllTodosStatus = (completed: boolean) => {
-  todos.forEach(todo => (todo.completed = completed))
+  for (const todo of todos) todo.completed = completed
   todos$.next([...todos])
 }
 

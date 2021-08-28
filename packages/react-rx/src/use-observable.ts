@@ -19,11 +19,13 @@ export const useObservable = <T>(observable?: ObservableSource<T>) => {
   useEffect(() => {
     const { current } = observableRef
     observableRef.current = typeof current === 'function' ? current() : current
+    // eslint-disable-next-line unicorn/consistent-destructuring
     if (!observableRef.current) {
       return
     }
+    // eslint-disable-next-line unicorn/consistent-destructuring
     const subscription = observableRef.current.subscribe(setValue)
     return () => subscription.unsubscribe()
-  }, [observableRef])
+  }, [])
   return value
 }

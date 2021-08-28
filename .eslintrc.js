@@ -1,4 +1,3 @@
-const { allowModules } = require('@1stg/eslint-config/_util')
 const { getGlobals } = require('eslint-plugin-mdx')
 
 module.exports = {
@@ -13,18 +12,6 @@ module.exports = {
       },
       rules: {
         'react/jsx-no-target-blank': 0,
-      },
-    },
-    {
-      files: '**/docs/*.tsx',
-      settings: {
-        node: {
-          allowModules: allowModules.concat(
-            'classnames',
-            'lodash',
-            'react-dom',
-          ),
-        },
       },
     },
   ],

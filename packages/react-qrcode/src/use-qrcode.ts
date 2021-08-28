@@ -8,16 +8,16 @@ export const isQRCodeValue = (
 ): valueOrOptions is QRCodeValue =>
   typeof valueOrOptions === 'string' || Array.isArray(valueOrOptions)
 
-export const useQRCode = (valueOrOptions: QRCodeValue | QRCodeOptions) => {
+export const useQRCode = (valueOrOptions: QRCodeOptions | QRCodeValue) => {
   const [dataURL, setDataURL] = useState<string>()
   useEffect(() => {
     const isValue = isQRCodeValue(valueOrOptions)
-    const value = (isValue
-      ? valueOrOptions
-      : (valueOrOptions as QRCodeOptions).value) as _QRCodeValue
+    const value = (
+      isValue ? valueOrOptions : valueOrOptions.value
+    ) as _QRCodeValue
     let options: QRCodeToDataURLOptions | undefined
     if (!isValue) {
-      const { quality, ...props } = valueOrOptions as QRCodeOptions
+      const { quality, ...props } = valueOrOptions
       options = Object.assign(props, {
         renderOptions: {
           quality,
@@ -26,7 +26,7 @@ export const useQRCode = (valueOrOptions: QRCodeValue | QRCodeOptions) => {
     }
 
     if (!value) {
-      return setDataURL(undefined)
+      return setDataURL('')
     }
 
     // eslint-disable-next-line @typescript-eslint/no-floating-promises

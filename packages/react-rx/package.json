@@ -1,22 +1,19 @@
 {
   "name": "@rxts/react-rx",
   "version": "0.6.4",
+  "type": "module",
   "description": "👁️ RxJS integration for React.",
   "repository": "git@github.com:rx-ts/react.git",
   "homepage": "https://github.com/rx-ts/react/blob/master/packages/react-rx",
   "author": "JounQin <admin@1stg.me>",
   "license": "MIT",
-  "main": "lib/cjs",
-  "module": "lib",
-  "jsdelivr": "lib/umd",
-  "unpkg": "lib/umd",
-  "es2015": "lib/es2015",
-  "esm5": "lib",
-  "fesm5": "lib/esm",
+  "exports": {
+    "require": "./lib/index.cjs",
+    "import": "./lib/index.js"
+  },
   "types": "lib",
   "files": [
-    "lib",
-    "src"
+    "lib"
   ],
   "peerDependencies": {
     "react": ">=16.8.0",

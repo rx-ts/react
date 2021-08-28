@@ -1,8 +1,6 @@
-import { Subscribe } from '@rxts/react-rx'
 import cn from 'classnames'
 import React from 'react'
-import { BehaviorSubject, combineLatest } from 'rxjs'
-import { map } from 'rxjs/operators'
+import { BehaviorSubject, combineLatest, map } from 'rxjs'
 
 import {
   TODO_FILTERS,
@@ -18,12 +16,14 @@ import {
   toggleTodoStatus,
 } from './store'
 
+import { Subscribe } from '@rxts/react-rx'
+
 export interface AppState {
   newTodoValue: string
 }
 
-export class ReactRxDemo extends React.PureComponent<{}, AppState> {
-  state: AppState = {
+export class ReactRxDemo extends React.PureComponent<object, AppState> {
+  override state: AppState = {
     newTodoValue: '',
   }
 
@@ -32,7 +32,7 @@ export class ReactRxDemo extends React.PureComponent<{}, AppState> {
     value?: string
   }>({})
 
-  todos$ = combineLatest(todos$, todoFilter$, this.editingTodo$).pipe(
+  todos$ = combineLatest([todos$, todoFilter$, this.editingTodo$]).pipe(
     map(([todos, todoFilter, editingTodo]) => {
       switch (todoFilter) {
         case TodoFilter.ACTIVE:
@@ -159,7 +159,7 @@ export class ReactRxDemo extends React.PureComponent<{}, AppState> {
     })
   }
 
-  render() {
+  override render() {
     const { newTodoValue } = this.state
     return (
       <>

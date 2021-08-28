@@ -3,7 +3,7 @@ import React from 'react'
 
 const LANGUAGE_REGEXP = /language-(?=[a-z]+)/
 
-export const pre = (props: {}) => <div {...props} />
+export const pre = (props: object) => <div {...props} />
 
 export const code: React.FunctionComponent<{
   children: string

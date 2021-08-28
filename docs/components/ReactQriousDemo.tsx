@@ -1,10 +1,10 @@
 import { get, merge, set } from 'lodash'
 import React, { useState } from 'react'
+
 import { QRious, QriousProps } from 'react-qrious'
 
 export const LEVELS = Object.freeze(['L', 'M', 'Q', 'H'] as const)
 
-// eslint-disable-next-line @typescript-eslint/no-type-alias
 type ChangeEvent = React.ChangeEvent<
   HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
 >
@@ -35,7 +35,7 @@ export const ReactQriousDemo = () => {
           type === 'number'
             ? value.trim() === ''
               ? ''
-              : parseFloat(value)
+              : Number.parseFloat(value)
             : value,
         ),
       )
@@ -49,7 +49,7 @@ export const ReactQriousDemo = () => {
         }
       },
       // type-coverage:ignore-next-line
-      value: get(props, name),
+      value: get(props, name) as number | string,
     }
   }
   return (

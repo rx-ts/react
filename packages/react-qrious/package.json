@@ -1,23 +1,21 @@
 {
   "name": "react-qrious",
   "version": "2.4.5",
+  "type": "module",
   "description": "🤳 A React component for QR code generation with qrious",
   "repository": "git@github.com:rx-ts/react.git",
   "homepage": "https://github.com/rx-ts/react/blob/master/packages/react-qrious",
   "author": "JounQin <admin@1stg.me>",
   "license": "MIT",
-  "main": "lib/cjs",
-  "module": "lib",
-  "jsdelivr": "lib/umd",
-  "unpkg": "lib/umd",
-  "es2015": "lib/es2015",
-  "esm5": "lib",
-  "fesm5": "lib/esm",
+  "exports": {
+    "require": "./lib/index.cjs",
+    "import": "./lib/index.js"
+  },
   "types": "lib",
   "files": [
     "lib",
-    "src",
     "qrious.d.ts",
+    "src",
     "typings.d.ts"
   ],
   "keywords": [

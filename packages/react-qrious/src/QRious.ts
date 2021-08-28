@@ -3,8 +3,8 @@ import React, { HTMLAttributes } from 'react'
 
 import { useQrious } from './use-qrious'
 
-export type QriousProps = QRiousOptions &
-  Omit<HTMLAttributes<HTMLImageElement>, 'src'>
+export type QriousProps = Omit<HTMLAttributes<HTMLImageElement>, 'src'> &
+  QRiousOptions
 
 export const QRious: React.FC<QriousProps> = ({
   background,

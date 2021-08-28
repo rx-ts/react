@@ -2,8 +2,8 @@
   "name": "@rxts/react",
   "version": 2,
   "alias": [
-    "react-rx.now.sh",
-    "rx-react.now.sh"
+    "react-rx.vercel.app",
+    "rx-react.vercel.app"
   ],
   "github": {
     "silent": true
@@ -11,7 +11,7 @@
   "builds": [
     {
       "src": "package.json",
-      "use": "@now/static-build"
+      "use": "@vercel/static-build"
     }
   ],
   "rewrites": [
