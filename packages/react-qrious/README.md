@@ -46,7 +46,7 @@ export const App = () => {
 | `mime`            | `string` ("image/png", "image/jpeg") | `"image/png"` |
 | `padding`         | `number`                             | `null`        |
 | `size`            | `number`                             | `100`         |
-| `value`           | `string`                             |
+| `value`           | `string`                             |               |
 
 ## Changelog
 
