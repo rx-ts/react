@@ -16,7 +16,7 @@
     "lib"
   ],
   "peerDependencies": {
-    "react": ">=16.8.0",
+    "react": ">=16.14.0",
     "rxjs": ">=6.0.0"
   },
   "publishConfig": {
