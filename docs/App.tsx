@@ -1,5 +1,4 @@
-import React, { Suspense } from 'react'
-import { hot } from 'react-hot-loader/root'
+import React, { ComponentType, Suspense } from 'react'
 import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom'
 
 import '../assets/global.scss'
@@ -7,15 +6,16 @@ import Homepage from '../README.md'
 
 import { ReactRxDemo } from './components'
 
-export const AppBase = () => (
+export const App = () => (
   <BrowserRouter>
     <Switch>
       <Route path="/packages/:id">
         {({ match }) => {
-          const Matched = React.lazy(() =>
-            import(`../packages/${match!.params.id}/README.md`).catch(() => ({
-              default: () => <Redirect to="/" />,
-            })),
+          const Matched = React.lazy(
+            () =>
+              import(`../packages/${match!.params.id}/README.md`).catch(() => ({
+                default: () => <Redirect to="/" />,
+              })) as Promise<{ default: ComponentType }>,
           )
           return (
             <Suspense fallback={null}>
@@ -34,6 +34,3 @@ export const AppBase = () => (
     </Switch>
   </BrowserRouter>
 )
-
-export const App =
-  process.env.NODE_ENV === 'development' ? hot(AppBase) : AppBase

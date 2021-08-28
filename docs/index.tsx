@@ -6,7 +6,7 @@ import * as components from './components'
 import { App } from './App'
 
 ReactDOM.render(
-  // @ts-ignore
+  // @ts-expect-error
   <MDXProvider components={components}>
     <App />
   </MDXProvider>,
