@@ -35,7 +35,7 @@
     "@pkgr/webpack-mdx": "^1.1.0",
     "@pkgr/webpack-react": "^1.1.0",
     "@types/classnames": "^2.3.1",
-    "@types/lodash": "^4.14.175",
+    "@types/lodash": "^4.14.176",
     "@types/node": "^16.7.4",
     "@types/qrcode": "^1.4.1",
     "@types/react": "^17.0.26",
