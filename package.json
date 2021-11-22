@@ -31,7 +31,7 @@
     "@changesets/changelog-github": "^0.4.0",
     "@changesets/cli": "^2.16.0",
     "@mdx-js/react": "^1.6.22",
-    "@pkgr/webpack": "^1.1.0",
+    "@pkgr/webpack": "^1.1.2",
     "@pkgr/webpack-mdx": "^1.1.0",
     "@pkgr/webpack-react": "^1.1.0",
     "@types/classnames": "^2.3.1",
