@@ -7,14 +7,15 @@
   "homepage": "https://github.com/rx-ts/react/blob/master/packages/react-storage",
   "author": "JounQin <admin@1stg.me>",
   "license": "MIT",
+  "main": "./lib/index.cjs",
+  "module": "./lib/index.js",
   "exports": {
     "require": "./lib/index.cjs",
     "import": "./lib/index.js"
   },
-  "types": "lib",
+  "types": "./lib/index.d.ts",
   "files": [
-    "lib",
-    "src"
+    "lib"
   ],
   "peerDependencies": {
     "react": ">=16.8.0"
