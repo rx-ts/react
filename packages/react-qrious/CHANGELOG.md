@@ -1,5 +1,13 @@
 # Change Log
 
+## 2.5.1
+
+### Patch Changes
+
+- [#117](https://github.com/rx-ts/react/pull/117) [`8b7e4f9`](https://github.com/rx-ts/react/commit/8b7e4f9b6075b880dc07c88e77d510d9ec32db70) Thanks [@JounQin](https://github.com/JounQin)! - fix: package entries for compatibility
+
+* [#117](https://github.com/rx-ts/react/pull/117) [`8b7e4f9`](https://github.com/rx-ts/react/commit/8b7e4f9b6075b880dc07c88e77d510d9ec32db70) Thanks [@JounQin](https://github.com/JounQin)! - fix: add tslib as deps
+
 ## 2.5.0
 
 ### Minor Changes
