@@ -7,15 +7,16 @@
   "homepage": "https://github.com/rx-ts/react/blob/master/packages/react-qrious",
   "author": "JounQin <admin@1stg.me>",
   "license": "MIT",
+  "main": "./lib/index.cjs",
+  "module": "./lib/index.js",
   "exports": {
     "require": "./lib/index.cjs",
     "import": "./lib/index.js"
   },
-  "types": "lib",
+  "types": "./lib/index.d.ts",
   "files": [
     "lib",
     "qrious.d.ts",
-    "src",
     "typings.d.ts"
   ],
   "keywords": [
@@ -28,6 +29,9 @@
   "peerDependencies": {
     "qrious": ">=4.0.0",
     "react": ">=16.8.0"
+  },
+  "dependencies": {
+    "tslib": "^2.3.1"
   },
   "publishConfig": {
     "access": "public"
