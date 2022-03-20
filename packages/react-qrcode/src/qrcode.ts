@@ -1,7 +1,7 @@
 import React, { HTMLAttributes } from 'react'
 
-import { QRCodeOptions } from './types'
-import { useQRCode } from './use-qrcode'
+import { QRCodeOptions } from './types.js'
+import { useQRCode } from './use-qrcode.js'
 
 export type QRCodeProps = Omit<
   HTMLAttributes<HTMLImageElement>,

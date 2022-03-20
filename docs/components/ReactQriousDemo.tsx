@@ -1,17 +1,15 @@
 import { get, merge, set } from 'lodash'
-import React, { useState } from 'react'
+import React, { FC, useState } from 'react'
+
+import { ChangeEvent } from '../types'
 
 import { QRious, QriousProps } from 'react-qrious'
 
 export const LEVELS = Object.freeze(['L', 'M', 'Q', 'H'] as const)
 
-type ChangeEvent = React.ChangeEvent<
-  HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
->
-
-export const ReactQriousDemo = () => {
+export const ReactQriousDemo: FC = () => {
   const [props, setState] = useState<QriousProps>({
-    background: '#ffffff',
+    background: '#fff',
     backgroundAlpha: 1,
     foreground: '#000000',
     foregroundAlpha: 1,

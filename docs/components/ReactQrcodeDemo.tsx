@@ -1,5 +1,7 @@
 import { get, merge, set } from 'lodash'
-import React, { useState } from 'react'
+import React, { FC, useState } from 'react'
+
+import { ChangeEvent } from '../types'
 
 import {
   LEVELS,
@@ -14,18 +16,17 @@ import {
 
 const DEFAULT_TEXT = 'https://www.1stg.me'
 
-type FormModel = Omit<QRCodeProps, 'maskPattern' | 'version' | 'width'> & {
+export type FormModel = Omit<
+  QRCodeProps,
+  'maskPattern' | 'version' | 'width'
+> & {
   manualMode?: boolean
   maskPattern?: MaskPattern | ''
   width?: number | ''
   version?: number | ''
 }
 
-type ChangeEvent = React.ChangeEvent<
-  HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
->
-
-export const ReactQrcodeDemo = () => {
+export const ReactQrcodeDemo: FC = () => {
   const [{ manualMode, ...options }, setState] = useState<FormModel>({
     version: '',
     errorCorrectionLevel: 'M',

@@ -1,11 +1,11 @@
 import Highlight, { Language, defaultProps } from 'prism-react-renderer'
-import React from 'react'
+import React, { FC } from 'react'
 
 const LANGUAGE_REGEXP = /language-(?=[a-z]+)/
 
 export const pre = (props: object) => <div {...props} />
 
-export const code: React.FunctionComponent<{
+export const code: FC<{
   children: string
   className?: string
 }> = ({ children, className }) => (
