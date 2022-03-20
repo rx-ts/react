@@ -30,9 +30,9 @@ const Pkg = () => {
 export const App = () => (
   <BrowserRouter>
     <Routes>
-      <Route path="/packages/:id" element={<Pkg />} />
-      <Route path="/react-rx" element={<ReactRxDemo />}></Route>
       <Route path="/" element={<Homepage />} />
+      <Route path="/react-rx" element={<ReactRxDemo />}></Route>
+      <Route path="/packages/:id" element={<Pkg />} />
       <Route path="*" element={<Navigate to="/" />}></Route>
     </Routes>
   </BrowserRouter>

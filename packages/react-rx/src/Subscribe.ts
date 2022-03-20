@@ -1,4 +1,4 @@
-import { ObservableSource, useObservable } from './use-observable'
+import { ObservableSource, useObservable } from './use-observable.js'
 
 export const Subscribe = <T>({
   children,

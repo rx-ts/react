@@ -1,2 +1,2 @@
-export * from './Subscribe'
-export * from './use-observable'
+export * from './Subscribe.js'
+export * from './use-observable.js'

@@ -1,7 +1,7 @@
 import { QRiousOptions } from 'qrious'
 import React, { HTMLAttributes } from 'react'
 
-import { useQrious } from './use-qrious'
+import { useQrious } from './use-qrious.js'
 
 export type QriousProps = Omit<HTMLAttributes<HTMLImageElement>, 'src'> &
   QRiousOptions

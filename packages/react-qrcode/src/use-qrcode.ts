@@ -1,7 +1,7 @@
 import QRCode, { QRCodeToDataURLOptions } from 'qrcode'
 import { useEffect, useState } from 'react'
 
-import { QRCodeOptions, QRCodeValue, _QRCodeValue } from './types'
+import { QRCodeOptions, QRCodeValue, _QRCodeValue } from './types.js'
 
 export const isQRCodeValue = (
   valueOrOptions: unknown,

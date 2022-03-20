@@ -6,8 +6,10 @@ import { App } from './App'
 import * as components from './components'
 
 ReactDOM.render(
-  // @ts-expect-error
-  <MDXProvider components={components}>
+  <MDXProvider
+    // @ts-expect-error
+    components={components}
+  >
     <App />
   </MDXProvider>,
   document.querySelector('#app'),
