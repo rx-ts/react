@@ -1,5 +1,11 @@
 # Change Log
 
+## 2.5.2
+
+### Patch Changes
+
+- [#132](https://github.com/rx-ts/react/pull/132) [`4537b18`](https://github.com/rx-ts/react/commit/4537b183661b79d344a5a8b03c0a64c7c546e4d9) Thanks [@JounQin](https://github.com/JounQin)! - fix: .js extension is required for webpack5 esm
+
 ## 2.5.1
 
 ### Patch Changes
