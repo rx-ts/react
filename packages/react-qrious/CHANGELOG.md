@@ -20,9 +20,6 @@
 
 - [#101](https://github.com/rx-ts/react/pull/101) [`d12af0a`](https://github.com/rx-ts/react/commit/d12af0a0f9240eda64d68d984d951dcdaae4e307) Thanks [@JounQin](https://github.com/JounQin)! - feat: upgrade (dev)Dependencies
 
-All notable changes to this project will be documented in this file.
-See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
-
 ## 2.4.5 (2020-02-03)
 
 **Note:** Version bump only for package react-qrious
