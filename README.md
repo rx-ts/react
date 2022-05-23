@@ -33,7 +33,7 @@
 
 ## Homepage
 
-<a href="https://react-rx.now.sh" target="_blank">react-rx</a>
+<a href="https://react-rx.vercel.app" target="_blank">react-rx</a>
 
 ## Packages
 

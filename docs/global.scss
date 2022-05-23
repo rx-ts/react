@@ -1,11 +1,21 @@
 @import '~todomvc-app-css';
 
-#app {
-  margin: 0 auto;
+// stylelint-disable-next-line scss/media-feature-value-dollar-variable
+@media (prefers-color-scheme: dark) {
+  :root {
+    background-color: #0d1117;
+  }
 }
 
 body {
-  max-width: 1024px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 40px;
+  background-color: inherit;
+}
+
+#app {
+  margin: 0 auto;
 }
 
 .container {

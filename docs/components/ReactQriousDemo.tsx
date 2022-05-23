@@ -55,19 +55,31 @@ export const ReactQriousDemo: FC = () => {
       <ul className="lists">
         <li>
           <label>background(color)</label>
-          <input type="color" {...fieldProps('background')} />
+          <input
+            type="color"
+            {...fieldProps('background')}
+          />
         </li>
         <li>
           <label>backgroundAlpha(0.1-1.0)</label>
-          <input type="number" {...fieldProps('backgroundAlpha')} />
+          <input
+            type="number"
+            {...fieldProps('backgroundAlpha')}
+          />
         </li>
         <li>
           <label>foreground(color)</label>
-          <input type="color" {...fieldProps('foreground')} />
+          <input
+            type="color"
+            {...fieldProps('foreground')}
+          />
         </li>
         <li>
           <label>foregroundAlpha(0.1-1.0)</label>
-          <input type="number" {...fieldProps('foregroundAlpha')} />
+          <input
+            type="number"
+            {...fieldProps('foregroundAlpha')}
+          />
         </li>
         <li>
           <label>level</label>
@@ -86,15 +98,25 @@ export const ReactQriousDemo: FC = () => {
         </li>
         <li>
           <label>padding(px)</label>
-          <input type="number" {...fieldProps('padding')} />
+          <input
+            type="number"
+            {...fieldProps('padding')}
+          />
         </li>
         <li>
           <label>size(px)</label>
-          <input type="number" {...fieldProps('size')} />
+          <input
+            type="number"
+            {...fieldProps('size')}
+          />
         </li>
         <li>
           <label>value</label>
-          <textarea rows={6} cols={80} {...fieldProps('value')} />
+          <textarea
+            rows={6}
+            cols={80}
+            {...fieldProps('value')}
+          />
         </li>
       </ul>
       <QRious {...props} />

@@ -126,7 +126,10 @@ export class ReactRxDemo extends React.PureComponent<object, AppState> {
                 </li>
               ))}
             </ul>
-            <button className="clear-completed" onClick={clearComputedTodos}>
+            <button
+              className="clear-completed"
+              onClick={clearComputedTodos}
+            >
               Clear completed
             </button>
           </footer>

@@ -4,14 +4,11 @@ module.exports = {
   extends: '@1stg',
   overrides: [
     {
-      files: '*.md',
+      files: 'packages/**/README.md',
       extends: 'plugin:mdx/overrides',
       globals: getGlobals(['ReactQriousDemo', 'ReactQrcodeDemo']),
       parserOptions: {
         extensions: '.md',
-      },
-      rules: {
-        'react/jsx-no-target-blank': 0,
       },
     },
   ],

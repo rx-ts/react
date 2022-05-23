@@ -80,7 +80,10 @@ export const ReactQrcodeDemo: FC = () => {
           <label>version</label>
           <select {...fieldProps('version')}>
             {Array.from({ length: 40 }).map((_, index) => (
-              <option key={index} value={index + 1}>
+              <option
+                key={index}
+                value={index + 1}
+              >
                 {index + 1}
               </option>
             ))}
@@ -104,24 +107,39 @@ export const ReactQrcodeDemo: FC = () => {
         </li>
         <li>
           <label>margin</label>
-          <input type="number" {...fieldProps('margin')} />
+          <input
+            type="number"
+            {...fieldProps('margin')}
+          />
         </li>
         <li />
         <li>
           <label>scale</label>
-          <input type="number" {...fieldProps('scale')} />
+          <input
+            type="number"
+            {...fieldProps('scale')}
+          />
         </li>
         <li>
           <label>width</label>
-          <input type="number" {...fieldProps('width')} />
+          <input
+            type="number"
+            {...fieldProps('width')}
+          />
         </li>
         <li>
           <label>color.dark</label>
-          <input type="color" {...fieldProps('color.dark')} />
+          <input
+            type="color"
+            {...fieldProps('color.dark')}
+          />
         </li>
         <li>
           <label>color.light</label>
-          <input type="color" {...fieldProps('color.light')} />
+          <input
+            type="color"
+            {...fieldProps('color.light')}
+          />
         </li>
         <li>
           <label>type</label>
@@ -133,7 +151,11 @@ export const ReactQrcodeDemo: FC = () => {
         </li>
         <li>
           <label>quality</label>
-          <input type="number" step="0.01" {...fieldProps('quality')} />
+          <input
+            type="number"
+            step="0.01"
+            {...fieldProps('quality')}
+          />
         </li>
         <li>
           <label>
@@ -212,7 +234,11 @@ export const ReactQrcodeDemo: FC = () => {
               ))}
             </ul>
           ) : (
-            <textarea rows={6} cols={80} {...fieldProps('value')} />
+            <textarea
+              rows={6}
+              cols={80}
+              {...fieldProps('value')}
+            />
           )}
         </li>
       </ul>

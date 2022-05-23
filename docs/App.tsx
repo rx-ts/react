@@ -1,4 +1,4 @@
-import React, { ComponentType, Suspense } from 'react'
+import React, { Suspense } from 'react'
 import {
   BrowserRouter,
   Navigate,
@@ -7,22 +7,20 @@ import {
   useParams,
 } from 'react-router-dom'
 
-import '../assets/global.scss'
-import Homepage from '../README.md'
+import 'github-markdown-css'
+import './global.scss'
 
 import { ReactRxDemo } from './components'
 
-const Pkg = () => {
-  const { id } = useParams<'id'>()
-  const Matched = React.lazy(
-    () =>
-      import(`../packages/${id!}/README.md`).catch(() => ({
-        default: () => <Navigate to="/" />,
-      })) as Promise<{ default: ComponentType }>,
+const Readme = () => {
+  const { name } = useParams<'name'>()
+  const Readme = React.lazy(() =>
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+    name ? import(`../packages/${name}/README.md`) : import('../README.md'),
   )
   return (
-    <Suspense fallback={null}>
-      <Matched />
+    <Suspense>
+      <Readme />
     </Suspense>
   )
 }
@@ -30,10 +28,22 @@ const Pkg = () => {
 export const App = () => (
   <BrowserRouter>
     <Routes>
-      <Route path="/" element={<Homepage />} />
-      <Route path="/react-rx" element={<ReactRxDemo />}></Route>
-      <Route path="/packages/:id" element={<Pkg />} />
-      <Route path="*" element={<Navigate to="/" />}></Route>
+      <Route
+        path="/"
+        element={<Readme />}
+      />
+      <Route
+        path="/react-rx"
+        element={<ReactRxDemo />}
+      ></Route>
+      <Route
+        path="/packages/:name"
+        element={<Readme />}
+      />
+      <Route
+        path="*"
+        element={<Navigate to="/" />}
+      ></Route>
     </Routes>
   </BrowserRouter>
 )
