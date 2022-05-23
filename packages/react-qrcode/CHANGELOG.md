@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.3.3
+
+### Patch Changes
+
+- [`41cd436`](https://github.com/rx-ts/react/commit/41cd436b2e46c39c61980430b7914767f2e6db0e) Thanks [@JounQin](https://github.com/JounQin)! - fix(types): add types field to exports
+
 ## 0.3.2
 
 ### Patch Changes

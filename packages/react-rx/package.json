@@ -1,6 +1,6 @@
 {
   "name": "@rxts/react-rx",
-  "version": "0.7.2",
+  "version": "0.7.3",
   "type": "module",
   "description": "👁️ RxJS integration for React.",
   "repository": "git@github.com:rx-ts/react.git",
