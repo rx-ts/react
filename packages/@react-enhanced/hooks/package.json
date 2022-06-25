@@ -1,10 +1,10 @@
 {
-  "name": "@rxts/react-rx",
-  "version": "0.7.3",
+  "name": "@react-enhanced/hooks",
+  "version": "0.0.0",
   "type": "module",
-  "description": "👁️ RxJS integration for React",
+  "description": "🔥 Enhanced React Hooks",
   "repository": "git@github.com:rx-ts/react.git",
-  "homepage": "https://github.com/rx-ts/react/blob/master/packages/react-rx",
+  "homepage": "https://github.com/rx-ts/react/blob/master/packages/@react-enhanced/hooks",
   "author": "JounQin <admin@1stg.me>",
   "license": "MIT",
   "main": "./lib/index.cjs",
@@ -18,9 +18,22 @@
   "files": [
     "lib"
   ],
+  "keywords": [
+    "react-enhanced",
+    "react-enhanced-hooks",
+    "react-hooks",
+    "react-hooks-enhanced",
+    "react"
+  ],
   "peerDependencies": {
     "react": ">=16.8.0",
-    "rxjs": ">=6.0.0"
+    "rxjs": ">=7.0.0",
+    "type-fest": ">=2.0.0"
+  },
+  "peerDependenciesMeta": {
+    "type-fest": {
+      "optional": true
+    }
   },
   "dependencies": {
     "tslib": "^2.4.0"

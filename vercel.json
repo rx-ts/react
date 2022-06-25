@@ -2,6 +2,7 @@
   "name": "@rxts/react",
   "version": 2,
   "alias": [
+    "react-enhanced.vercel.app",
     "react-rx.vercel.app",
     "rx-react.vercel.app"
   ],

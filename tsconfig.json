@@ -5,6 +5,9 @@
   },
   "references": [
     {
+      "path": "packages/@react-enhanced/hooks"
+    },
+    {
       "path": "packages/react-qrcode"
     },
     {

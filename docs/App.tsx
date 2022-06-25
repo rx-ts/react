@@ -13,10 +13,14 @@ import './global.scss'
 import { ReactRxDemo } from './components'
 
 const Readme = () => {
-  const { name } = useParams<'name'>()
+  const { enhancedName, name } = useParams<'enhancedName' | 'name'>()
   const Readme = React.lazy(() =>
     // eslint-disable-next-line @typescript-eslint/no-unsafe-return
-    name ? import(`../packages/${name}/README.md`) : import('../README.md'),
+    enhancedName
+      ? import(`../packages/@react-enhanced/${enhancedName}/README.md`)
+      : name
+      ? import(`../packages/${name}/README.md`)
+      : import('../README.md'),
   )
   return (
     <Suspense>
@@ -38,6 +42,10 @@ export const App = () => (
       ></Route>
       <Route
         path="/packages/:name"
+        element={<Readme />}
+      />
+      <Route
+        path="/packages/@react-enhanced/:enhancedName"
         element={<Readme />}
       />
       <Route
