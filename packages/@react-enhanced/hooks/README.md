@@ -89,6 +89,14 @@ useEffect(() => {
 `useRendered` returns `Ref`, its reference will never change, so do not try to set `formRendered.current` as a variable outside `useEffect`
 :::
 
+## `useObservable`
+
+Get latest value from `Observable` with `subscribe` and `unsubscribe` automatically
+
+## Demo
+
+[TodoList](/react-rx)
+
 ## `usePromise`
 
 Handle `Promise` with `abort` support

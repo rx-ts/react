@@ -22,16 +22,16 @@ let todos = (storage && (JSON.parse(storage) as Todo[] | undefined)) || []
 
 let uid = todos.length
 
-export const todos$ = new BehaviorSubject<Todo[]>(todos)
+export const todos$$ = new BehaviorSubject<Todo[]>(todos)
 
-todos$.subscribe(newTodos => {
+todos$$.subscribe(newTodos => {
   todos = newTodos
   localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(todos))
 })
 
 export const addTodo = (title: string) => {
   const todo = { id: ++uid, title, completed: false }
-  todos$.next([...todos, todo])
+  todos$$.next([...todos, todo])
 }
 
 export const changeTodoTitle = (id: number, title: string) => {
@@ -40,7 +40,7 @@ export const changeTodoTitle = (id: number, title: string) => {
     return
   }
   todo.title = title
-  todos$.next([...todos])
+  todos$$.next([...todos])
 }
 
 export const toggleTodoStatus = (id: number, completed?: boolean) => {
@@ -49,19 +49,19 @@ export const toggleTodoStatus = (id: number, completed?: boolean) => {
     return
   }
   todo.completed = completed === undefined ? !todo.completed : completed
-  todos$.next([...todos])
+  todos$$.next([...todos])
 }
 
 export const setAllTodosStatus = (completed: boolean) => {
   for (const todo of todos) todo.completed = completed
-  todos$.next([...todos])
+  todos$$.next([...todos])
 }
 
 export const deleteTodo = (id: number) =>
-  todos$.next(todos.filter(({ id: _id }) => _id !== id))
+  todos$$.next(todos.filter(({ id: _id }) => _id !== id))
 
 export const clearComputedTodos = () =>
-  todos$.next(todos.filter(({ completed }) => !completed))
+  todos$$.next(todos.filter(({ completed }) => !completed))
 
 export const todoFilter$ = new BehaviorSubject<TodoFilter>(TodoFilter.ALL)
 
