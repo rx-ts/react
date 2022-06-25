@@ -49,12 +49,15 @@ This repository is a monorepo managed by [changesets][] what means we actually p
 
 ## Install
 
-```console
+```sh
 # yarn
-yarn add @rxts/react-{rx,storage} react-{qrcode,qrious}
+yarn add @react-enhanced/hooks @rxts/react-{rx,storage} react-{qrcode,qrious}
+
+# pnpm
+pnpm add @react-enhanced/hooks @rxts/react-{rx,storage} react-{qrcode,qrious}
 
 # npm
-npm i @rxts/react-{rx,storage} react-{qrcode,qrious}
+npm i @react-enhanced/hooks @rxts/react-{rx,storage} react-{qrcode,qrious}
 ```
 
 ## Changelog
