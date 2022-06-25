@@ -7,7 +7,8 @@
   "license": "MIT",
   "private": true,
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "packages/@react-enhanced/*"
   ],
   "packageManager": "yarn@1.22.19",
   "scripts": {
@@ -15,8 +16,8 @@
     "build:docs": "w -e docs --publicPath / -p",
     "build:r": "r -f cjs",
     "build:ts": "tsc -b",
-    "clean": "rimraf dist packages/*/{lib,*.tsbuildinfo}",
-    "dev": "w -e docs --publicPath /",
+    "clean": "rimraf dist packages/**/*/{lib,*.tsbuildinfo}",
+    "dev": "w -e docs",
     "lint": "run-p lint:*",
     "lint:es": "eslint . --cache -f friendly",
     "lint:style": "stylelint --cache '**/*.scss'",
@@ -65,6 +66,7 @@
     "todomvc-app-css": "^2.4.2",
     "ts-node": "^10.8.1",
     "type-coverage": "^2.21.1",
+    "type-fest": "^2.14.0",
     "typescript": "^4.7.4"
   },
   "typeCoverage": {
@@ -72,6 +74,7 @@
     "cache": true,
     "detail": true,
     "ignoreAsAssertion": true,
+    "ignoreNested": true,
     "ignoreNonNullAssertion": true,
     "showRelativePath": true,
     "strict": true

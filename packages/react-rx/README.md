@@ -1,6 +1,6 @@
 # @rxts/react-rx
 
-👁️ RxJS integration for React.
+👁️ RxJS integration for React
 
 ## Demo
 
