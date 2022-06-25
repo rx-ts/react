@@ -1,4 +1,4 @@
-import { Subscribe } from '@rxts/react-rx'
+import { Subscribe } from '@react-enhanced/hooks'
 import cn from 'classnames'
 import React from 'react'
 import { BehaviorSubject, combineLatest, map } from 'rxjs'
@@ -13,7 +13,7 @@ import {
   deleteTodo,
   setAllTodosStatus,
   todoFilter$,
-  todos$,
+  todos$$,
   toggleTodoStatus,
 } from './store'
 
@@ -31,7 +31,7 @@ export class ReactRxDemo extends React.PureComponent<object, AppState> {
     value?: string
   }>({})
 
-  todos$ = combineLatest([todos$, todoFilter$, this.editingTodo$]).pipe(
+  todos$ = combineLatest([todos$$, todoFilter$, this.editingTodo$]).pipe(
     map(([todos, todoFilter, editingTodo]) => {
       switch (todoFilter) {
         case TodoFilter.ACTIVE:

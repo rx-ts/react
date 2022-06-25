@@ -42,7 +42,6 @@ This repository is a monorepo managed by [changesets][] what means we actually p
 | Package                                                    | Description                                                 | Version                                                                                                               | Peer Dependencies                                                                                                                                                                      | Dependencies                                                                                                                                                       |
 | ---------------------------------------------------------- | ----------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | [`@react-enhanced/hooks`](/packages/@react-enhanced/hooks) | 🔥 Enhanced React Hooks                                     | [![npm](https://img.shields.io/npm/v/@react-enhanced/hooks.svg)](https://www.npmjs.com/package/@react-enhanced/hooks) | [![David Peer](https://img.shields.io/david/peer/rx-ts/react.svg?path=packages/@react-enhanced/hooks)](https://david-dm.org/rx-ts/react?path=packages/@react-enhanced/hooks&type=peer) | [![David](https://img.shields.io/david/rx-ts/react.svg?path=packages/@react-enhanced/hooks)](https://david-dm.org/rx-ts/react?path=packages/@react-enhanced/hooks) |
-| [`react-rx`](/packages/react-rx)                           | 👁️ RxJS integration for React                               | [![npm](https://img.shields.io/npm/v/@rxts/react-rx.svg)](https://www.npmjs.com/package/@rxts/react-rx)               | [![David Peer](https://img.shields.io/david/peer/rx-ts/react.svg?path=packages/react-rx)](https://david-dm.org/rx-ts/react?path=packages/react-rx&type=peer)                           | [![David](https://img.shields.io/david/rx-ts/react.svg?path=packages/react-rx)](https://david-dm.org/rx-ts/react?path=packages/react-rx)                           |
 | [`react-qrcode`](/packages/react-qrcode)                   | 🤳 A React component for QR code generation with [qrcode][] | [![npm](https://img.shields.io/npm/v/react-qrcode.svg)](https://www.npmjs.com/package/react-qrcode)                   | [![David Peer](https://img.shields.io/david/peer/rx-ts/react.svg?path=packages/react-qrcode)](https://david-dm.org/rx-ts/react?path=packages/react-qrcode&type=peer)                   | [![David](https://img.shields.io/david/rx-ts/react.svg?path=packages/react-qrcode)](https://david-dm.org/rx-ts/react?path=packages/react-qrcode)                   |
 | [`react-qrious`](/packages/react-qrious)                   | 🤳 A React component for QR code generation with [qrious][] | [![npm](https://img.shields.io/npm/v/react-qrious.svg)](https://www.npmjs.com/package/react-qrious)                   | [![David Peer](https://img.shields.io/david/peer/rx-ts/react.svg?path=packages/react-qrious)](https://david-dm.org/rx-ts/react?path=packages/react-qrious&type=peer)                   | [![David](https://img.shields.io/david/rx-ts/react.svg?path=packages/react-qrious)](https://david-dm.org/rx-ts/react?path=packages/react-qrious)                   |
 
@@ -50,13 +49,13 @@ This repository is a monorepo managed by [changesets][] what means we actually p
 
 ```sh
 # yarn
-yarn add @react-enhanced/hooks @rxts/react-rx react-{qrcode,qrious}
+yarn add @react-enhanced/hooks react-{qrcode,qrious}
 
 # pnpm
-pnpm add @react-enhanced/hooks @rxts/react-rx react-{qrcode,qrious}
+pnpm add @react-enhanced/hooks react-{qrcode,qrious}
 
 # npm
-npm i @react-enhanced/hooks @rxts/react-rx react-{qrcode,qrious}
+npm i @react-enhanced/hooks react-{qrcode,qrious}
 ```
 
 ## Changelog

@@ -12,9 +12,6 @@
     },
     {
       "path": "packages/react-qrious"
-    },
-    {
-      "path": "packages/react-rx"
     }
   ]
 }
