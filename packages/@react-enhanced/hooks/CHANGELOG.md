@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.3.0
+
+### Minor Changes
+
+- [#146](https://github.com/rx-ts/react/pull/146) [`d151662`](https://github.com/rx-ts/react/commit/d151662c761589ec575fe6be773b2894ae502745) Thanks [@JounQin](https://github.com/JounQin)! - feat: migrate react-rx package
+
 ## 0.2.0
 
 ### Minor Changes
