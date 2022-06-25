@@ -35,8 +35,8 @@ export function usePromise<T, E = unknown>(
   abortCtr?: AbortController,
 ) {
   const [result, setResult] = useState<PromiseResult<T, E>>([
-    undefined,
-    undefined,
+    null,
+    null,
     PromiseStatus.PENDING,
   ])
   const isDeps = Array.isArray(depsOrAbortCtr)

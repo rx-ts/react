@@ -89,6 +89,14 @@ useEffect(() => {
 `useRendered` returns `Ref`, its reference will never change, so do not try to set `formRendered.current` as a variable outside `useEffect`
 :::
 
+## `usePromise`
+
+Handle `Promise` with `abort` support
+
+## `useLocalStorage` and `useSessionStorage`
+
+Sync data to/from `localStorage` or `sessionStorage` across components
+
 ## `useInterval`
 
 Timer based on `setInterval`
