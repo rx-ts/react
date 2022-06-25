@@ -45,19 +45,18 @@ This repository is a monorepo managed by [changesets][] what means we actually p
 | [`react-rx`](/packages/react-rx)                           | 👁️ RxJS integration for React                               | [![npm](https://img.shields.io/npm/v/@rxts/react-rx.svg)](https://www.npmjs.com/package/@rxts/react-rx)               | [![David Peer](https://img.shields.io/david/peer/rx-ts/react.svg?path=packages/react-rx)](https://david-dm.org/rx-ts/react?path=packages/react-rx&type=peer)                           | [![David](https://img.shields.io/david/rx-ts/react.svg?path=packages/react-rx)](https://david-dm.org/rx-ts/react?path=packages/react-rx)                           |
 | [`react-qrcode`](/packages/react-qrcode)                   | 🤳 A React component for QR code generation with [qrcode][] | [![npm](https://img.shields.io/npm/v/react-qrcode.svg)](https://www.npmjs.com/package/react-qrcode)                   | [![David Peer](https://img.shields.io/david/peer/rx-ts/react.svg?path=packages/react-qrcode)](https://david-dm.org/rx-ts/react?path=packages/react-qrcode&type=peer)                   | [![David](https://img.shields.io/david/rx-ts/react.svg?path=packages/react-qrcode)](https://david-dm.org/rx-ts/react?path=packages/react-qrcode)                   |
 | [`react-qrious`](/packages/react-qrious)                   | 🤳 A React component for QR code generation with [qrious][] | [![npm](https://img.shields.io/npm/v/react-qrious.svg)](https://www.npmjs.com/package/react-qrious)                   | [![David Peer](https://img.shields.io/david/peer/rx-ts/react.svg?path=packages/react-qrious)](https://david-dm.org/rx-ts/react?path=packages/react-qrious&type=peer)                   | [![David](https://img.shields.io/david/rx-ts/react.svg?path=packages/react-qrious)](https://david-dm.org/rx-ts/react?path=packages/react-qrious)                   |
-| [`react-storage`](/packages/react-storage)                 | 🔥 React hooks for using localStorage/sessionStorage        | [![npm](https://img.shields.io/npm/v/@rxts/react-storage.svg)](https://www.npmjs.com/package/@rxts/react-storage)     | [![David Peer](https://img.shields.io/david/peer/rx-ts/react.svg?path=packages/react-storage)](https://david-dm.org/rx-ts/react?path=packages/react-storage&type=peer)                 | [![David](https://img.shields.io/david/rx-ts/react.svg?path=packages/react-storage)](https://david-dm.org/rx-ts/react?path=packages/react-storage)                 |
 
 ## Install
 
 ```sh
 # yarn
-yarn add @react-enhanced/hooks @rxts/react-{rx,storage} react-{qrcode,qrious}
+yarn add @react-enhanced/hooks @rxts/react-rx react-{qrcode,qrious}
 
 # pnpm
-pnpm add @react-enhanced/hooks @rxts/react-{rx,storage} react-{qrcode,qrious}
+pnpm add @react-enhanced/hooks @rxts/react-rx react-{qrcode,qrious}
 
 # npm
-npm i @react-enhanced/hooks @rxts/react-{rx,storage} react-{qrcode,qrious}
+npm i @react-enhanced/hooks @rxts/react-rx react-{qrcode,qrious}
 ```
 
 ## Changelog

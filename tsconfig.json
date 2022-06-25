@@ -15,9 +15,6 @@
     },
     {
       "path": "packages/react-rx"
-    },
-    {
-      "path": "packages/react-storage"
     }
   ]
 }

@@ -7,8 +7,7 @@
       "@react-hooks/enhanced": ["packages/@react-enhanced/hooks/src"],
       "react-qrcode": ["packages/react-qrcode/src"],
       "react-qrious": ["packages/react-qrious/src"],
-      "@rxts/react-rx": ["packages/react-rx/src"],
-      "@rxts/react-storage": ["packages/react-storage/src"]
+      "@rxts/react-rx": ["packages/react-rx/src"]
     }
   }
 }

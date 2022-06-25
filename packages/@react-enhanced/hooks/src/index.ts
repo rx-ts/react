@@ -1,4 +1,5 @@
 export * from './computed.js'
+export * from './helper.js'
 export * from './lifecycle.js'
 export * from './promise.js'
 export * from './timer.js'
