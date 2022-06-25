@@ -1,9 +1,8 @@
 import { get, merge, set } from 'lodash'
 import React, { FC, useState } from 'react'
+import { QRious, QriousProps } from 'react-qrious'
 
 import { ChangeEvent } from '../types'
-
-import { QRious, QriousProps } from 'react-qrious'
 
 export const LEVELS = Object.freeze(['L', 'M', 'Q', 'H'] as const)
 

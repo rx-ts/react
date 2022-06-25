@@ -1,6 +1,7 @@
 const { getGlobals } = require('eslint-plugin-mdx')
 
 module.exports = {
+  root: true,
   extends: '@1stg',
   overrides: [
     {

@@ -1,3 +1,4 @@
+import { Subscribe } from '@rxts/react-rx'
 import cn from 'classnames'
 import React from 'react'
 import { BehaviorSubject, combineLatest, map } from 'rxjs'
@@ -15,8 +16,6 @@ import {
   todos$,
   toggleTodoStatus,
 } from './store'
-
-import { Subscribe } from '@rxts/react-rx'
 
 export interface AppState {
   newTodoValue: string

@@ -1,8 +1,5 @@
 import { get, merge, set } from 'lodash'
 import React, { FC, useState } from 'react'
-
-import { ChangeEvent } from '../types'
-
 import {
   LEVELS,
   MASK_PATTERNS,
@@ -13,6 +10,8 @@ import {
   QRCodeSegment,
   TYPES,
 } from 'react-qrcode'
+
+import { ChangeEvent } from '../types'
 
 const DEFAULT_TEXT = 'https://www.1stg.me'
 
