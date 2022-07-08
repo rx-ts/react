@@ -26,8 +26,7 @@
     "prerelease": "run-p build:r build:ts",
     "release": "changeset publish",
     "start": "sirv dist",
-    "typecov": "type-coverage",
-    "vercel-build": "yarn build:docs"
+    "typecov": "type-coverage"
   },
   "devDependencies": {
     "@1stg/app-config": "^6.0.0",
