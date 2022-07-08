@@ -1,6 +1,7 @@
 import Highlight, { Language, defaultProps } from 'prism-react-renderer'
 import React, { FC } from 'react'
 
+// eslint-disable-next-line regexp/optimal-lookaround-quantifier
 const LANGUAGE_REGEXP = /language-(?=[a-z]+)/
 
 export const pre = (props: object) => <div {...props} />

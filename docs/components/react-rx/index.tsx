@@ -1,4 +1,3 @@
-import { Subscribe } from '@react-enhanced/hooks'
 import cn from 'classnames'
 import React from 'react'
 import { BehaviorSubject, combineLatest, map } from 'rxjs'
@@ -16,6 +15,8 @@ import {
   todos$$,
   toggleTodoStatus,
 } from './store'
+
+import { Subscribe } from '@react-enhanced/hooks'
 
 export interface AppState {
   newTodoValue: string
