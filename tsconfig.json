@@ -5,13 +5,13 @@
   },
   "references": [
     {
-      "path": "packages/@react-enhanced/hooks"
+      "path": "./packages/@react-enhanced/hooks"
     },
     {
-      "path": "packages/react-qrcode"
+      "path": "./packages/react-qrcode"
     },
     {
-      "path": "packages/react-qrious"
+      "path": "./packages/react-qrious"
     }
   ]
 }

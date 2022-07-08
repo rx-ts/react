@@ -1,12 +1,11 @@
 {
   "extends": "@1stg/tsconfig/dom-lib",
   "compilerOptions": {
-    "baseUrl": ".",
     "paths": {
       "@@/*": ["./*"],
-      "@react-hooks/enhanced": ["packages/@react-enhanced/hooks/src"],
-      "react-qrcode": ["packages/react-qrcode/src"],
-      "react-qrious": ["packages/react-qrious/src"]
+      "@react-hooks/enhanced": ["./packages/@react-enhanced/hooks/src"],
+      "react-qrcode": ["./packages/react-qrcode/src"],
+      "react-qrious": ["./packages/react-qrious/src"]
     }
   }
 }

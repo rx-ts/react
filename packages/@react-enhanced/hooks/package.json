@@ -5,7 +5,7 @@
   "description": "🔥 Enhanced React Hooks",
   "repository": "git@github.com:rx-ts/react.git",
   "homepage": "https://github.com/rx-ts/react/blob/master/packages/@react-enhanced/hooks",
-  "author": "JounQin <admin@1stg.me>",
+  "author": "JounQin (https://www.1stG.me) <admin@1stg.me>",
   "license": "MIT",
   "main": "./lib/index.cjs",
   "module": "./lib/index.js",

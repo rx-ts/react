@@ -1,10 +1,10 @@
 {
-  "name": "react-qrcode",
-  "version": "0.3.3",
+  "name": "@react-enhanced/eslint-plugin",
+  "version": "0.3.0",
   "type": "module",
-  "description": "🤳 A React component for QR code generation with `qrcode`",
+  "description": "An incredible ESLint plugin for @react-enhanced",
   "repository": "git@github.com:rx-ts/react.git",
-  "homepage": "https://github.com/rx-ts/react/blob/master/packages/react-qrcode",
+  "homepage": "https://github.com/rx-ts/react/blob/master/packages/@react-enhanced/eslint-plugin",
   "author": "JounQin (https://www.1stG.me) <admin@1stg.me>",
   "license": "MIT",
   "main": "./lib/index.cjs",
@@ -19,13 +19,15 @@
     "lib"
   ],
   "keywords": [
-    "react-qrcode",
-    "qrcode",
+    "react-enhanced",
+    "eslint-plugin-react",
+    "eslint-plugin-react-enhanced",
+    "eslint-plugin-react-hooks",
     "react"
   ],
   "peerDependencies": {
-    "qrcode": ">=1.0.0",
-    "react": ">=16.8.0"
+    "react": ">=16.8.0",
+    "rxjs": ">=7.0.0"
   },
   "dependencies": {
     "tslib": "^2.4.0"
