@@ -41,11 +41,12 @@
 
 This repository is a monorepo managed by [changesets][] what means we actually publish several packages to npm from same codebase, including:
 
-| Package                                                    | Description                                                 | Version                                                                                                               |
-| ---------------------------------------------------------- | ----------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
-| [`@react-enhanced/hooks`](/packages/@react-enhanced/hooks) | 🔥 Enhanced React Hooks                                     | [![npm](https://img.shields.io/npm/v/@react-enhanced/hooks.svg)](https://www.npmjs.com/package/@react-enhanced/hooks) |
-| [`react-qrcode`](/packages/react-qrcode)                   | 🤳 A React component for QR code generation with [qrcode][] | [![npm](https://img.shields.io/npm/v/react-qrcode.svg)](https://www.npmjs.com/package/react-qrcode)                   |
-| [`react-qrious`](/packages/react-qrious)                   | 🤳 A React component for QR code generation with [qrious][] | [![npm](https://img.shields.io/npm/v/react-qrious.svg)](https://www.npmjs.com/package/react-qrious)                   |
+| Package                                                                    | Description                                                 | Version                                                                                                                               |
+| -------------------------------------------------------------------------- | ----------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| [`@react-enhanced/eslint-plugin`](/packages/@react-enhanced/eslint-plugin) | An incredible ESLint plugin for @react-enhanced Hooks       | [![npm](https://img.shields.io/npm/v/@react-enhanced/eslint-plugin.svg)](https://www.npmjs.com/package/@react-enhanced/eslint-plugin) |
+| [`@react-enhanced/hooks`](/packages/@react-enhanced/hooks)                 | 🔥 Enhanced React Hooks                                     | [![npm](https://img.shields.io/npm/v/@react-enhanced/hooks.svg)](https://www.npmjs.com/package/@react-enhanced/hooks)                 |
+| [`react-qrcode`](/packages/react-qrcode)                                   | 🤳 A React component for QR code generation with [qrcode][] | [![npm](https://img.shields.io/npm/v/react-qrcode.svg)](https://www.npmjs.com/package/react-qrcode)                                   |
+| [`react-qrious`](/packages/react-qrious)                                   | 🤳 A React component for QR code generation with [qrious][] | [![npm](https://img.shields.io/npm/v/react-qrious.svg)](https://www.npmjs.com/package/react-qrious)                                   |
 
 ## Install
 
