@@ -1,7 +1,5 @@
 {
-  "node": "14",
-  "packages": [
-    "packages/*"
-  ],
+  "node": "16",
+  "installCommand": "codesanbox:install",
   "sandboxes": []
 }
