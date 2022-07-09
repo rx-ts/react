@@ -18,7 +18,7 @@
     "build:ts": "tsc -b",
     "clean": "rimraf dist packages/**/*/{lib,*.tsbuildinfo}",
     "codesanbox:install": "npx pnpm@7.5.0 i",
-    "dev": "w -e docs",
+    "dev": "w -e docs --disableDotRule --publicPath /",
     "lint": "run-p lint:*",
     "lint:es": "eslint . --cache -f friendly",
     "lint:style": "stylelint --cache '**/*.scss'",
