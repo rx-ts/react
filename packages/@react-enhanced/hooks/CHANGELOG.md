@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.3.2
+
+### Patch Changes
+
+- [`11eaf28`](https://github.com/rx-ts/react/commit/11eaf2825e922de1b836a1006056c6be6cc862db) Thanks [@JounQin](https://github.com/JounQin)! - build: migrate to pnpm
+
 ## 0.3.1
 
 ### Patch Changes
