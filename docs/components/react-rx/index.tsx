@@ -1,5 +1,10 @@
 import cn from 'classnames'
-import React from 'react'
+import React, {
+  ChangeEventHandler,
+  KeyboardEventHandler,
+  MouseEventHandler,
+  PureComponent,
+} from 'react'
 import { BehaviorSubject, combineLatest, map } from 'rxjs'
 
 import {
@@ -22,7 +27,7 @@ export interface AppState {
   newTodoValue: string
 }
 
-export class ReactRxDemo extends React.PureComponent<object, AppState> {
+export class ReactRxDemo extends PureComponent<object, AppState> {
   override state: AppState = {
     newTodoValue: '',
   }
@@ -138,13 +143,13 @@ export class ReactRxDemo extends React.PureComponent<object, AppState> {
     }),
   )
 
-  handleTodoStatus: React.ChangeEventHandler<HTMLInputElement> = e =>
+  handleTodoStatus: ChangeEventHandler<HTMLInputElement> = e =>
     toggleTodoStatus(+e.currentTarget.dataset.id!)
 
-  handleDeleteTodo: React.MouseEventHandler<HTMLButtonElement> = e =>
+  handleDeleteTodo: MouseEventHandler<HTMLButtonElement> = e =>
     deleteTodo(+e.currentTarget.dataset.id!)
 
-  handleAddTodo: React.KeyboardEventHandler<HTMLInputElement> = e => {
+  handleAddTodo: KeyboardEventHandler<HTMLInputElement> = e => {
     if (e.key !== 'Enter') {
       return
     }
@@ -156,7 +161,7 @@ export class ReactRxDemo extends React.PureComponent<object, AppState> {
     this.setState({ newTodoValue: '' })
   }
 
-  handleNewTodoChange: React.ChangeEventHandler<HTMLInputElement> = e => {
+  handleNewTodoChange: ChangeEventHandler<HTMLInputElement> = e => {
     this.setState({
       newTodoValue: e.currentTarget.value,
     })

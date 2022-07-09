@@ -1,6 +1,6 @@
-import React, { Suspense } from 'react'
+import { lazy, Suspense } from 'react'
 import {
-  BrowserRouter,
+  BrowserRouter as Router,
   Navigate,
   Route,
   Routes,
@@ -14,7 +14,7 @@ import { ReactRxDemo } from './components'
 
 const Readme = () => {
   const { enhancedName, name } = useParams<'enhancedName' | 'name'>()
-  const Readme = React.lazy(() =>
+  const Readme = lazy(() =>
     // eslint-disable-next-line @typescript-eslint/no-unsafe-return
     enhancedName
       ? import(`../packages/@react-enhanced/${enhancedName}/README.md`)
@@ -29,23 +29,36 @@ const Readme = () => {
   )
 }
 
+const Changelog = () => {
+  const Changelog = lazy(() => import('../CHANGELOG.md'))
+  return (
+    <Suspense>
+      <Changelog />
+    </Suspense>
+  )
+}
+
 export const App = () => (
-  <BrowserRouter>
+  <Router>
     <Routes>
-      <Route
-        path="/"
-        element={<Readme />}
-      />
       <Route
         path="/react-rx"
         element={<ReactRxDemo />}
       ></Route>
       <Route
+        path="/CHANGELOG.md"
+        element={<Changelog />}
+      />
+      <Route
         path="/packages/:name"
         element={<Readme />}
       />
       <Route
-        path="/packages/@react-enhanced/:enhancedName"
+        path="/packages/:name/CHANGELOG.md"
+        element={<Changelog />}
+      />
+      <Route
+        path="/"
         element={<Readme />}
       />
       <Route
@@ -53,5 +66,5 @@ export const App = () => (
         element={<Navigate to="/" />}
       ></Route>
     </Routes>
-  </BrowserRouter>
+  </Router>
 )

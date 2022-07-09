@@ -1,5 +1,5 @@
 import { get, merge, set } from 'lodash'
-import React, { FC, useState } from 'react'
+import { FC, useState } from 'react'
 
 import { ChangeEvent } from '../types'
 

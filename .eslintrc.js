@@ -3,6 +3,9 @@ const { getGlobals } = require('eslint-plugin-mdx')
 module.exports = {
   root: true,
   extends: '@1stg',
+  rules: {
+    'react/react-in-jsx-scope': 'off',
+  },
   overrides: [
     {
       files: 'packages/**/README.md',

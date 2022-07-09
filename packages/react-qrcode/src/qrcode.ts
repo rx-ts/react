@@ -1,4 +1,4 @@
-import React, { HTMLAttributes } from 'react'
+import { createElement, FC, HTMLAttributes } from 'react'
 
 import { QRCodeOptions } from './types.js'
 import { useQRCode } from './use-qrcode.js'
@@ -9,7 +9,7 @@ export type QRCodeProps = Omit<
 > &
   QRCodeOptions
 
-export const QRCode: React.FC<QRCodeProps> = ({
+export const QRCode: FC<QRCodeProps> = ({
   color,
   errorCorrectionLevel,
   margin,
@@ -23,7 +23,7 @@ export const QRCode: React.FC<QRCodeProps> = ({
   width,
   ...props
 }) =>
-  React.createElement('img', {
+  createElement('img', {
     ...props,
     src: useQRCode({
       color,
