@@ -1,0 +1,8 @@
+dist
+lib
+LICENSE
+*.json
+*.log
+*.tsbuildinfo
+*.yaml
+*.yml
