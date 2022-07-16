@@ -1,6 +1,7 @@
-!/.*.js
 .*cache
 dist
 lib
 packages/*/CHANGELOG.md
-/pnpm-*.yaml
+/pnpm-lock.yaml
+!/.github
+!/.*.js

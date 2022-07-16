@@ -33,10 +33,10 @@ jobs:
         run: pnpm i
 
       - name: Build, Lint and Test
-        run: |
-          yarn build
-          yarn lint
-          # yarn test
+        run: pnpm run-s build lint test
         env:
           EFF_NO_LINK_RULES: true
           PARSER_NO_WATCH: true
+
+      - name: Codecov
+        uses: codecov/codecov-action@v3

@@ -8,6 +8,12 @@ module.exports = {
   },
   overrides: [
     {
+      files: '.github/*.yml',
+      rules: {
+        'unicorn/filename-case': 'off',
+      },
+    },
+    {
       files: 'packages/**/README.md',
       extends: 'plugin:mdx/overrides',
       globals: getGlobals(['ReactQriousDemo', 'ReactQrcodeDemo']),

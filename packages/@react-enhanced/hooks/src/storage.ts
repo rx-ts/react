@@ -6,22 +6,24 @@ import { parseJsonFallback } from './helper.js'
 import { Nilable } from './types.js'
 
 export const useStorageFactory =
-  (storage: Storage, listener?: boolean) =>
+  (storage?: Storage, listener?: boolean) =>
   <T>(key: string, defaultValue?: Nilable<T>) => {
     const defaultValueRef = useRef(defaultValue)
     defaultValueRef.current = defaultValue
 
-    const [value, setValue] = useState<Nilable<T>>(() =>
-      parseJsonFallback(storage.getItem(key), defaultValueRef.current),
+    const [value, setValue] = useState<Nilable<T>>(
+      () =>
+        storage &&
+        parseJsonFallback(storage.getItem(key), defaultValueRef.current),
     )
 
     const onChange = useCallback(
       (value: Nilable<T>) => {
         setValue(value)
         if (value == null) {
-          storage.removeItem(key)
+          storage?.removeItem(key)
         } else {
-          storage.setItem(key, JSON.stringify(value))
+          storage?.setItem(key, JSON.stringify(value))
         }
       },
       [key, setValue],
@@ -44,9 +46,9 @@ export const useStorageFactory =
       }
     }, [key])
 
-    return [value, onChange]
+    return [value, onChange] as const
   }
 
-export const useLocalStorage = useStorageFactory(localStorage, true)
+export const useLocalStorage = useStorageFactory(globalThis.localStorage, true)
 
-export const useSessionStorage = useStorageFactory(sessionStorage)
+export const useSessionStorage = useStorageFactory(globalThis.sessionStorage)
