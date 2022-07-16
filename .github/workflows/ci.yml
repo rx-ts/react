@@ -33,7 +33,7 @@ jobs:
         run: pnpm i
 
       - name: Build, Lint and Test
-        run: yarn run-s build lint test
+        run: pnpm run-s build lint test
         env:
           EFF_NO_LINK_RULES: true
           PARSER_NO_WATCH: true

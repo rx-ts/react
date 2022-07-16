@@ -11,9 +11,9 @@ importers:
       '@mdx-js/react': ^2.1.2
       '@pkgr/webpack': ^3.1.2
       '@pkgr/webpack-mdx': ^2.0.3
-      '@pkgr/webpack-react': ^2.0.3
       '@react-enhanced/eslint-plugin': workspace:*
       '@react-enhanced/hooks': workspace:*
+      '@size-limit/preset-small-lib': ^7.0.8
       '@testing-library/react': ^13.3.0
       '@types/lodash': ^4.14.182
       '@types/node': ^18.0.5
@@ -42,12 +42,13 @@ importers:
       rxjs: ^7.5.6
       sanitize.css: ^13.0.0
       sirv-cli: ^2.0.2
+      size-limit: ^7.0.8
       todomvc-app-css: ^2.4.2
       type-coverage: ^2.22.0
       type-fest: ^2.16.0
       typescript: ^4.7.4
       unplugin-auto-import: ^0.9.3
-      vitest: ^0.18.0
+      vitest: ^0.18.1
     devDependencies:
       '@1stg/app-config': 6.1.3_yljyuul4yfelyc4vxhyntykate
       '@1stg/lib-config': 9.0.0_cx5oarfg7zd5bhhxcakzf5ikdy
@@ -56,9 +57,9 @@ importers:
       '@mdx-js/react': 2.1.2_react@18.2.0
       '@pkgr/webpack': 3.1.2_t54fbwee6mwva2xdvyly4ct6vm
       '@pkgr/webpack-mdx': 2.0.3_r3ajdkjnj6rosfo6qaenjkgcp4
-      '@pkgr/webpack-react': 2.0.3_lvgelkngcicydbgcs7wpb5p2ey
       '@react-enhanced/eslint-plugin': link:packages/@react-enhanced/eslint-plugin
       '@react-enhanced/hooks': link:packages/@react-enhanced/hooks
+      '@size-limit/preset-small-lib': 7.0.8_size-limit@7.0.8
       '@testing-library/react': 13.3.0_biqbaboplfbrettd7655fr4n2y
       '@types/lodash': 4.14.182
       '@types/node': 18.0.5
@@ -87,12 +88,13 @@ importers:
       rxjs: 7.5.6
       sanitize.css: 13.0.0
       sirv-cli: 2.0.2
+      size-limit: 7.0.8
       todomvc-app-css: 2.4.2
       type-coverage: 2.22.0_typescript@4.7.4
       type-fest: 2.16.0
       typescript: 4.7.4
       unplugin-auto-import: 0.9.3_3apju3vqb3ruyb4gkxccifputa
-      vitest: 0.18.0_q4hrww4xxwc5fluuwukynljeh4
+      vitest: 0.18.1_q4hrww4xxwc5fluuwukynljeh4
 
   packages/@react-enhanced/eslint-plugin:
     specifiers:
@@ -3307,6 +3309,37 @@ packages:
     engines: {node: '>=4'}
     dev: true
 
+  /@size-limit/esbuild/7.0.8_size-limit@7.0.8:
+    resolution: {integrity: sha512-AzCrxJJThDvHrBNoolebYVgXu46c6HuS3fOxoXr3V0YWNM0qz81z5F3j7RruzboZnls8ZgME4WrH6GM5rB9gtA==}
+    engines: {node: ^12.0.0 || ^14.0.0 || >=16.0.0}
+    peerDependencies:
+      size-limit: 7.0.8
+    dependencies:
+      esbuild: 0.14.48
+      nanoid: 3.3.4
+      size-limit: 7.0.8
+    dev: true
+
+  /@size-limit/file/7.0.8_size-limit@7.0.8:
+    resolution: {integrity: sha512-1KeFQuMXIXAH/iELqIX7x+YNYDFvzIvmxcp9PrdwEoSNL0dXdaDIo9WE/yz8xvOmUcKaLfqbWkL75DM0k91WHQ==}
+    engines: {node: ^12.0.0 || ^14.0.0 || >=16.0.0}
+    peerDependencies:
+      size-limit: 7.0.8
+    dependencies:
+      semver: 7.3.5
+      size-limit: 7.0.8
+    dev: true
+
+  /@size-limit/preset-small-lib/7.0.8_size-limit@7.0.8:
+    resolution: {integrity: sha512-CT8nIYA/c2CSD+X4rAUgwqYccQMahJ6rBnaZxvi3YKFdkXIbuGNXHNjHsYaFksgwG9P4UjG/unyO5L73f3zQBw==}
+    peerDependencies:
+      size-limit: 7.0.8
+    dependencies:
+      '@size-limit/esbuild': 7.0.8_size-limit@7.0.8
+      '@size-limit/file': 7.0.8_size-limit@7.0.8
+      size-limit: 7.0.8
+    dev: true
+
   /@soda/friendly-errors-webpack-plugin/1.8.1_webpack@5.73.0:
     resolution: {integrity: sha512-h2ooWqP8XuFqTXT+NyAFbrArzfQA7R6HTezADrvD9Re8fxMLTPPniLdqVTdDaO0eIoLaAwKT+d6w+5GeTk7Vbg==}
     engines: {node: '>=8.0.0'}
@@ -5098,6 +5131,11 @@ packages:
       semver: 7.3.7
     dev: true
 
+  /bytes-iec/3.1.1:
+    resolution: {integrity: sha512-fey6+4jDK7TFtFg/klGSvNKJctyU7n2aQdnM+CO0ruLPbqqMOM8Tio0Pc+deqUeVKX1tL5DQep1zQ7+37aTAsA==}
+    engines: {node: '>= 0.8'}
+    dev: true
+
   /bytes/3.0.0:
     resolution: {integrity: sha512-pMhOfFDPiv9t5jjIXkHosWmkSyQbvsgEVNkz0ERHbuLh2T/7j4Mqqpz523Fe8MVY89KC6Sh/QfS2sM+SjgFDcw==}
     engines: {node: '>= 0.8'}
@@ -5368,6 +5406,10 @@ packages:
 
   /ci-info/3.3.2:
     resolution: {integrity: sha512-xmDt/QIAdeZ9+nfdPsaBCpMvHNLFiLdjj59qjqn+6iPe6YmHGQ35sBnQ8uslRBXFmXkiZQOJRjvQeoGppoTjjg==}
+    dev: true
+
+  /ci-job-number/1.2.2:
+    resolution: {integrity: sha512-CLOGsVDrVamzv8sXJGaILUVI6dsuAkouJP/n6t+OxLPeeA4DDby7zn9SB6EUpa1H7oIKoE+rMmkW80zYsFfUjA==}
     dev: true
 
   /classnames/2.3.1:
@@ -11275,6 +11317,12 @@ packages:
     hasBin: true
     dev: true
 
+  /nanospinner/1.1.0:
+    resolution: {integrity: sha512-yFvNYMig4AthKYfHFl1sLj7B2nkHL4lzdig4osvl9/LdGbXwrdFRoqBS98gsEsOakr0yH+r5NZ/1Y9gdVB8trA==}
+    dependencies:
+      picocolors: 1.0.0
+    dev: true
+
   /natural-compare/1.4.0:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
     dev: true
@@ -14973,6 +15021,14 @@ packages:
     hasBin: true
     dev: true
 
+  /semver/7.3.5:
+    resolution: {integrity: sha512-PoeGJYh8HK4BTO/a9Tf6ZG3veo/A7ZVsYrSA6J8ny9nb3B1VrpkuN+z9OE5wfE5p6H4LchYZsegiQgbJD94ZFQ==}
+    engines: {node: '>=10'}
+    hasBin: true
+    dependencies:
+      lru-cache: 6.0.0
+    dev: true
+
   /semver/7.3.7:
     resolution: {integrity: sha512-QlYTucUYOews+WeEujDoEGziz4K6c47V/Bd+LjSSYcA94p+DmINdf7ncaUinThfvZyu13lN9OY1XDxt8C0Tw0g==}
     engines: {node: '>=10'}
@@ -15125,6 +15181,21 @@ packages:
       '@polka/url': 1.0.0-next.21
       mrmime: 1.0.1
       totalist: 3.0.0
+    dev: true
+
+  /size-limit/7.0.8:
+    resolution: {integrity: sha512-3h76c9E0e/nNhYLSR7IBI/bSoXICeo7EYkYjlyVqNIsu7KvN/PQmMbIXeyd2QKIF8iZKhaiZQoXLkGWbyPDtvQ==}
+    engines: {node: ^12.0.0 || ^14.0.0 || >=16.0.0}
+    hasBin: true
+    dependencies:
+      bytes-iec: 3.1.1
+      chokidar: 3.5.3
+      ci-job-number: 1.2.2
+      globby: 11.1.0
+      lilconfig: 2.0.5
+      mkdirp: 1.0.4
+      nanospinner: 1.1.0
+      picocolors: 1.0.0
     dev: true
 
   /slash/3.0.0:
@@ -16116,8 +16187,8 @@ packages:
     engines: {node: '>=14.0.0'}
     dev: true
 
-  /tinyspy/0.3.3:
-    resolution: {integrity: sha512-gRiUR8fuhUf0W9lzojPf1N1euJYA30ISebSfgca8z76FOvXtVXqd5ojEIaKLWbDQhAaC3ibxZIjqbyi4ybjcTw==}
+  /tinyspy/1.0.0:
+    resolution: {integrity: sha512-FI5B2QdODQYDRjfuLF+OrJ8bjWRMCXokQPcwKm0W3IzcbUmBNv536cQc7eXGoAuXphZwgx1DFbqImwzz08Fnhw==}
     engines: {node: '>=14.0.0'}
     dev: true
 
@@ -16964,8 +17035,8 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /vitest/0.18.0_q4hrww4xxwc5fluuwukynljeh4:
-    resolution: {integrity: sha512-ryAtlh5Gvg3+aLNuOQ8YOHxgQCCu46jx40X5MBL0K0/ejB9i5zsr8fV8LTGXbXex80UMHlzceI9F+ouGaiR+mQ==}
+  /vitest/0.18.1_q4hrww4xxwc5fluuwukynljeh4:
+    resolution: {integrity: sha512-4F/1K/Vn4AvJwe7i2YblR02PT5vMKcw9KN4unDq2KD0YcSxX0B/6D6Qu9PJaXwVuxXMFTQ5ovd4+CQaW3bwofA==}
     engines: {node: '>=v14.16.0'}
     hasBin: true
     peerDependencies:
@@ -16995,7 +17066,7 @@ packages:
       happy-dom: 6.0.3
       local-pkg: 0.4.2
       tinypool: 0.2.4
-      tinyspy: 0.3.3
+      tinyspy: 1.0.0
       vite: 3.0.0_less@4.1.3+stylus@0.58.1
     transitivePeerDependencies:
       - less
