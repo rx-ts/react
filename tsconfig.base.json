@@ -7,5 +7,6 @@
       "react-qrcode": ["./packages/react-qrcode/src"],
       "react-qrious": ["./packages/react-qrious/src"]
     }
-  }
+  },
+  "include": ["./auto-imports.d.ts", "./**/*.ts", "./**/*.tsx"]
 }

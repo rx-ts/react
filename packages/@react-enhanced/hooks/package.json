@@ -39,6 +39,9 @@
   },
   "funding": "https://opencollective.com/rxts",
   "license": "MIT",
+  "engines": {
+    "node": "^12.20.0 || ^14.18.0 || >=16.0.0"
+  },
   "main": "./lib/index.cjs",
   "module": "./lib/index.js",
   "exports": {
