@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.3.3
+
+### Patch Changes
+
+- [#152](https://github.com/rx-ts/react/pull/152) [`f051a48`](https://github.com/rx-ts/react/commit/f051a487fe56469b36ccd5d28639053edeade154) Thanks [@JounQin](https://github.com/JounQin)! - fix(storage): compatibility on Node environment
+
 ## 0.3.2
 
 ### Patch Changes

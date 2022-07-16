@@ -1,6 +1,6 @@
 {
   "name": "@react-enhanced/hooks",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "type": "module",
   "description": "🔥 Enhanced React Hooks",
   "repository": "git@github.com:rx-ts/react.git",
