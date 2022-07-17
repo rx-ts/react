@@ -1,10 +1,10 @@
 {
-  "name": "@react-enhanced/eslint-plugin",
-  "version": "0.0.2",
+  "name": "@react-enhanced/types",
+  "version": "0.0.0",
   "type": "module",
-  "description": "An incredible ESLint plugin for @react-enhanced",
+  "description": "🔥 Enhanced React Types",
   "repository": "git@github.com:rx-ts/react.git",
-  "homepage": "https://github.com/rx-ts/react/blob/master/packages/@react-enhanced/eslint-plugin",
+  "homepage": "https://github.com/rx-ts/react/blob/master/packages/@react-enhanced/types",
   "author": "JounQin (https://www.1stG.me) <admin@1stg.me>",
   "donate": {
     "recipients": [
@@ -42,29 +42,37 @@
   "engines": {
     "node": "^12.20.0 || ^14.18.0 || >=16.0.0"
   },
-  "main": "./lib/index.cjs",
-  "module": "./lib/index.js",
-  "exports": {
-    "types": "./lib/index.d.ts",
-    "require": "./lib/index.cjs",
-    "import": "./lib/index.js"
-  },
-  "types": "./lib/index.d.ts",
+  "main": "./src/index.ts",
   "files": [
     "lib"
   ],
   "keywords": [
     "react-enhanced",
-    "eslint-plugin-react",
-    "eslint-plugin-react-enhanced",
-    "eslint-plugin-react-hooks",
+    "react-enhanced-types",
+    "react-types",
+    "react-types-enhanced",
     "react"
   ],
   "peerDependencies": {
-    "eslint": ">=8.0.0"
+    "react": ">=16.8.0",
+    "rxjs": ">=7.0.0",
+    "type-fest": ">=2.0.0"
+  },
+  "peerDependenciesMeta": {
+    "type-fest": {
+      "optional": true
+    }
   },
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "main": "./lib/index.cjs",
+    "module": "./lib/index.js",
+    "exports": {
+      "types": "./lib/index.d.ts",
+      "require": "./lib/index.cjs",
+      "import": "./lib/index.js"
+    },
+    "types": "./lib/index.d.ts"
   },
   "sideEffects": false
 }

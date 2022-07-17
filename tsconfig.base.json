@@ -3,7 +3,12 @@
   "compilerOptions": {
     "paths": {
       "@@/*": ["./*"],
-      "@react-hooks/enhanced": ["./packages/@react-enhanced/hooks/src"],
+      "@react-enhanced/hooks": ["./packages/@react-enhanced/hooks/src"],
+      "@react-enhanced/plugins": ["./packages/@react-enhanced/plugins/src"],
+      "@react-enhanced/shared": ["./packages/@react-enhanced/shared/src"],
+      "@react-enhanced/translate": ["./packages/@react-enhanced/translate/src"],
+      "@react-enhanced/types": ["./packages/@react-enhanced/types/src"],
+      "@react-enhanced/utils": ["./packages/@react-enhanced/types/utils"],
       "react-qrcode": ["./packages/react-qrcode/src"],
       "react-qrious": ["./packages/react-qrious/src"]
     }

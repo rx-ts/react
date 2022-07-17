@@ -1,5 +1,5 @@
 {
-  "extends": "../../../tsconfig.base",
+  "extends": "@1stg/tsconfig/node16",
   "compilerOptions": {
     "composite": true,
     "rootDir": "src",
