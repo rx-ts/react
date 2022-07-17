@@ -1,6 +1,6 @@
 {
   "name": "@react-enhanced/types",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "type": "module",
   "description": "🔥 Enhanced React Types",
   "repository": "git@github.com:rx-ts/react.git",
