@@ -2,7 +2,6 @@ import type { ValueOf } from '@react-enhanced/types'
 
 import { getBrowserLang, getLang } from './helpers.js'
 
-
 export const Locale = {
   ZH: 'zh',
   EN: 'en',

@@ -1,7 +1,6 @@
 import type { ContextFC } from '@react-enhanced/types'
 import { useMemo, useState } from 'react'
 
-
 import { Locale } from './constants.js'
 import { TranslateContext } from './context.js'
 import { setLang } from './helpers.js'

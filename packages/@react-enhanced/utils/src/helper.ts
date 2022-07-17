@@ -4,7 +4,6 @@ import { camelCase, isPlainObject, upperFirst } from 'lodash'
 import type { Observable } from 'rxjs'
 import { isObservable } from 'rxjs'
 
-
 export const identify = <
   T,
   V extends Exclude<NonNilable<T>, Empty | false>,

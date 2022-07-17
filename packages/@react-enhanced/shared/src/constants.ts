@@ -1,7 +1,6 @@
 import type { ValueOf } from '@react-enhanced/types'
 import type { TemplateOptions } from 'lodash'
 
-
 // `method` must be uppercased for `fetch`, otherwise `patch` will fail...
 export const ApiMethod = {
   GET: 'GET',

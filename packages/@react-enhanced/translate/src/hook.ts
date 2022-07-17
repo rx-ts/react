@@ -18,7 +18,6 @@ import type {
   TranslateWarn,
 } from './types.js'
 
-
 function _getLooseLocale(locale: string) {
   return locale.split(/[_-]/)[0]
 }

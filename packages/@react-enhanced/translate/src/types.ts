@@ -1,7 +1,6 @@
 import type { Arrayable, IfEqual, KeyOf, Nilable } from '@react-enhanced/types'
 import type { Dispatch, SetStateAction } from 'react'
 
-
 export interface Translation {
   [key: string]: Arrayable<Translation | boolean | number | string>
 }
