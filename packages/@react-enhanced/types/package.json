@@ -1,0 +1,78 @@
+{
+  "name": "@react-enhanced/types",
+  "version": "0.0.0",
+  "type": "module",
+  "description": "🔥 Enhanced React Types",
+  "repository": "git@github.com:rx-ts/react.git",
+  "homepage": "https://github.com/rx-ts/react/blob/master/packages/@react-enhanced/types",
+  "author": "JounQin (https://www.1stG.me) <admin@1stg.me>",
+  "donate": {
+    "recipients": [
+      {
+        "name": "unts",
+        "platform": "opencollective",
+        "address": "https://opencollective.com/unts",
+        "weight": 60
+      },
+      {
+        "name": "rxts",
+        "platform": "opencollective",
+        "address": "https://opencollective.com/rxts",
+        "weight": 20
+      },
+      {
+        "name": "1stG",
+        "email": "i@1stg.me",
+        "weight": 20,
+        "platforms": [
+          {
+            "platform": "opencollective",
+            "address": "https://opencollective.com/1stG"
+          },
+          {
+            "platform": "patreon",
+            "address": "https://www.patreon.com/1stG"
+          }
+        ]
+      }
+    ]
+  },
+  "funding": "https://opencollective.com/rxts",
+  "license": "MIT",
+  "engines": {
+    "node": "^12.20.0 || ^14.18.0 || >=16.0.0"
+  },
+  "main": "./src/index.ts",
+  "files": [
+    "lib"
+  ],
+  "keywords": [
+    "react-enhanced",
+    "react-enhanced-types",
+    "react-types",
+    "react-types-enhanced",
+    "react"
+  ],
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "rxjs": ">=7.0.0",
+    "type-fest": ">=2.0.0"
+  },
+  "peerDependenciesMeta": {
+    "type-fest": {
+      "optional": true
+    }
+  },
+  "publishConfig": {
+    "access": "public",
+    "main": "./lib/index.cjs",
+    "module": "./lib/index.js",
+    "exports": {
+      "types": "./lib/index.d.ts",
+      "require": "./lib/index.cjs",
+      "import": "./lib/index.js"
+    },
+    "types": "./lib/index.d.ts"
+  },
+  "sideEffects": false
+}

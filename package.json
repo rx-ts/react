@@ -1,7 +1,7 @@
 {
   "name": "@rxts/react",
   "version": "0.0.0",
-  "description": "Make React greater with RxTS.",
+  "description": "Make React greater with RxTS",
   "repository": "git@github.com:rx-ts/react.git",
   "author": "JounQin (https://www.1stG.me) <admin@1stg.me>",
   "license": "MIT",
@@ -14,7 +14,7 @@
   "scripts": {
     "build": "run-s build:r build:ts build:docs",
     "build:docs": "w -e docs -p --publicPath /",
-    "build:r": "r -f cjs",
+    "build:r": "r -f cjs --esbuild {jsxFactory:'React.createElement'}",
     "build:ts": "tsc -b",
     "clean": "rimraf dist packages/**/*/{lib,*.tsbuildinfo}",
     "codesandbox:install": "npx pnpm@7.5.1 i",
@@ -42,6 +42,11 @@
     "@pkgr/webpack-mdx": "^2.0.3",
     "@react-enhanced/eslint-plugin": "workspace:*",
     "@react-enhanced/hooks": "workspace:*",
+    "@react-enhanced/plugins": "workspace:*",
+    "@react-enhanced/shared": "workspace:*",
+    "@react-enhanced/translate": "workspace:*",
+    "@react-enhanced/types": "workspace:*",
+    "@react-enhanced/utils": "workspace:*",
     "@size-limit/preset-small-lib": "^7.0.8",
     "@testing-library/react": "^13.3.0",
     "@types/lodash": "^4.14.182",
@@ -51,6 +56,7 @@
     "@types/react-dom": "^18.0.6",
     "@types/react-router": "^5.1.18",
     "@types/react-router-dom": "^5.3.3",
+    "@types/web": "^0.0.69",
     "c8": "^7.11.3",
     "classnames": "^2.3.1",
     "github-markdown-css": "^5.1.0",
@@ -75,9 +81,14 @@
     "todomvc-app-css": "^2.4.2",
     "type-coverage": "^2.22.0",
     "type-fest": "^2.16.0",
-    "typescript": "^4.7.4",
+    "typescript": "4.8.0-dev.20220717",
     "unplugin-auto-import": "^0.9.3",
     "vitest": "^0.18.1"
+  },
+  "pnpm": {
+    "patchedDependencies": {
+      "rollup-plugin-esbuild@4.9.1": "patches/rollup-plugin-esbuild@4.9.1.patch"
+    }
   },
   "size-limit": [
     {

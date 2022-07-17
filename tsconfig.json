@@ -5,7 +5,22 @@
   },
   "references": [
     {
+      "path": "./packages/@react-enhanced/types"
+    },
+    {
+      "path": "./packages/@react-enhanced/shared"
+    },
+    {
+      "path": "./packages/@react-enhanced/utils"
+    },
+    {
       "path": "./packages/@react-enhanced/hooks"
+    },
+    {
+      "path": "./packages/@react-enhanced/translate"
+    },
+    {
+      "path": "./packages/@react-enhanced/plugins"
     },
     {
       "path": "./packages/react-qrcode"

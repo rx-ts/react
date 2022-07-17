@@ -1,0 +1,256 @@
+diff --git a/dist/index.mjs b/dist/index.mjs
+index ef7e5ee7e8e1939fbde36b7295f6f29c6b5cbb0e..c43541b58d86cd40e6762e2f705e7e6da14af448 100644
+--- a/dist/index.mjs
++++ b/dist/index.mjs
+@@ -1,38 +1,6 @@
+-var __defProp = Object.defineProperty;
+-var __defProps = Object.defineProperties;
+-var __getOwnPropDescs = Object.getOwnPropertyDescriptors;
+-var __getOwnPropSymbols = Object.getOwnPropertySymbols;
+-var __hasOwnProp = Object.prototype.hasOwnProperty;
+-var __propIsEnum = Object.prototype.propertyIsEnumerable;
+-var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+-var __spreadValues = (a, b) => {
+-  for (var prop in b || (b = {}))
+-    if (__hasOwnProp.call(b, prop))
+-      __defNormalProp(a, prop, b[prop]);
+-  if (__getOwnPropSymbols)
+-    for (var prop of __getOwnPropSymbols(b)) {
+-      if (__propIsEnum.call(b, prop))
+-        __defNormalProp(a, prop, b[prop]);
+-    }
+-  return a;
+-};
+-var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
+-var __objRest = (source, exclude) => {
+-  var target = {};
+-  for (var prop in source)
+-    if (__hasOwnProp.call(source, prop) && exclude.indexOf(prop) < 0)
+-      target[prop] = source[prop];
+-  if (source != null && __getOwnPropSymbols)
+-    for (var prop of __getOwnPropSymbols(source)) {
+-      if (exclude.indexOf(prop) < 0 && __propIsEnum.call(source, prop))
+-        target[prop] = source[prop];
+-    }
+-  return target;
+-};
+-
+ // src/index.ts
+ import { existsSync, statSync } from "fs";
+-import { extname, resolve, dirname, join } from "path";
++import { extname, resolve, dirname, join, basename } from "path";
+ import { transform as transform2 } from "esbuild";
+ import { createFilter } from "@rollup/pluginutils";
+ import createDebug from "debug";
+@@ -88,30 +56,27 @@ var getEsbuildFormat = (rollupFormat) => {
+     return rollupFormat;
+   }
+ };
+-var getRenderChunk = (_a) => {
+-  var _b = _a, {
+-    sourceMap
+-  } = _b, options = __objRest(_b, [
+-    "sourceMap"
+-  ]);
+-  return async function(code, _, rollupOptions) {
+-    if (options.minify || options.minifyWhitespace || options.minifyIdentifiers || options.minifySyntax) {
+-      const format = getEsbuildFormat(rollupOptions.format);
+-      const result = await transform(code, __spreadValues({
+-        format,
+-        loader: "js",
+-        sourcemap: sourceMap !== false
+-      }, options));
+-      await warn(this, result.warnings);
+-      if (result.code) {
+-        return {
+-          code: result.code,
+-          map: result.map || null
+-        };
+-      }
++var getRenderChunk = ({
++  sourceMap,
++  ...options
++}) => async function(code, _, rollupOptions) {
++  if (options.minify || options.minifyWhitespace || options.minifyIdentifiers || options.minifySyntax) {
++    const format = getEsbuildFormat(rollupOptions.format);
++    const result = await transform(code, {
++      format,
++      loader: "js",
++      sourcemap: sourceMap !== false,
++      ...options
++    });
++    await warn(this, result.warnings);
++    if (result.code) {
++      return {
++        code: result.code,
++        map: result.map || null
++      };
+     }
+-    return null;
+-  };
++  }
++  return null;
+ };
+ var minify = (options = {}) => {
+   let sourceMap = false;
+@@ -122,11 +87,11 @@ var minify = (options = {}) => {
+       sourceMap = (_a = options.sourceMap) != null ? _a : !!sourcemap;
+       return null;
+     },
+-    renderChunk: getRenderChunk(__spreadProps(__spreadValues({
+-      minify: true
+-    }, options), {
++    renderChunk: getRenderChunk({
++      minify: true,
++      ...options,
+       sourceMap
+-    }))
++    })
+   };
+ };
+ 
+@@ -134,17 +99,14 @@ var minify = (options = {}) => {
+ import fs2 from "fs";
+ import path from "path";
+ import { build } from "esbuild";
+-import {
+-  init,
+-  parse as parse2
+-} from "es-module-lexer";
++import * as esModuleLexer from "es-module-lexer";
+ var slash = (p) => p.replace(/\\/g, "/");
+ var optimizeDeps = async (options) => {
+   var _a;
+   const cacheDir = path.join(options.cwd, "node_modules/.optimize_deps");
+   await fs2.promises.mkdir(cacheDir, { recursive: true });
+-  await init;
+-  const result = await build(__spreadProps(__spreadValues({
++  await esModuleLexer.init;
++  const result = await build({
+     entryPoints: options.include,
+     absWorkingDir: options.cwd,
+     bundle: true,
+@@ -153,8 +115,8 @@ var optimizeDeps = async (options) => {
+     metafile: true,
+     splitting: true,
+     outdir: cacheDir,
+-    sourcemap: options.sourceMap
+-  }, options.esbuildOptions), {
++    sourcemap: options.sourceMap,
++    ...options.esbuildOptions,
+     plugins: [
+       {
+         name: "optimize-deps",
+@@ -191,7 +153,7 @@ var optimizeDeps = async (options) => {
+           build2.onLoad({ filter: /.*/, namespace: "optimize-deps" }, async (args) => {
+             const { absolute, resolveDir } = args.pluginData;
+             const contents = await fs2.promises.readFile(absolute, "utf-8");
+-            const [, exported] = parse2(contents);
++            const [, exported] = esModuleLexer.parse(contents);
+             return {
+               contents: exported.length > 0 ? `export * from '${slash(absolute)}'` : `module.exports = require('${slash(absolute)}')`,
+               resolveDir
+@@ -201,8 +163,8 @@ var optimizeDeps = async (options) => {
+       },
+       ...((_a = options.esbuildOptions) == null ? void 0 : _a.plugins) || []
+     ]
+-  }));
+-  const optimized = new Map();
++  });
++  const optimized = /* @__PURE__ */ new Map();
+   for (const id of options.include) {
+     optimized.set(id, { file: path.join(cacheDir, `${id}.js`) });
+   }
+@@ -220,23 +182,18 @@ var defaultLoaders = {
+   ".ts": "ts",
+   ".tsx": "tsx"
+ };
+-var src_default = (_a = {}) => {
+-  var _b = _a, {
+-    include,
+-    exclude,
+-    sourceMap: _sourceMap,
+-    optimizeDeps: optimizeDeps2,
+-    tsconfig,
+-    loaders: _loaders
+-  } = _b, esbuildOptions = __objRest(_b, [
+-    "include",
+-    "exclude",
+-    "sourceMap",
+-    "optimizeDeps",
+-    "tsconfig",
+-    "loaders"
+-  ]);
+-  const loaders = __spreadValues({}, defaultLoaders);
++var src_default = ({
++  include,
++  exclude,
++  sourceMap: _sourceMap,
++  optimizeDeps: optimizeDeps2,
++  tsconfig,
++  loaders: _loaders,
++  ...esbuildOptions
++} = {}) => {
++  const loaders = {
++    ...defaultLoaders
++  };
+   if (_loaders) {
+     for (const key of Object.keys(_loaders)) {
+       const value = _loaders[key];
+@@ -252,8 +209,9 @@ var src_default = (_a = {}) => {
+   const EXCLUDE_REGEXP = /node_modules/;
+   const filter = createFilter(include || INCLUDE_REGEXP, exclude || EXCLUDE_REGEXP);
+   const resolveFile = (resolved, index = false) => {
++    const fileWithoutExt = join(dirname(resolved), basename(resolved, extname(resolved)));
+     for (const ext of extensions) {
+-      const file = index ? join(resolved, `index${ext}`) : `${resolved}${ext}`;
++      const file = index ? join(resolved, `index${ext}`) : `${fileWithoutExt}${ext}`;
+       if (existsSync(file))
+         return file;
+     }
+@@ -277,10 +235,11 @@ var src_default = (_a = {}) => {
+     async buildStart() {
+       if (!optimizeDeps2 || optimizeDepsResult)
+         return;
+-      optimizeDepsResult = await optimizeDeps(__spreadValues({
++      optimizeDepsResult = await optimizeDeps({
+         cwd,
+-        sourceMap
+-      }, optimizeDeps2));
++        sourceMap,
++        ...optimizeDeps2
++      });
+       debugOptimizeDeps("optimized %O", optimizeDepsResult.optimized);
+     },
+     async resolveId(id, importer) {
+@@ -311,23 +270,25 @@ var src_default = (_a = {}) => {
+         return null;
+       }
+       const defaultOptions = tsconfig === false ? {} : await getOptions(dirname(id), tsconfig);
+-      const result = await transform2(code, __spreadValues({
++      const result = await transform2(code, {
+         loader,
+         target: defaultOptions.target || "es2017",
+         jsxFactory: defaultOptions.jsxFactory,
+         jsxFragment: defaultOptions.jsxFragment,
+         sourcemap: sourceMap,
+-        sourcefile: id
+-      }, esbuildOptions));
++        sourcefile: id,
++        ...esbuildOptions
++      });
+       await warn(this, result.warnings);
+       return result.code && {
+         code: result.code,
+         map: result.map || null
+       };
+     },
+-    renderChunk: getRenderChunk(__spreadProps(__spreadValues({}, esbuildOptions), {
++    renderChunk: getRenderChunk({
++      ...esbuildOptions,
+       sourceMap
+-    }))
++    })
+   };
+ };
+ export {

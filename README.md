@@ -21,7 +21,7 @@
 [![Code Style: Prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 [![changesets](https://img.shields.io/badge/maintained%20with-changesets-176de3.svg)](https://github.com/atlassian/changesets)
 
-> Make [React][] greater with [RxTS][].
+> Make [React][] greater with [RxTS][]
 
 ## TOC <!-- omit in toc -->
 
@@ -45,6 +45,11 @@ This repository is a monorepo managed by [changesets][] what means we actually p
 | -------------------------------------------------------------------------- | ----------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [`@react-enhanced/eslint-plugin`](/packages/@react-enhanced/eslint-plugin) | An incredible ESLint plugin for @react-enhanced Hooks       | [![npm](https://img.shields.io/npm/v/@react-enhanced/eslint-plugin.svg)](https://www.npmjs.com/package/@react-enhanced/eslint-plugin) [![View changelog](https://img.shields.io/badge/changelog-explore-brightgreen)](https://changelogs.xyz/@react-enhanced/eslint-plugin) |
 | [`@react-enhanced/hooks`](/packages/@react-enhanced/hooks)                 | 🔥 Enhanced React Hooks                                     | [![npm](https://img.shields.io/npm/v/@react-enhanced/hooks.svg)](https://www.npmjs.com/package/@react-enhanced/hooks) [![View changelog](https://img.shields.io/badge/changelog-explore-brightgreen)](https://changelogs.xyz/@react-enhanced/hooks)                         |
+| [`@react-enhanced/plugins`](/packages/@react-enhanced/plugins)             | 🔥 Enhanced React Plugins                                   | [![npm](https://img.shields.io/npm/v/@react-enhanced/plugins.svg)](https://www.npmjs.com/package/@react-enhanced/plugins) [![View changelog](https://img.shields.io/badge/changelog-explore-brightgreen)](https://changelogs.xyz/@react-enhanced/plugins)                   |
+| [`@react-enhanced/shared`](/packages/@react-enhanced/shared)               | 🔥 Enhanced React Shared codes between sever and client     | [![npm](https://img.shields.io/npm/v/@react-enhanced/shared.svg)](https://www.npmjs.com/package/@react-enhanced/shared) [![View changelog](https://img.shields.io/badge/changelog-explore-brightgreen)](https://changelogs.xyz/@react-enhanced/shared)                      |
+| [`@react-enhanced/translate`](/packages/@react-enhanced/translate)         | 🔥 Enhanced React Translate Plugin                          | [![npm](https://img.shields.io/npm/v/@react-enhanced/translate.svg)](https://www.npmjs.com/package/@react-enhanced/translate) [![View changelog](https://img.shields.io/badge/changelog-explore-brightgreen)](https://changelogs.xyz/@react-enhanced/translate)             |
+| [`@react-enhanced/types`](/packages/@react-enhanced/types)                 | 🔥 Enhanced React Types                                     | [![npm](https://img.shields.io/npm/v/@react-enhanced/types.svg)](https://www.npmjs.com/package/@react-enhanced/types) [![View changelog](https://img.shields.io/badge/changelog-explore-brightgreen)](https://changelogs.xyz/@react-enhanced/types)                         |
+| [`@react-enhanced/utils`](/packages/@react-enhanced/utils)                 | 🔥 Enhanced React Utils                                     | [![npm](https://img.shields.io/npm/v/@react-enhanced/utils.svg)](https://www.npmjs.com/package/@react-enhanced/utils) [![View changelog](https://img.shields.io/badge/changelog-explore-brightgreen)](https://changelogs.xyz/@react-enhanced/utils)                         |
 | [`react-qrcode`](/packages/react-qrcode)                                   | 🤳 A React component for QR code generation with [qrcode][] | [![npm](https://img.shields.io/npm/v/react-qrcode.svg)](https://www.npmjs.com/package/react-qrcode) [![View changelog](https://img.shields.io/badge/changelog-explore-brightgreen)](https://changelogs.xyz/react-qrcode)                                                    |
 | [`react-qrious`](/packages/react-qrious)                                   | 🤳 A React component for QR code generation with [qrious][] | [![npm](https://img.shields.io/npm/v/react-qrious.svg)](https://www.npmjs.com/package/react-qrious) [![View changelog](https://img.shields.io/badge/changelog-explore-brightgreen)](https://changelogs.xyz/react-qrious)                                                    |
 
@@ -52,13 +57,13 @@ This repository is a monorepo managed by [changesets][] what means we actually p
 
 ```sh
 # yarn
-yarn add @react-enhanced/hooks react-{qrcode,qrious}
+yarn add @react-enhanced/{hooks,plugins} react-{qrcode,qrious}
 
 # pnpm
-pnpm add @react-enhanced/hooks react-{qrcode,qrious}
+pnpm add @react-enhanced/{hooks,plugins} react-{qrcode,qrious}
 
 # npm
-npm i @react-enhanced/hooks react-{qrcode,qrious}
+npm i @react-enhanced/{hooks,plugins} react-{qrcode,qrious}
 ```
 
 ## Sponsors
