@@ -1,6 +1,6 @@
 {
   "name": "@react-enhanced/plugins",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "type": "module",
   "description": "🔥 Enhanced React Plugins",
   "repository": "git@github.com:rx-ts/react.git",
@@ -64,7 +64,7 @@
     }
   },
   "dependencies": {
-    "@react-enhanced/translate": "^0.0.0"
+    "@react-enhanced/translate": "^0.1.0"
   },
   "publishConfig": {
     "access": "public",

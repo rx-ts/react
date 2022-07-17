@@ -1,6 +1,6 @@
 {
   "name": "@react-enhanced/utils",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "type": "module",
   "description": "🔥 Enhanced React Utils",
   "repository": "git@github.com:rx-ts/react.git",
@@ -68,8 +68,8 @@
     }
   },
   "dependencies": {
-    "@react-enhanced/shared": "^0.0.0",
-    "@react-enhanced/types": "^0.0.0"
+    "@react-enhanced/shared": "^0.1.0",
+    "@react-enhanced/types": "^0.1.0"
   },
   "publishConfig": {
     "access": "public",
