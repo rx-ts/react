@@ -12,10 +12,9 @@
   ],
   "packageManager": "pnpm@7.5.1",
   "scripts": {
-    "build": "run-s build:r build:ts build:docs",
-    "build:docs": "w -e docs -p --publicPath /",
+    "build": "run-p build:*",
     "build:r": "r -f cjs --esbuild {jsxFactory:'React.createElement'}",
-    "build:ts": "tsc -b",
+    "build:tsc": "tsc -b",
     "clean": "rimraf dist packages/**/*/{lib,*.tsbuildinfo}",
     "codesandbox:install": "npx pnpm@7.5.1 i",
     "dev": "w -e docs --disableDotRule --publicPath /",
@@ -25,11 +24,13 @@
     "lint:ts": "tsc --noEmit",
     "postversion": "pnpm i --no-frozen-lockfile",
     "prepare": "simple-git-hooks",
-    "prerelease": "run-p build:r build:ts",
+    "prerelease": "pnpm build",
+    "prevercel-build": "pnpm build",
     "release": "changeset publish",
     "start": "sirv dist",
     "test": "vitest run --coverage",
     "typecov": "type-coverage",
+    "vercel-build": "w -e docs -p --publicPath /",
     "version": "changeset version"
   },
   "devDependencies": {
