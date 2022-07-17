@@ -114,16 +114,10 @@ importers:
       vitest: 0.18.1_q4hrww4xxwc5fluuwukynljeh4
 
   packages/@react-enhanced/eslint-plugin:
-    specifiers:
-      tslib: ^2.4.0
-    dependencies:
-      tslib: 2.4.0
+    specifiers: {}
 
   packages/@react-enhanced/hooks:
-    specifiers:
-      tslib: ^2.4.0
-    dependencies:
-      tslib: 2.4.0
+    specifiers: {}
 
   packages/@react-enhanced/plugins:
     specifiers:
@@ -161,16 +155,10 @@ importers:
       '@react-enhanced/types': link:../types
 
   packages/react-qrcode:
-    specifiers:
-      tslib: ^2.4.0
-    dependencies:
-      tslib: 2.4.0
+    specifiers: {}
 
   packages/react-qrious:
-    specifiers:
-      tslib: ^2.4.0
-    dependencies:
-      tslib: 2.4.0
+    specifiers: {}
 
 packages:
 
@@ -16401,6 +16389,7 @@ packages:
 
   /tslib/2.4.0:
     resolution: {integrity: sha512-d6xOpEDfsi2CZVlPQzGeux8XMwLT9hssAsaPYExaQMuYskwb+x1x7J371tWlbBdWHroy99KnVB6qIkUbs5X3UQ==}
+    dev: true
 
   /tsutils/3.21.0_6neqeabdvuewkiholxadskvjcy:
     resolution: {integrity: sha512-mHKK3iUXL+3UF6xL5k0PEhKRUBKPBCv/+RkEOpjRWxxx27KKRBmmA60A9pgOUvMi8GKhRMPEmjBRPzs2W7O1OA==}

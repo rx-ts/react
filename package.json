@@ -93,15 +93,58 @@
   "size-limit": [
     {
       "path": "./packages/@react-enhanced/hooks/lib/index.js",
-      "limit": "10kb"
+      "limit": "1.5kb",
+      "ignore": [
+        "react",
+        "rxjs"
+      ]
+    },
+    {
+      "path": "./packages/@react-enhanced/translate/lib/index.js",
+      "limit": "1.5kb",
+      "ignore": [
+        "@react-enhanced/hooks",
+        "@react-enhanced/shared",
+        "@react-enhanced/types",
+        "@react-enhanced/utils",
+        "lodash",
+        "react",
+        "rxjs"
+      ]
+    },
+    {
+      "path": "./packages/@react-enhanced/shared/lib/index.js",
+      "limit": "200b",
+      "ignore": [
+        "@react-enhanced/types"
+      ]
+    },
+    {
+      "path": "./packages/@react-enhanced/types/lib/index.js",
+      "limit": "400b",
+      "ignore": [
+        "react",
+        "rxjs",
+        "type-fest"
+      ]
+    },
+    {
+      "path": "./packages/@react-enhanced/utils/lib/index.js",
+      "limit": "600b",
+      "ignore": [
+        "@react-enhanced/shared",
+        "@react-enhanced/types",
+        "lodash",
+        "react",
+        "rxjs"
+      ]
     },
     {
       "path": "./packages/react-qrcode/lib/index.js",
       "limit": "1kb",
       "ignore": [
         "react",
-        "qrcode",
-        "tslib"
+        "qrcode"
       ]
     },
     {
@@ -109,8 +152,7 @@
       "limit": "1kb",
       "ignore": [
         "react",
-        "qrious",
-        "tslib"
+        "qrious"
       ]
     }
   ],
