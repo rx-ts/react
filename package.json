@@ -10,7 +10,7 @@
     "packages/*",
     "packages/@react-enhanced/*"
   ],
-  "packageManager": "pnpm@7.5.1",
+  "packageManager": "pnpm@7.5.2",
   "scripts": {
     "build": "run-p build:*",
     "build:r": "r -f cjs --esbuild {jsxFactory:'React.createElement'}",
