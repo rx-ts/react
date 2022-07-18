@@ -118,8 +118,8 @@ importers:
 
   packages/@react-enhanced/hooks:
     specifiers:
-      '@react-enhanced/shared': ^0.1.0
-      '@react-enhanced/utils': ^0.1.0
+      '@react-enhanced/shared': ^0.2.0
+      '@react-enhanced/utils': ^0.2.0
     dependencies:
       '@react-enhanced/shared': link:../shared
       '@react-enhanced/utils': link:../utils
@@ -132,16 +132,16 @@ importers:
 
   packages/@react-enhanced/shared:
     specifiers:
-      '@react-enhanced/types': ^0.1.0
+      '@react-enhanced/types': ^0.2.0
     dependencies:
       '@react-enhanced/types': link:../types
 
   packages/@react-enhanced/translate:
     specifiers:
-      '@react-enhanced/hooks': ^0.3.3
-      '@react-enhanced/shared': ^0.1.0
-      '@react-enhanced/types': ^0.1.0
-      '@react-enhanced/utils': ^0.1.0
+      '@react-enhanced/hooks': ^0.4.0
+      '@react-enhanced/shared': ^0.2.0
+      '@react-enhanced/types': ^0.2.0
+      '@react-enhanced/utils': ^0.2.0
     dependencies:
       '@react-enhanced/hooks': link:../hooks
       '@react-enhanced/shared': link:../shared
@@ -153,8 +153,8 @@ importers:
 
   packages/@react-enhanced/utils:
     specifiers:
-      '@react-enhanced/shared': ^0.1.0
-      '@react-enhanced/types': ^0.1.0
+      '@react-enhanced/shared': ^0.2.0
+      '@react-enhanced/types': ^0.2.0
     dependencies:
       '@react-enhanced/shared': link:../shared
       '@react-enhanced/types': link:../types
