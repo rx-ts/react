@@ -1,5 +1,15 @@
 # Change Log
 
+## 0.1.1
+
+### Patch Changes
+
+- Updated dependencies [[`bdbd9dc`](https://github.com/rx-ts/react/commit/bdbd9dc9cac168e99c0e1b00280509d6ec7f7d78)]:
+  - @react-enhanced/hooks@0.4.0
+  - @react-enhanced/shared@0.2.0
+  - @react-enhanced/types@0.2.0
+  - @react-enhanced/utils@0.2.0
+
 ## 0.1.0
 
 ### Minor Changes

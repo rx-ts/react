@@ -1,6 +1,6 @@
 {
   "name": "@react-enhanced/translate",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "type": "module",
   "description": "🔥 Enhanced React Translate Plugin",
   "repository": "git@github.com:rx-ts/react.git",
@@ -72,10 +72,10 @@
     }
   },
   "dependencies": {
-    "@react-enhanced/hooks": "^0.3.3",
-    "@react-enhanced/shared": "^0.1.0",
-    "@react-enhanced/types": "^0.1.0",
-    "@react-enhanced/utils": "^0.1.0"
+    "@react-enhanced/hooks": "^0.4.0",
+    "@react-enhanced/shared": "^0.2.0",
+    "@react-enhanced/types": "^0.2.0",
+    "@react-enhanced/utils": "^0.2.0"
   },
   "publishConfig": {
     "access": "public",

@@ -1,6 +1,6 @@
 {
   "name": "@react-enhanced/hooks",
-  "version": "0.3.4",
+  "version": "0.4.0",
   "type": "module",
   "description": "🔥 Enhanced React Hooks",
   "repository": "git@github.com:rx-ts/react.git",
@@ -71,8 +71,8 @@
     }
   },
   "dependencies": {
-    "@react-enhanced/shared": "^0.1.0",
-    "@react-enhanced/utils": "^0.1.0"
+    "@react-enhanced/shared": "^0.2.0",
+    "@react-enhanced/utils": "^0.2.0"
   },
   "publishConfig": {
     "access": "public"
