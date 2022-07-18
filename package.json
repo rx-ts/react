@@ -94,10 +94,15 @@
   "size-limit": [
     {
       "path": "./packages/@react-enhanced/hooks/lib/index.js",
-      "limit": "1.5kb",
+      "limit": "2.5kb",
       "ignore": [
+        "@react-enhanced/shared",
+        "@react-enhanced/types",
+        "@react-enhanced/utils",
+        "lodash",
         "react",
-        "rxjs"
+        "rxjs",
+        "rxjs/fetch"
       ]
     },
     {
@@ -115,7 +120,7 @@
     },
     {
       "path": "./packages/@react-enhanced/shared/lib/index.js",
-      "limit": "200b",
+      "limit": "250b",
       "ignore": [
         "@react-enhanced/types"
       ]
@@ -131,7 +136,7 @@
     },
     {
       "path": "./packages/@react-enhanced/utils/lib/index.js",
-      "limit": "600b",
+      "limit": "1.5kb",
       "ignore": [
         "@react-enhanced/shared",
         "@react-enhanced/types",

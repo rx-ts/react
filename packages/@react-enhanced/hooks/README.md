@@ -2,6 +2,46 @@
 
 🔥 Enhanced React Hooks
 
+## `useApi`
+
+`API` request `hook` based on `fetch` + `Observable`, supports advanced features like `interceptor`, `lazy` request, etc.
+
+## Usage
+
+```ts
+const { data, loading, error, fetch } = useApi('path')
+```
+
+```ts
+const { data, loading, error, fetch } = useApi('path', {
+  method: ApiMethod.POST,
+  type: 'text',
+  query: {},
+  body: {},
+  // Other native `fetch` options
+})
+```
+
+```ts
+// It won't trigger `fetch` actively in `lazy` mode, and properties like `data`, `loading`, `error` are not available by default
+const { fetch } = useApi('path', {
+  lazy: true,
+})
+```
+
+```ts
+// Enable `lazyResult` to make properties like `data`, `loading`, `error` available
+const { data, loading, error, fetch } = useApi('path', {
+  lazy: true,
+  lazyResult: true,
+})
+```
+
+```ts
+// Use `fetchApi` directly, no involvement in rendering
+const callApi = useCallback(() => fetchApi('path'), [])
+```
+
 ## `useComputed`
 
 Similar to `useState` + `useMemo`

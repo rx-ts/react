@@ -117,7 +117,12 @@ importers:
     specifiers: {}
 
   packages/@react-enhanced/hooks:
-    specifiers: {}
+    specifiers:
+      '@react-enhanced/shared': ^0.1.0
+      '@react-enhanced/utils': ^0.1.0
+    dependencies:
+      '@react-enhanced/shared': link:../shared
+      '@react-enhanced/utils': link:../utils
 
   packages/@react-enhanced/plugins:
     specifiers:
