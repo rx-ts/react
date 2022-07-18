@@ -70,6 +70,10 @@
       "optional": true
     }
   },
+  "dependencies": {
+    "@react-enhanced/shared": "^0.1.0",
+    "@react-enhanced/utils": "^0.1.0"
+  },
   "publishConfig": {
     "access": "public"
   },

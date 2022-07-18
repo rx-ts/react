@@ -1,11 +1,9 @@
-/* eslint-disable react-hooks/rules-of-hooks */
-
 import { useCallback, useEffect, useRef, useState } from 'react'
 
 import { parseJsonFallback } from './helper.js'
 import { Nilable } from './types.js'
 
-export const useStorageFactory =
+export const createUseStorage =
   (storage?: Storage, listener?: boolean) =>
   <T>(key: string, defaultValue?: Nilable<T>) => {
     const defaultValueRef = useRef(defaultValue)
@@ -49,6 +47,6 @@ export const useStorageFactory =
     return [value, onChange] as const
   }
 
-export const useLocalStorage = useStorageFactory(globalThis.localStorage, true)
+export const useLocalStorage = createUseStorage(globalThis.localStorage, true)
 
-export const useSessionStorage = useStorageFactory(globalThis.sessionStorage)
+export const useSessionStorage = createUseStorage(globalThis.sessionStorage)

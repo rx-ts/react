@@ -1,3 +1,6 @@
+/// <reference path="../shim.d.ts" />
+
+export * from './api.js'
 export * from './computed.js'
 export * from './constant.js'
 export * from './helper.js'
