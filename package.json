@@ -10,13 +10,13 @@
     "packages/*",
     "packages/@react-enhanced/*"
   ],
-  "packageManager": "pnpm@7.5.2",
+  "packageManager": "pnpm@7.11.0",
   "scripts": {
     "build": "run-p build:*",
     "build:r": "r -f cjs --esbuild {jsxFactory:'React.createElement'}",
     "build:tsc": "tsc -b",
     "clean": "rimraf dist packages/**/*/{lib,*.tsbuildinfo}",
-    "codesandbox:install": "npx pnpm@7.5.1 i",
+    "codesandbox:install": "npx pnpm@7.11.0 i",
     "dev": "w -e docs --disableDotRule --publicPath /",
     "lint": "run-p lint:*",
     "lint:es": "eslint . --cache -f friendly",
@@ -34,13 +34,13 @@
     "version": "changeset version"
   },
   "devDependencies": {
-    "@1stg/app-config": "^6.1.3",
-    "@1stg/lib-config": "^9.0.0",
-    "@changesets/changelog-github": "^0.4.5",
-    "@changesets/cli": "^2.23.2",
-    "@mdx-js/react": "^2.1.2",
-    "@pkgr/webpack": "^3.1.2",
-    "@pkgr/webpack-mdx": "^2.0.3",
+    "@1stg/app-config": "^7.2.1",
+    "@1stg/lib-config": "^10.2.1",
+    "@changesets/changelog-github": "^0.4.6",
+    "@changesets/cli": "^2.24.4",
+    "@mdx-js/react": "^2.1.3",
+    "@pkgr/webpack": "^3.4.0",
+    "@pkgr/webpack-mdx": "^2.2.0",
     "@react-enhanced/eslint-plugin": "workspace:*",
     "@react-enhanced/hooks": "workspace:*",
     "@react-enhanced/plugins": "workspace:*",
@@ -48,20 +48,19 @@
     "@react-enhanced/translate": "workspace:*",
     "@react-enhanced/types": "workspace:*",
     "@react-enhanced/utils": "workspace:*",
-    "@size-limit/preset-small-lib": "^7.0.8",
-    "@testing-library/react": "^13.3.0",
-    "@types/lodash": "^4.14.182",
-    "@types/node": "^18.0.5",
-    "@types/qrcode": "^1.4.2",
-    "@types/react": "^18.0.15",
+    "@testing-library/react": "^13.4.0",
+    "@types/lodash": "^4.14.184",
+    "@types/node": "^18.7.16",
+    "@types/qrcode": "^1.5.0",
+    "@types/react": "^18.0.18",
     "@types/react-dom": "^18.0.6",
     "@types/react-router": "^5.1.18",
     "@types/react-router-dom": "^5.3.3",
-    "@types/web": "^0.0.69",
-    "c8": "^7.11.3",
+    "@types/web": "^0.0.72",
+    "@vitest/coverage-istanbul": "^0.23.1",
     "classnames": "^2.3.1",
     "github-markdown-css": "^5.1.0",
-    "happy-dom": "^6.0.3",
+    "happy-dom": "^6.0.4",
     "lodash": "^4.17.21",
     "lodash-es": "^4.17.21",
     "prism-react-renderer": "^1.3.5",
@@ -78,88 +77,43 @@
     "rxjs": "^7.5.6",
     "sanitize.css": "^13.0.0",
     "sirv-cli": "^2.0.2",
-    "size-limit": "^7.0.8",
+    "size-limit": "^8.1.0",
+    "size-limit-preset-node-lib": "^0.1.0",
     "todomvc-app-css": "^2.4.2",
     "type-coverage": "^2.22.0",
-    "type-fest": "^2.16.0",
-    "typescript": "4.8.0-dev.20220717",
-    "unplugin-auto-import": "^0.9.3",
-    "vitest": "^0.18.1"
-  },
-  "pnpm": {
-    "patchedDependencies": {
-      "rollup-plugin-esbuild@4.9.1": "patches/rollup-plugin-esbuild@4.9.1.patch"
-    }
+    "type-fest": "^2.19.0",
+    "typescript": "4.8.2",
+    "unplugin-auto-import": "^0.11.2",
+    "vitest": "^0.23.1"
   },
   "size-limit": [
     {
       "path": "./packages/@react-enhanced/hooks/lib/index.js",
-      "limit": "2.5kb",
-      "ignore": [
-        "@react-enhanced/shared",
-        "@react-enhanced/types",
-        "@react-enhanced/utils",
-        "lodash",
-        "react",
-        "rxjs",
-        "rxjs/fetch"
-      ]
+      "limit": "150B"
     },
     {
       "path": "./packages/@react-enhanced/translate/lib/index.js",
-      "limit": "1.5kb",
-      "ignore": [
-        "@react-enhanced/hooks",
-        "@react-enhanced/shared",
-        "@react-enhanced/types",
-        "@react-enhanced/utils",
-        "lodash",
-        "react",
-        "rxjs"
-      ]
+      "limit": "125B"
     },
     {
       "path": "./packages/@react-enhanced/shared/lib/index.js",
-      "limit": "250b",
-      "ignore": [
-        "@react-enhanced/types"
-      ]
+      "limit": "100B"
     },
     {
       "path": "./packages/@react-enhanced/types/lib/index.js",
-      "limit": "400b",
-      "ignore": [
-        "react",
-        "rxjs",
-        "type-fest"
-      ]
+      "limit": "120B"
     },
     {
       "path": "./packages/@react-enhanced/utils/lib/index.js",
-      "limit": "1.5kb",
-      "ignore": [
-        "@react-enhanced/shared",
-        "@react-enhanced/types",
-        "lodash",
-        "react",
-        "rxjs"
-      ]
+      "limit": "150B"
     },
     {
       "path": "./packages/react-qrcode/lib/index.js",
-      "limit": "1kb",
-      "ignore": [
-        "react",
-        "qrcode"
-      ]
+      "limit": "100B"
     },
     {
       "path": "./packages/react-qrious/lib/index.js",
-      "limit": "1kb",
-      "ignore": [
-        "react",
-        "qrious"
-      ]
+      "limit": "100B"
     }
   ],
   "typeCoverage": {
