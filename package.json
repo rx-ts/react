@@ -10,13 +10,13 @@
     "packages/*",
     "packages/@react-enhanced/*"
   ],
-  "packageManager": "pnpm@7.11.0",
+  "packageManager": "pnpm@7.13.4",
   "scripts": {
     "build": "run-p build:*",
     "build:r": "r -f cjs --esbuild {jsxFactory:'React.createElement'}",
     "build:tsc": "tsc -b",
     "clean": "rimraf dist packages/**/*/{lib,*.tsbuildinfo}",
-    "codesandbox:install": "npx pnpm@7.11.0 i",
+    "codesandbox:install": "npx pnpm@7.13.4 i",
     "dev": "w -e docs --disableDotRule --publicPath /",
     "lint": "run-p lint:*",
     "lint:es": "eslint . --cache -f friendly",
