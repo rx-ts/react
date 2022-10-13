@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.4.1
+
+### Patch Changes
+
+- [#165](https://github.com/rx-ts/react/pull/165) [`90652ef`](https://github.com/rx-ts/react/commit/90652efe22ada3309471fab79e7bd0e87757babc) Thanks [@JounQin](https://github.com/JounQin)! - fix: add `src` folder into registry for sourcemap
+
 ## 0.4.0
 
 ### Minor Changes

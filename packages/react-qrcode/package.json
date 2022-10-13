@@ -1,6 +1,6 @@
 {
   "name": "react-qrcode",
-  "version": "0.3.5",
+  "version": "0.3.6",
   "type": "module",
   "description": "🤳 A React component for QR code generation with `qrcode`",
   "repository": "git+https://github.com/rx-ts/react.git",
