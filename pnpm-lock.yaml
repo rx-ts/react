@@ -19,7 +19,7 @@ importers:
       '@react-enhanced/types': link:packages/@react-enhanced/types
       '@react-enhanced/utils': link:packages/@react-enhanced/utils
       '@testing-library/react': ^13.4.0
-      '@types/lodash': ^4.14.184
+      '@types/lodash': ^4.14.186
       '@types/node': ^18.7.16
       '@types/qrcode': ^1.5.0
       '@types/react': ^18.0.18
