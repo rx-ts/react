@@ -9,11 +9,14 @@ declare global {
   }
 }
 
-export const getBrowserLang = () =>
-  navigator.languages[0] ||
-  navigator.language ||
-  navigator.browserLanguage ||
-  navigator.userLanguage
+export function getBrowserLang() {
+  return (
+    navigator.languages[0] ||
+    navigator.language ||
+    navigator.browserLanguage ||
+    navigator.userLanguage
+  )
+}
 
 export function getLang<T extends string = string>(LOCALES: T[]): T
 export function getLang(LOCALES?: []): undefined
