@@ -38,7 +38,7 @@
     "@1stg/lib-config": "^10.2.1",
     "@changesets/changelog-github": "^0.4.7",
     "@changesets/cli": "^2.24.4",
-    "@mdx-js/react": "^2.1.3",
+    "@mdx-js/react": "^2.1.5",
     "@pkgr/webpack": "^3.4.0",
     "@pkgr/webpack-mdx": "^2.2.0",
     "@react-enhanced/eslint-plugin": "link:packages/@react-enhanced/eslint-plugin",
