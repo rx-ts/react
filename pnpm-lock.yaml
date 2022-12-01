@@ -19,7 +19,7 @@ importers:
       '@react-enhanced/types': link:packages/@react-enhanced/types
       '@react-enhanced/utils': link:packages/@react-enhanced/utils
       '@testing-library/react': ^13.4.0
-      '@types/lodash': ^4.14.187
+      '@types/lodash': ^4.14.191
       '@types/node': ^18.7.16
       '@types/qrcode': ^1.5.0
       '@types/react': ^18.0.24
@@ -71,7 +71,7 @@ importers:
       '@react-enhanced/types': link:packages/@react-enhanced/types
       '@react-enhanced/utils': link:packages/@react-enhanced/utils
       '@testing-library/react': 13.4.0_biqbaboplfbrettd7655fr4n2y
-      '@types/lodash': 4.14.187
+      '@types/lodash': 4.14.191
       '@types/node': 18.8.5
       '@types/qrcode': 1.5.0
       '@types/react': 18.0.24
@@ -4026,8 +4026,8 @@ packages:
       '@types/node': 18.8.5
     dev: true
 
-  /@types/lodash/4.14.187:
-    resolution: {integrity: sha512-MrO/xLXCaUgZy3y96C/iOsaIqZSeupyTImKClHunL5GrmaiII2VwvWmLBu2hwa0Kp0sV19CsyjtrTc/Fx8rg/A==}
+  /@types/lodash/4.14.191:
+    resolution: {integrity: sha512-BdZ5BCCvho3EIXw6wUCXHe7rS53AIDPLE+JzwgT+OsJk53oBfbSmZZ7CX4VaRoN78N+TJpFi9QPlfIVNmJYWxQ==}
     dev: true
 
   /@types/mdast/3.0.10:
