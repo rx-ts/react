@@ -23,7 +23,7 @@ importers:
       '@types/node': ^18.7.16
       '@types/qrcode': ^1.5.0
       '@types/react': ^18.0.27
-      '@types/react-dom': ^18.0.6
+      '@types/react-dom': ^18.0.10
       '@types/react-router': ^5.1.18
       '@types/react-router-dom': ^5.3.3
       '@types/web': ^0.0.72
@@ -75,7 +75,7 @@ importers:
       '@types/node': 18.8.5
       '@types/qrcode': 1.5.0
       '@types/react': 18.0.27
-      '@types/react-dom': 18.0.6
+      '@types/react-dom': 18.0.10
       '@types/react-router': 5.1.18
       '@types/react-router-dom': 5.3.3
       '@types/web': 0.0.72
@@ -3809,7 +3809,7 @@ packages:
     dependencies:
       '@babel/runtime': 7.18.6
       '@testing-library/dom': 8.16.0
-      '@types/react-dom': 18.0.6
+      '@types/react-dom': 18.0.10
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
     dev: true
@@ -4114,8 +4114,8 @@ packages:
     resolution: {integrity: sha512-EEhsLsD6UsDM1yFhAvy0Cjr6VwmpMWqFBCb9w07wVugF7w9nfajxLuVmngTIpgS6svCnm6Vaw+MZhoDCKnOfsw==}
     dev: true
 
-  /@types/react-dom/18.0.6:
-    resolution: {integrity: sha512-/5OFZgfIPSwy+YuIBP/FgJnQnsxhZhjjrnxudMddeblOouIodEQ75X14Rr4wGSG/bknL+Omy9iWlLo1u/9GzAA==}
+  /@types/react-dom/18.0.10:
+    resolution: {integrity: sha512-E42GW/JA4Qv15wQdqJq8DL4JhNpB3prJgjgapN3qJT9K2zO5IIAQh4VXvCEDupoqAwnz0cY4RlXeC/ajX5SFHg==}
     dependencies:
       '@types/react': 18.0.27
     dev: true
