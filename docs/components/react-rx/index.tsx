@@ -40,12 +40,14 @@ export class ReactRxDemo extends PureComponent<object, AppState> {
   todos$ = combineLatest([todos$$, todoFilter$, this.editingTodo$]).pipe(
     map(([todos, todoFilter, editingTodo]) => {
       switch (todoFilter) {
-        case TodoFilter.ACTIVE:
+        case TodoFilter.ACTIVE: {
           todos = todos.filter(({ completed }) => !completed)
           break
-        case TodoFilter.COMPLETED:
+        }
+        case TodoFilter.COMPLETED: {
           todos = todos.filter(({ completed }) => completed)
           break
+        }
       }
       // tslint:disable jsx-no-lambda
       return (

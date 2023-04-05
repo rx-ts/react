@@ -42,10 +42,10 @@
     }
   },
   "dependencies": {
-    "@react-enhanced/hooks": "^0.4.0",
-    "@react-enhanced/shared": "^0.2.0",
-    "@react-enhanced/types": "^0.2.0",
-    "@react-enhanced/utils": "^0.2.0"
+    "@react-enhanced/hooks": "^0.4.1",
+    "@react-enhanced/shared": "^0.2.1",
+    "@react-enhanced/types": "^0.2.1",
+    "@react-enhanced/utils": "^0.2.1"
   },
   "publishConfig": {
     "access": "public",

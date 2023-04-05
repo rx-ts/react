@@ -5,6 +5,8 @@ LICENSE
 *.json
 *.log
 *.patch
+*.ts
 *.tsbuildinfo
+*.tsx
 *.yaml
 *.yml

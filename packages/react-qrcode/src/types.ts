@@ -14,7 +14,7 @@ export const LEVELS = [
 // eslint-disable-next-line @typescript-eslint/no-magic-numbers
 export const MASK_PATTERNS = [0, 1, 2, 3, 4, 5, 6, 7] as const
 
-export type MaskPattern = typeof MASK_PATTERNS[number]
+export type MaskPattern = (typeof MASK_PATTERNS)[number]
 
 export const MODES = [
   'auto',
@@ -26,7 +26,7 @@ export const MODES = [
 
 export const TYPES = ['image/png', 'image/jpeg', 'image/webp'] as const
 
-export type QRCodeMode = typeof MODES[number]
+export type QRCodeMode = (typeof MODES)[number]
 export type _QRCodeValue = _QRCodeSegment[] | string
 
 export interface QRCodeSegment {

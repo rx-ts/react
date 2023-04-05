@@ -41,8 +41,8 @@
     }
   },
   "dependencies": {
-    "@react-enhanced/shared": "^0.2.0",
-    "@react-enhanced/utils": "^0.2.0"
+    "@react-enhanced/shared": "^0.2.1",
+    "@react-enhanced/utils": "^0.2.1"
   },
   "publishConfig": {
     "access": "public"
