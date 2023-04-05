@@ -13,11 +13,11 @@ import './global.scss'
 import { ReactRxDemo } from './components'
 
 const Readme = () => {
-  const { enhancedName, name } = useParams<'enhancedName' | 'name'>()
+  const { pkgName, name } = useParams<'name' | 'pkgName'>()
   const Readme = lazy(() =>
     // eslint-disable-next-line @typescript-eslint/no-unsafe-return
-    enhancedName
-      ? import(`../packages/@react-enhanced/${enhancedName}/README.md`)
+    pkgName
+      ? import(`../packages/@react-enhanced/${pkgName}/README.md`)
       : name
       ? import(`../packages/${name}/README.md`)
       : import('../README.md'),

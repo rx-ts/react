@@ -246,7 +246,7 @@ export function fetchApi<T>(
         selector: res => of(res),
       }).pipe(
         catchError((err: api.Error) => invokeErrorInterceptors(req, err)),
-        switchMap(res => invokeResponseInterceptors(req, res, type).pipe()),
+        switchMap(res => invokeResponseInterceptors(req, res, type)),
       )
     }),
     catchError((err: ResponseError) =>

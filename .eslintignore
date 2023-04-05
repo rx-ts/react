@@ -2,6 +2,7 @@ coverage
 dist
 lib
 packages/*/CHANGELOG.md
+/auto-imports.d.ts
 /pnpm-lock.yaml
 !/.github
 !/.*.js
