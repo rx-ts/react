@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.4.2
+
+### Patch Changes
+
+- [`a4fa7a1`](https://github.com/rx-ts/react/commit/a4fa7a15c5bd25c787fff8512971f4ce6e2bf8e8) Thanks [@JounQin](https://github.com/JounQin)! - feat(hooks): createApi support
+
 ## 0.4.1
 
 ### Patch Changes
