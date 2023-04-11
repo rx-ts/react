@@ -2,22 +2,22 @@ import { sleep } from '@react-enhanced/shared'
 import { renderHook } from '@testing-library/react'
 import { fetch } from 'undici'
 
-import { RequestInterceptor, interceptors, useApi } from '@react-enhanced/hooks'
+import { ApiInterceptor, interceptors, useApi } from '@react-enhanced/hooks'
 
-const requestInterceptor: RequestInterceptor = req => {
+const apiInterceptor: ApiInterceptor = (req, next) => {
   if (!/^https?:\/\//.test(req.url)) {
     req.url = 'https://api.github.com/' + req.url
   }
-  return req
+  return next(req)
 }
 
 // @ts-expect-error
 globalThis.fetch = fetch
 
-interceptors.request.use(requestInterceptor)
+interceptors.use(apiInterceptor)
 
 afterAll(() => {
-  interceptors.request.eject(requestInterceptor)
+  interceptors.eject(apiInterceptor)
 })
 
 it('should work as expected', async () => {
