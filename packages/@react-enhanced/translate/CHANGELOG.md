@@ -1,5 +1,12 @@
 # Change Log
 
+## 0.1.3
+
+### Patch Changes
+
+- Updated dependencies [[`eda5886`](https://github.com/rx-ts/react/commit/eda58865eb55fcb33b96c6e72c4537c5b6058747)]:
+  - @react-enhanced/hooks@0.5.0
+
 ## 0.1.2
 
 ### Patch Changes

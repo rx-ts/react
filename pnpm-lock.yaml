@@ -221,7 +221,7 @@ importers:
   packages/@react-enhanced/translate:
     dependencies:
       '@react-enhanced/hooks':
-        specifier: ^0.4.1
+        specifier: ^0.5.0
         version: link:../hooks
       '@react-enhanced/shared':
         specifier: ^0.2.1
