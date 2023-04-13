@@ -69,7 +69,6 @@
     "qrious": "^4.0.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-hot-loader": "^4.13.1",
     "react-qrcode": "link:packages/react-qrcode",
     "react-qrious": "link:packages/react-qrious",
     "react-router": "^6.10.0",
