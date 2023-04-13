@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.5.0
+
+### Minor Changes
+
+- [#183](https://github.com/rx-ts/react/pull/183) [`eda5886`](https://github.com/rx-ts/react/commit/eda58865eb55fcb33b96c6e72c4537c5b6058747) Thanks [@JounQin](https://github.com/JounQin)! - feat: better interceptor implementation
+
 ## 0.4.2
 
 ### Patch Changes
