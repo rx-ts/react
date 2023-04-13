@@ -5,11 +5,10 @@ export default defineConfig({
   plugins: [
     autoImport({
       imports: ['vitest'],
-      dts: true,
     }),
   ],
   test: {
-    environment: 'happy-dom',
+    environment: 'jsdom',
     coverage: {
       provider: 'istanbul',
       reporter: ['lcov', 'json'],
