@@ -1,4 +1,4 @@
-import { ApiMethod, NO_CONTENT } from '@react-enhanced/shared'
+import { ApiMethod } from '@react-enhanced/shared'
 import type { Nilable, URLSearchParamsOptions } from '@react-enhanced/types'
 import {
   CONTENT_TYPE,
@@ -8,7 +8,7 @@ import {
 import { isPlainObject } from 'lodash'
 import { useCallback, useState } from 'react'
 import type { Observable } from 'rxjs'
-import { NEVER, catchError, from, of, switchMap, tap, throwError } from 'rxjs'
+import { NEVER, from, of, switchMap, tap } from 'rxjs'
 import { fromFetch } from 'rxjs/fetch'
 
 import { useEnhancedEffect } from './lifecycle.js'
@@ -19,23 +19,15 @@ export interface FetchApiOptions extends Omit<RequestInit, 'body' | 'method'> {
   query?: URLSearchParamsOptions
   json?: boolean
   type?: 'arrayBuffer' | 'blob' | 'json' | 'text' | null
-  mock?: boolean
 }
 
 export interface InterceptorRequest extends FetchApiOptions {
   url: string
 }
 
-export type RequestInterceptor = (
+export type ApiInterceptor = (
   request: InterceptorRequest,
-) =>
-  | InterceptorRequest
-  | Observable<InterceptorRequest>
-  | PromiseLike<InterceptorRequest>
-
-export type ResponseInterceptor = (
-  request: InterceptorRequest,
-  response: Response,
+  next: (request: InterceptorRequest) => Observable<Response>,
 ) => Observable<Response> | PromiseLike<Response> | Response
 
 export type ResponseError<T extends api.Error = api.Error> = T & {
@@ -43,29 +35,29 @@ export type ResponseError<T extends api.Error = api.Error> = T & {
   response?: Response | null
 }
 
-export type ErrorInterceptor<T extends api.Error = api.Error> = (
-  request: InterceptorRequest,
-  error: ResponseError<T>,
-) => Observable<Response> | PromiseLike<Response> | Response
+export class ApiInterceptors {
+  readonly #interceptors: ApiInterceptor[] = []
 
-export interface ApiInterceptors {
-  request: {
-    end(): ApiInterceptors
-    use(interceptor: RequestInterceptor): ApiInterceptors['request']
-    eject(interceptor: RequestInterceptor): boolean
+  get length() {
+    return this.#interceptors.length
   }
-  response: {
-    end(): ApiInterceptors
-    use(interceptor: ResponseInterceptor): ApiInterceptors['response']
-    use<T extends api.Error = api.Error>(
-      responseInterceptor: ResponseInterceptor | null,
-      errorInterceptor: ErrorInterceptor<T>,
-    ): ApiInterceptors['response']
-    eject(interceptor: ResponseInterceptor): boolean
-    eject<T extends api.Error = api.Error>(
-      responseInterceptor: ResponseInterceptor | null,
-      errorInterceptor: ErrorInterceptor<T>,
-    ): boolean
+
+  at(index: number): ApiInterceptor | undefined {
+    return this.#interceptors.at(index)
+  }
+
+  use(...interceptors: ApiInterceptor[]): ApiInterceptors {
+    this.#interceptors.push(...interceptors)
+    return this
+  }
+
+  eject(interceptor: ApiInterceptor): boolean {
+    const index = this.#interceptors.indexOf(interceptor)
+    if (index > -1) {
+      this.#interceptors.splice(index, 1)
+      return true
+    }
+    return false
   }
 }
 
@@ -90,151 +82,8 @@ export interface UseApiOptions extends FetchApiOptions {
   url?: string
 }
 
-const createInterceptors = () => {
-  const requestInterceptors = new Set<RequestInterceptor>()
-  const responseInterceptors = new Set<ResponseInterceptor>()
-  const errorInterceptors = new Set<ErrorInterceptor>()
-
-  const interceptors: ApiInterceptors = {
-    request: {
-      end() {
-        return interceptors
-      },
-      use(interceptor: RequestInterceptor) {
-        requestInterceptors.add(interceptor)
-        return interceptors.request
-      },
-      eject(interceptor: RequestInterceptor) {
-        return requestInterceptors.delete(interceptor)
-      },
-    },
-    response: {
-      end() {
-        return interceptors
-      },
-      use(
-        responseInterceptor: ResponseInterceptor | null,
-        errorInterceptor?: ErrorInterceptor,
-      ) {
-        if (responseInterceptor) {
-          responseInterceptors.add(responseInterceptor)
-        }
-
-        if (errorInterceptor) {
-          errorInterceptors.add(errorInterceptor)
-        }
-
-        return interceptors.response
-      },
-      eject(
-        responseInterceptor: ResponseInterceptor | null,
-        errorInterceptor?: ErrorInterceptor,
-      ) {
-        if (!responseInterceptor && !errorInterceptor) {
-          return false
-        }
-        const resIcDeleted =
-          !responseInterceptor ||
-          responseInterceptors.delete(responseInterceptor)
-        const errIcDeleted =
-          !errorInterceptor || errorInterceptors.delete(errorInterceptor)
-        return resIcDeleted && errIcDeleted
-      },
-    },
-  }
-
-  return {
-    interceptors,
-    requestInterceptors,
-    responseInterceptors,
-    errorInterceptors,
-  }
-}
-
-const invokeRequestInterceptors = (
-  requestInterceptors: Set<RequestInterceptor>,
-  req: InterceptorRequest,
-) =>
-  [...requestInterceptors].reduce(
-    (acc, interceptor) =>
-      acc.pipe(
-        switchMap(req => {
-          const next = interceptor(req)
-          return isObservableLike(next) ? next : of(next)
-        }),
-      ),
-    of(req),
-  )
-
-const invokeResponseInterceptors = <T>(
-  responseInterceptors: Set<ResponseInterceptor>,
-  req: InterceptorRequest,
-  res: Response,
-  type: FetchApiOptions['type'],
-) =>
-  [...responseInterceptors]
-    .reduce(
-      (acc, interceptor) =>
-        acc.pipe(
-          switchMap(res => {
-            const next = interceptor(req, res)
-            return isObservableLike(next) ? next : of(next)
-          }),
-        ),
-      of(res),
-    )
-    .pipe(
-      switchMap(res =>
-        from(
-          res.status === NO_CONTENT
-            ? of(null)
-            : type == null
-            ? of(res)
-            : (res.clone()[type]() as Promise<T>),
-        ).pipe(
-          catchError((err: Error) =>
-            throwError(() =>
-              Object.assign(new Error(err.message), { response: res }),
-            ),
-          ),
-          switchMap(data => {
-            if (res.ok) {
-              return of(data)
-            }
-            return throwError(() =>
-              Object.assign(new Error(res.statusText), {
-                data,
-                response: res,
-              }),
-            )
-          }),
-        ),
-      ),
-    )
-
-const invokeErrorInterceptors = (
-  errorInterceptors: Set<ErrorInterceptor>,
-  req: InterceptorRequest,
-  err: ResponseError,
-) =>
-  [...errorInterceptors].reduce<Observable<Response>>(
-    (acc, interceptor) =>
-      acc.pipe(
-        catchError((err: ResponseError) => {
-          const next = interceptor(req, err)
-          return isObservableLike(next) ? next : of(next)
-        }),
-      ),
-    throwError(() => err),
-  )
-
 export function createApi() {
-  const {
-    interceptors,
-    requestInterceptors,
-    responseInterceptors,
-    errorInterceptors,
-  } = createInterceptors()
+  const interceptors = new ApiInterceptors()
 
   function fetchApi(
     url: string,
@@ -273,44 +122,34 @@ export function createApi() {
       headers.append(CONTENT_TYPE, 'application/json')
     }
 
-    const req: InterceptorRequest = {
+    let index = 0
+
+    const next = (req: InterceptorRequest) => {
+      if (index < interceptors.length) {
+        const res = interceptors.at(index++)!(req, next)
+        return isObservableLike(res) ? from(res) : of(res)
+      }
+      const { body, url, query, ...rest } = req
+      return fromFetch<Response>(normalizeUrl(url, query), {
+        ...rest,
+        body: json ? JSON.stringify(body) : (body as BodyInit),
+        selector: res => of(res),
+      })
+    }
+
+    return next({
       url,
       method,
       body,
       headers,
       ...rest,
-    }
-
-    return invokeRequestInterceptors(requestInterceptors, req).pipe(
-      switchMap(req => {
-        const { body, url, query, ...rest } = req
-        return fromFetch<Response>(normalizeUrl(url, query), {
-          ...rest,
-          body: json ? JSON.stringify(body) : (body as BodyInit),
-          selector: res => of(res),
-        }).pipe(
-          catchError((err: api.Error) =>
-            invokeErrorInterceptors(errorInterceptors, req, err),
-          ),
-          switchMap(res =>
-            invokeResponseInterceptors(responseInterceptors, req, res, type),
-          ),
-        )
+    }).pipe(
+      switchMap(res => {
+        if (type == null) {
+          return of(res)
+        }
+        return res[type]() as Promise<T>
       }),
-      catchError((err: ResponseError) =>
-        invokeErrorInterceptors(errorInterceptors, req, err).pipe(
-          switchMap(res => {
-            if (type == null) {
-              return of(res)
-            }
-            return from(res.clone()[type]() as Promise<T>).pipe(
-              catchError((err: Error) =>
-                throwError(() => Object.assign(err, { response: res })),
-              ),
-            )
-          }),
-        ),
-      ),
     )
   }
 
