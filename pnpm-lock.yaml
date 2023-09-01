@@ -83,8 +83,8 @@ importers:
         specifier: ^5.2.0
         version: 5.2.0
       jsdom:
-        specifier: ^21.1.1
-        version: 21.1.1
+        specifier: ^21.1.2
+        version: 21.1.2
       lodash:
         specifier: ^4.17.21
         version: 4.17.21
@@ -162,7 +162,7 @@ importers:
         version: 4.2.1(@types/node@18.15.11)(sass@1.61.0)
       vitest:
         specifier: ^0.30.0
-        version: 0.30.0(jsdom@21.1.1)(sass@1.61.0)
+        version: 0.30.0(jsdom@21.1.2)(sass@1.61.0)
 
   packages/@react-enhanced/eslint-plugin:
     dependencies:
@@ -4409,7 +4409,7 @@ packages:
       istanbul-lib-source-maps: 4.0.1
       istanbul-reports: 3.1.5
       test-exclude: 6.0.0
-      vitest: 0.30.0(jsdom@21.1.1)(sass@1.61.0)
+      vitest: 0.30.0(jsdom@21.1.2)(sass@1.61.0)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -9138,8 +9138,8 @@ packages:
     hasBin: true
     dev: true
 
-  /jsdom@21.1.1:
-    resolution: {integrity: sha512-Jjgdmw48RKcdAIQyUD1UdBh2ecH7VqwaXPN3ehoZN6MqgVbMn+lRm1aAT1AsdJRAJpwfa4IpwgzySn61h2qu3w==}
+  /jsdom@21.1.2:
+    resolution: {integrity: sha512-sCpFmK2jv+1sjff4u7fzft+pUh2KSUbUrEHYHyfSIbGTIcmnjyp83qg6qLwdJ/I3LpTXx33ACxeRL7Lsyc6lGQ==}
     engines: {node: '>=14'}
     peerDependencies:
       canvas: ^2.5.0
@@ -15458,7 +15458,7 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /vitest@0.30.0(jsdom@21.1.1)(sass@1.61.0):
+  /vitest@0.30.0(jsdom@21.1.2)(sass@1.61.0):
     resolution: {integrity: sha512-2WW4WeTHtrLFeoiuotWvEW6khozx1NvMGYoGsNz2btdddEbqvEdPJIouIdoiC5i61Rl1ctZvm9cn2R9TcPQlzw==}
     engines: {node: '>=v14.18.0'}
     hasBin: true
@@ -15503,7 +15503,7 @@ packages:
       chai: 4.3.7
       concordance: 5.0.4
       debug: 4.3.4
-      jsdom: 21.1.1
+      jsdom: 21.1.2
       local-pkg: 0.4.3
       magic-string: 0.30.0
       pathe: 1.1.0
