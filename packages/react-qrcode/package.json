@@ -26,7 +26,7 @@
     "react"
   ],
   "peerDependencies": {
-    "qrcode": ">=1.5.3",
+    "qrcode": ">=1.5.4",
     "react": ">=16.8.0"
   },
   "publishConfig": {
