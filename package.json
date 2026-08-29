@@ -71,7 +71,7 @@
     "react-dom": "^18.2.0",
     "react-qrcode": "link:packages/react-qrcode",
     "react-qrious": "link:packages/react-qrious",
-    "react-router": "^6.10.0",
+    "react-router": "^7.0.0",
     "react-router-dom": "^6.10.0",
     "remark-gfm": "^3.0.1",
     "rimraf": "^4.4.1",
